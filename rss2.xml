@@ -9,8 +9,35 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache.</description>
-    <pubDate>Mon, 26 Dec 2022 14:03:02 GMT</pubDate>
+    <pubDate>Wed, 28 Dec 2022 08:24:03 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>博客更新日志</title>
+      <link>http://example.com/2022/12/28/BlogUpdateLog/</link>
+      <guid>http://example.com/2022/12/28/BlogUpdateLog/</guid>
+      <pubDate>Wed, 28 Dec 2022 06:28:41 GMT</pubDate>
+      
+      <description>&lt;h4 id=&quot;2022-12-28&quot;&gt;&lt;a href=&quot;#2022-12-28&quot; class=&quot;headerlink&quot; title=&quot;2022-12-28&quot;&gt;&lt;/a&gt;2022-12-28&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;添加博客更新日志&lt;/li&gt;
+&lt;li&gt;优化博客&lt;ul&gt;
+&lt;li&gt;添加访问量统计(themes&amp;#x2F;next&amp;#x2F;_config.yml&amp;#x2F;busuanzi_count)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h4 id="2022-12-28"><a href="#2022-12-28" class="headerlink" title="2022-12-28"></a>2022-12-28</h4><ol><li>添加博客更新日志</li><li>优化博客<ul><li>添加访问量统计(themes&#x2F;next&#x2F;_config.yml&#x2F;busuanzi_count)</li></ul></li></ol><span id="more"></span><h4 id="2022-12-27"><a href="#2022-12-27" class="headerlink" title="2022-12-27"></a>2022-12-27</h4><ol><li>添加页面Grains(书目等)和Play With Me(留言板)</li><li>优化博客<ul><li>实现底部信息居中（修改css）</li><li>添加友链页面</li></ul></li></ol><h4 id="2022-12-26"><a href="#2022-12-26" class="headerlink" title="2022-12-26"></a>2022-12-26</h4><ol><li>优化博客<ul><li>添加Gitalk评论功能</li></ul></li><li>学习使用Markdown语法，添加日志《十年后的重逢》</li></ol><h4 id="2022-12-25-🎄"><a href="#2022-12-25-🎄" class="headerlink" title="2022-12-25 🎄"></a>2022-12-25 🎄</h4><ol><li>优化博客<ul><li>修改菜单(themes&#x2F;next&#x2F;_config.yml&#x2F;menu)&amp;(theme&#x2F;next&#x2F;languages&#x2F;zh-CN.yml&#x2F;menu)</li><li>设置建站时间(themes&#x2F;next&#x2F;_config.yml&#x2F;footer&#x2F;since)</li><li>设置背景图：创建文件(Blog&#x2F;source&#x2F;_data&#x2F;styles.styl)</li><li>添加顶部加载条(themes&#x2F;next&#x2F;_config.yml&#x2F;pace)</li><li>设置博文链接为蓝色</li><li>显示文章字数：安装hexo-wordcount插件，增加配置Blog&#x2F;_config.yml&#x2F;symbols_count_time</li><li>显示站点文章总字数，修改&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig文件</li></ul></li></ol><h4 id="2022-12-24"><a href="#2022-12-24" class="headerlink" title="2022-12-24"></a>2022-12-24</h4><ol><li>部署和优化博客<ul><li>安装Hexo，Blog&#x2F;_config.yml&#x2F;deploy&#x2F;repository填入仓库地址，安装Git部署插件，执行hexo clean ,hexo g, hexo d部署到github仓库</li><li>在<a href="https://wanwang.aliyun.com/">万网</a>购买域名</li><li>解析域名，Blog&#x2F;source添加CHAME.txt文件，写入域名并部署，在Github Pages&#x2F;Custom domain添加域名</li><li>设置主题：Next:Gemini(themes&#x2F;next&#x2F;_config.yml&#x2F;Schemes)</li><li>修改头像(themes&#x2F;next&#x2F;_config.yml&#x2F;avatar)和标签图标(themes&#x2F;next&#x2F;_config.yml&#x2F;favicon)</li><li>增加社交链接(themes&#x2F;next&#x2F;_config.yml&#x2F;social)</li></ul></li></ol><h4 id="2022-12-23"><a href="#2022-12-23" class="headerlink" title="2022-12-23"></a>2022-12-23</h4><ol><li>部署博客 <ul><li>安装和学习使用Git</li><li>绑定Github仓库：创建Github仓库，使用SSH key克隆内容到本地，再更新提交</li><li>安装node.js（解决了nodejs本地文件夹只读问题）</li></ul></li></ol>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/Tech/">Tech</category>
+      
+      
+      
+      <comments>http://example.com/2022/12/28/BlogUpdateLog/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>十年后的重逢</title>
@@ -49,7 +76,7 @@
       <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><span id="more"></span><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><div id="gitalk-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script src="/js/md5.min.js"></script><script>var gitalk = new Gitalk({  clientID: '8a1150939f4fa795f439',  clientSecret: 'ba1c39ca577e914d7e48639a4e1fb9b6ce67d8c8',  repo: 'pearlchocolate01.github.io',  owner: 'PearlChocolate01',  admin: 'PearlChocolate01',  id: md5(location.pathname),      // Ensure uniqueness and length less than 50  distractionFreeMode: true,  // Facebook-like distraction free mode  proxy: 'https://zy01.pearlchocolate.workers.dev/?https://github.com/login/oauth/access_token'})gitalk.render('gitalk-container')</script>]]></content:encoded>
       
       
-      <category domain="http://example.com/categories/Grains/">Grains</category>
+      <category domain="http://example.com/categories/Tech/">Tech</category>
       
       
       
