@@ -9,8 +9,32 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache.</description>
-    <pubDate>Fri, 13 Jan 2023 11:55:09 GMT</pubDate>
+    <pubDate>Mon, 16 Jan 2023 02:42:39 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hexo|Butterfly主题配置Artitalk说说功能</title>
+      <link>https://pearlchocolatezy.com/2023/01/15/SetArtitalk/</link>
+      <guid>https://pearlchocolatezy.com/2023/01/15/SetArtitalk/</guid>
+      <pubDate>Sun, 15 Jan 2023 09:54:48 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;为了给博客配置一个说说功能，我按照网络上的教程使用LeanCloud+Artitalk进行配置。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LeanCloud: &lt;a href=&quot;https://console.leancloud.app/apps&quot;&gt;LeanCloud国际版&lt;/a&gt;&lt;/l</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>为了给博客配置一个说说功能，我按照网络上的教程使用LeanCloud+Artitalk进行配置。</p><ul><li>LeanCloud: <a href="https://console.leancloud.app/apps">LeanCloud国际版</a></li><li>Artitalk: <a href="https://artitalk.js.org/">Artitalk</a></li></ul>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/01/15/SetArtitalk/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Vue学习笔记</title>
@@ -59,53 +83,24 @@
     </item>
     
     <item>
-      <title>书摘2022</title>
-      <link>https://pearlchocolatezy.com/2022/12/30/ReadingExcerpts2022/</link>
-      <guid>https://pearlchocolatezy.com/2022/12/30/ReadingExcerpts2022/</guid>
-      <pubDate>Fri, 30 Dec 2022 04:28:43 GMT</pubDate>
-      
-      <description>&lt;div&gt;
-    &lt;img src=&quot;/2022/12/30/ReadingExcerpts2022/aidewuzhongnengli.jpg&quot; alt=&quot;爱的五种能力&quot; width=&quot;150&quot; style=&quot;display:inline;float:left;margin-right:30px;margin-left:10px;margin-bottom:1090px;&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;书名：&lt;/strong&gt;&lt;font color=&quot;#cf5b75&quot;&gt;爱的五种能力&lt;/font&gt;&lt;br&gt;&lt;strong&gt;作者：&lt;/strong&gt;赵永久&lt;br&gt;&lt;strong&gt;出版时间：&lt;/strong&gt;2014年6月&lt;br&gt;&lt;strong&gt;阅读时间：&lt;/strong&gt;2022年12月&lt;br&gt;&lt;strong&gt;书摘：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在一个情商低的环境中，很难成长出一个情商高的人来，除非后天刻意地学习和练习。而我们也很有必要在后天来学习和练习自己地这些能力，因为这些能力都会通过语言环境遗传给一代又一代地子子孙孙。&lt;/li&gt;
-&lt;li&gt;爱人是被你吸引才会跟你在一起的，但被你吸引并不代表了解你，真正能知道你在想什么，一定是你经常告诉他你的想法和感受，时间久了，他对你多数的想法和性格特点都了解后，他才能做到你想要的这种境界，这需要你经常“述情”的。&lt;/li&gt;
-&lt;li&gt;相爱很多时候是荷尔蒙在起作用，而两人彼此都很懂对方的爱情关系是通过彼此不断述情沟通来达到的。&lt;/li&gt;
-&lt;li&gt;“心有灵犀”是经营的结果。&lt;/li&gt;
-&lt;li&gt;启发，很像是苏格拉底的“诘问”，通过提问的方式启发对方，苏格拉底就是这样帮助人们变得更加智慧的，他说：“我妈妈是接生婆，我也是个接生婆，我妈妈接生的是生命，我接生的是人的智慧，帮助人们生出他们的思想。”&lt;/li&gt;
-&lt;li&gt;启发又分为两步：&lt;/li&gt;
-&lt;li&gt;第一步：启发对方理解他人，或从另外的角度看问题。&lt;/li&gt;
-&lt;li&gt;第二步：是引导对方去关注未来、关注解决方案。&lt;/li&gt;
-&lt;li&gt;通过问“为什么”，让对方去思考他人的出发点和需求，或者看到事物发展的基本规律。而不是停留在自己的逻辑上。&lt;/li&gt;
-&lt;li&gt;目的都是让对方去做更多的思考，彻底瓦解其起情绪的逻辑，使其以后再遇到这样的事情不会再起情绪。&lt;/li&gt;
-&lt;li&gt;启发就是这样做的，整个过程中都是提问，并不给答案，而是促使对方自己去思考问题，进而使用他的智慧去解决问题。在这个过程中，你甚至有可能都不知道怎么解决这些问题，但依据这个原则你就可以启发对方，让他想出连你都想不出的解决方案来。&lt;/li&gt;
-&lt;li&gt;允许是解决爱情中诸多问题的一条捷径，也是一种能力。&lt;/li&gt;
-&lt;li&gt;允许的意思是说，我不需要去判断这些事情是对的还是错的，也不需要把这些事情装到自己的心里去，我只是允许这些事情以它本来的面目存在，不去做抗争，臣服于宇宙和自然的规律中。在这个大的规律中，她是大的，我是小的，我允许她的存在。&lt;/li&gt;
-&lt;li&gt;一个人想要活在当下，你的心理资源都在当下，整个人的注意力都在当下，你才会真正地活在当下，才能感受到当下的美好。&lt;/li&gt;
-&lt;/ul&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<div>    <img src="/2022/12/30/ReadingExcerpts2022/aidewuzhongnengli.jpg" alt="爱的五种能力" width="150" style="display:inline;float:left;margin-right:30px;margin-left:10px;margin-bottom:1090px;"></div><p><strong>书名：</strong><font color="#cf5b75">爱的五种能力</font><br><strong>作者：</strong>赵永久<br><strong>出版时间：</strong>2014年6月<br><strong>阅读时间：</strong>2022年12月<br><strong>书摘：</strong></p><ul><li>在一个情商低的环境中，很难成长出一个情商高的人来，除非后天刻意地学习和练习。而我们也很有必要在后天来学习和练习自己地这些能力，因为这些能力都会通过语言环境遗传给一代又一代地子子孙孙。</li><li>爱人是被你吸引才会跟你在一起的，但被你吸引并不代表了解你，真正能知道你在想什么，一定是你经常告诉他你的想法和感受，时间久了，他对你多数的想法和性格特点都了解后，他才能做到你想要的这种境界，这需要你经常“述情”的。</li><li>相爱很多时候是荷尔蒙在起作用，而两人彼此都很懂对方的爱情关系是通过彼此不断述情沟通来达到的。</li><li>“心有灵犀”是经营的结果。</li><li>启发，很像是苏格拉底的“诘问”，通过提问的方式启发对方，苏格拉底就是这样帮助人们变得更加智慧的，他说：“我妈妈是接生婆，我也是个接生婆，我妈妈接生的是生命，我接生的是人的智慧，帮助人们生出他们的思想。”</li><li>启发又分为两步：</li><li>第一步：启发对方理解他人，或从另外的角度看问题。</li><li>第二步：是引导对方去关注未来、关注解决方案。</li><li>通过问“为什么”，让对方去思考他人的出发点和需求，或者看到事物发展的基本规律。而不是停留在自己的逻辑上。</li><li>目的都是让对方去做更多的思考，彻底瓦解其起情绪的逻辑，使其以后再遇到这样的事情不会再起情绪。</li><li>启发就是这样做的，整个过程中都是提问，并不给答案，而是促使对方自己去思考问题，进而使用他的智慧去解决问题。在这个过程中，你甚至有可能都不知道怎么解决这些问题，但依据这个原则你就可以启发对方，让他想出连你都想不出的解决方案来。</li><li>允许是解决爱情中诸多问题的一条捷径，也是一种能力。</li><li>允许的意思是说，我不需要去判断这些事情是对的还是错的，也不需要把这些事情装到自己的心里去，我只是允许这些事情以它本来的面目存在，不去做抗争，臣服于宇宙和自然的规律中。在这个大的规律中，她是大的，我是小的，我允许她的存在。</li><li>一个人想要活在当下，你的心理资源都在当下，整个人的注意力都在当下，你才会真正地活在当下，才能感受到当下的美好。</li></ul><span id="more"></span><hr><div>    <img src="/2022/12/30/ReadingExcerpts2022/aiyuzhisi.jpg" alt="爱欲之死" width="150" style="display:inline;float:left;margin-right:30px;margin-left:10px;margin-bottom:220px;"></div><p><strong>书名：</strong><font color="#5b3669">爱欲之死</font><br><strong>作者：</strong>[德]韩炳哲<br><strong>出版时间：</strong>2019年9月<br><strong>阅读时间：</strong>2022年6月<br><strong>书摘：</strong></p><ul><li>爱欲将主体从“自我”世界中拉扯出去，转移到“他者”世界。当今世界，自恋主体的核心追求是成功。成功可以通过确认“我”的成绩而与“他者”分离，“他者”就变成了我的参照物。这一奖赏性的逻辑将自恋的主体更加牢牢地编织在他的“自我”中。于是就产生了成功后忧郁。</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/Grains/">Grains</category>
-      
-      
-      
-      <comments>https://pearlchocolatezy.com/2022/12/30/ReadingExcerpts2022/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>博客更新日志</title>
       <link>https://pearlchocolatezy.com/2022/12/28/BlogUpdateLog/</link>
       <guid>https://pearlchocolatezy.com/2022/12/28/BlogUpdateLog/</guid>
       <pubDate>Wed, 28 Dec 2022 06:28:41 GMT</pubDate>
       
-      <description>&lt;h4 id=&quot;2023-01-12&quot;&gt;&lt;a href=&quot;#2023-01-12&quot; class=&quot;headerlink&quot; title=&quot;2023-01-12&quot;&gt;&lt;/a&gt;2023-01-12&lt;/h4&gt;&lt;ol&gt;
+      <description>&lt;h4 id=&quot;2023-01-16&quot;&gt;&lt;a href=&quot;#2023-01-16&quot; class=&quot;headerlink&quot; title=&quot;2023-01-16&quot;&gt;&lt;/a&gt;2023-01-16&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;配置分类标签页面&lt;/li&gt;
+&lt;li&gt;修改背景渐变色&lt;/li&gt;
+&lt;li&gt;修改主题颜色&lt;/li&gt;
+&lt;li&gt;进一步压缩图片大小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;2023-01-15&quot;&gt;&lt;a href=&quot;#2023-01-15&quot; class=&quot;headerlink&quot; title=&quot;2023-01-15&quot;&gt;&lt;/a&gt;2023-01-15&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;配置说说功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;2023-01-14&quot;&gt;&lt;a href=&quot;#2023-01-14&quot; class=&quot;headerlink&quot; title=&quot;2023-01-14&quot;&gt;&lt;/a&gt;2023-01-14&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;更新游戏页面&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;2023-01-12&quot;&gt;&lt;a href=&quot;#2023-01-12&quot; class=&quot;headerlink&quot; title=&quot;2023-01-12&quot;&gt;&lt;/a&gt;2023-01-12&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;更新鼠标点击文字特效，打字特效&lt;/li&gt;
 &lt;li&gt;增加友链、书架和留言板页面&lt;/li&gt;
 &lt;/ol&gt;
@@ -123,7 +118,7 @@
       
       
       
-      <content:encoded><![CDATA[<h4 id="2023-01-12"><a href="#2023-01-12" class="headerlink" title="2023-01-12"></a>2023-01-12</h4><ol><li>更新鼠标点击文字特效，打字特效</li><li>增加友链、书架和留言板页面</li></ol><h4 id="2023-01-10"><a href="#2023-01-10" class="headerlink" title="2023-01-10"></a>2023-01-10</h4><ol><li>博客更新为ButterFly主题，还有很多待完成的页面…</li></ol><h4 id="2022-12-28"><a href="#2022-12-28" class="headerlink" title="2022-12-28"></a>2022-12-28</h4><ol><li>添加博客更新日志</li><li>优化博客<ul><li>添加访问量统计(themes&#x2F;next&#x2F;_config.yml&#x2F;busuanzi_count)</li><li>修改友链页面手机端显示文字不全问题</li></ul></li></ol><span id="more"></span><h4 id="2022-12-27"><a href="#2022-12-27" class="headerlink" title="2022-12-27"></a>2022-12-27</h4><ol><li>添加页面Grains(书目等)和Play With Me(留言板)</li><li>优化博客<ul><li>实现底部信息居中（修改css）</li><li>添加友链页面</li></ul></li></ol><h4 id="2022-12-26"><a href="#2022-12-26" class="headerlink" title="2022-12-26"></a>2022-12-26</h4><ol><li>优化博客<ul><li>添加Gitalk评论功能</li></ul></li><li>学习使用Markdown语法，添加日志《十年后的重逢》</li></ol><h4 id="2022-12-25-🎄"><a href="#2022-12-25-🎄" class="headerlink" title="2022-12-25 🎄"></a>2022-12-25 🎄</h4><ol><li>优化博客<ul><li>修改菜单(themes&#x2F;next&#x2F;_config.yml&#x2F;menu)&amp;(theme&#x2F;next&#x2F;languages&#x2F;zh-CN.yml&#x2F;menu)</li><li>设置建站时间(themes&#x2F;next&#x2F;_config.yml&#x2F;footer&#x2F;since)</li><li>设置背景图：创建文件(Blog&#x2F;source&#x2F;_data&#x2F;styles.styl)</li><li>添加顶部加载条(themes&#x2F;next&#x2F;_config.yml&#x2F;pace)</li><li>设置博文链接为蓝色</li><li>显示文章字数：安装hexo-wordcount插件，增加配置Blog&#x2F;_config.yml&#x2F;symbols_count_time</li><li>显示站点文章总字数，修改&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig文件</li></ul></li></ol><h4 id="2022-12-24"><a href="#2022-12-24" class="headerlink" title="2022-12-24"></a>2022-12-24</h4><ol><li>部署和优化博客<ul><li>安装Hexo，Blog&#x2F;_config.yml&#x2F;deploy&#x2F;repository填入仓库地址，安装Git部署插件，执行hexo clean ,hexo g, hexo d部署到github仓库</li><li>在<a href="https://wanwang.aliyun.com/">万网</a>购买域名</li><li>解析域名，Blog&#x2F;source添加CHAME.txt文件，写入域名并部署，在Github Pages&#x2F;Custom domain添加域名</li><li>设置主题：Next:Gemini(themes&#x2F;next&#x2F;_config.yml&#x2F;Schemes)</li><li>修改头像(themes&#x2F;next&#x2F;_config.yml&#x2F;avatar)和标签图标(themes&#x2F;next&#x2F;_config.yml&#x2F;favicon)</li><li>增加社交链接(themes&#x2F;next&#x2F;_config.yml&#x2F;social)</li></ul></li></ol><h4 id="2022-12-23"><a href="#2022-12-23" class="headerlink" title="2022-12-23"></a>2022-12-23</h4><ol><li>部署博客 <ul><li>安装和学习使用Git</li><li>绑定Github仓库：创建Github仓库，使用SSH key克隆内容到本地，再更新提交</li><li>安装node.js（解决了nodejs本地文件夹只读问题）</li></ul></li></ol>]]></content:encoded>
+      <content:encoded><![CDATA[<h4 id="2023-01-16"><a href="#2023-01-16" class="headerlink" title="2023-01-16"></a>2023-01-16</h4><ol><li>配置分类标签页面</li><li>修改背景渐变色</li><li>修改主题颜色</li><li>进一步压缩图片大小</li></ol><h4 id="2023-01-15"><a href="#2023-01-15" class="headerlink" title="2023-01-15"></a>2023-01-15</h4><ol><li>配置说说功能</li></ol><h4 id="2023-01-14"><a href="#2023-01-14" class="headerlink" title="2023-01-14"></a>2023-01-14</h4><ol><li>更新游戏页面</li></ol><h4 id="2023-01-12"><a href="#2023-01-12" class="headerlink" title="2023-01-12"></a>2023-01-12</h4><ol><li>更新鼠标点击文字特效，打字特效</li><li>增加友链、书架和留言板页面</li></ol><h4 id="2023-01-10"><a href="#2023-01-10" class="headerlink" title="2023-01-10"></a>2023-01-10</h4><ol><li>博客更新为ButterFly主题，还有很多待完成的页面…</li></ol><h4 id="2022-12-28"><a href="#2022-12-28" class="headerlink" title="2022-12-28"></a>2022-12-28</h4><ol><li>添加博客更新日志</li><li>优化博客<ul><li>添加访问量统计(themes&#x2F;next&#x2F;_config.yml&#x2F;busuanzi_count)</li><li>修改友链页面手机端显示文字不全问题</li></ul></li></ol><span id="more"></span><h4 id="2022-12-27"><a href="#2022-12-27" class="headerlink" title="2022-12-27"></a>2022-12-27</h4><ol><li>添加页面Grains(书目等)和Play With Me(留言板)</li><li>优化博客<ul><li>实现底部信息居中（修改css）</li><li>添加友链页面</li></ul></li></ol><h4 id="2022-12-26"><a href="#2022-12-26" class="headerlink" title="2022-12-26"></a>2022-12-26</h4><ol><li>优化博客<ul><li>添加Gitalk评论功能</li></ul></li><li>学习使用Markdown语法，添加日志《十年后的重逢》</li></ol><h4 id="2022-12-25-🎄"><a href="#2022-12-25-🎄" class="headerlink" title="2022-12-25 🎄"></a>2022-12-25 🎄</h4><ol><li>优化博客<ul><li>修改菜单(themes&#x2F;next&#x2F;_config.yml&#x2F;menu)&amp;(theme&#x2F;next&#x2F;languages&#x2F;zh-CN.yml&#x2F;menu)</li><li>设置建站时间(themes&#x2F;next&#x2F;_config.yml&#x2F;footer&#x2F;since)</li><li>设置背景图：创建文件(Blog&#x2F;source&#x2F;_data&#x2F;styles.styl)</li><li>添加顶部加载条(themes&#x2F;next&#x2F;_config.yml&#x2F;pace)</li><li>设置博文链接为蓝色</li><li>显示文章字数：安装hexo-wordcount插件，增加配置Blog&#x2F;_config.yml&#x2F;symbols_count_time</li><li>显示站点文章总字数，修改&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig文件</li></ul></li></ol><h4 id="2022-12-24"><a href="#2022-12-24" class="headerlink" title="2022-12-24"></a>2022-12-24</h4><ol><li>部署和优化博客<ul><li>安装Hexo，Blog&#x2F;_config.yml&#x2F;deploy&#x2F;repository填入仓库地址，安装Git部署插件，执行hexo clean ,hexo g, hexo d部署到github仓库</li><li>在<a href="https://wanwang.aliyun.com/">万网</a>购买域名</li><li>解析域名，Blog&#x2F;source添加CHAME.txt文件，写入域名并部署，在Github Pages&#x2F;Custom domain添加域名</li><li>设置主题：Next:Gemini(themes&#x2F;next&#x2F;_config.yml&#x2F;Schemes)</li><li>修改头像(themes&#x2F;next&#x2F;_config.yml&#x2F;avatar)和标签图标(themes&#x2F;next&#x2F;_config.yml&#x2F;favicon)</li><li>增加社交链接(themes&#x2F;next&#x2F;_config.yml&#x2F;social)</li></ul></li></ol><h4 id="2022-12-23"><a href="#2022-12-23" class="headerlink" title="2022-12-23"></a>2022-12-23</h4><ol><li>部署博客 <ul><li>安装和学习使用Git</li><li>绑定Github仓库：创建Github仓库，使用SSH key克隆内容到本地，再更新提交</li><li>安装node.js（解决了nodejs本地文件夹只读问题）</li></ul></li></ol>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
