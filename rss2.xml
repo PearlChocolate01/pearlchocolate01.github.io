@@ -9,8 +9,35 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Tue, 17 Jan 2023 05:32:30 GMT</pubDate>
+    <pubDate>Tue, 17 Jan 2023 12:50:52 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Photoshop学习笔记</title>
+      <link>https://pearlchocolatezy.com/2023/01/17/LearnPs/</link>
+      <guid>https://pearlchocolatezy.com/2023/01/17/LearnPs/</guid>
+      <pubDate>Tue, 17 Jan 2023 11:21:38 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ul&gt;
+&lt;li&gt;如何锐化边缘：选中图层-&amp;gt;滤镜-&amp;gt;锐化-&amp;gt;USM锐化&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ul><li>如何锐化边缘：选中图层-&gt;滤镜-&gt;锐化-&gt;USM锐化</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/01/17/LearnPs/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Hexo|Butterfly主题配置Artitalk说说功能</title>
@@ -20,14 +47,14 @@
       
         
         
-      <description>&lt;p&gt;为了给博客配置一个说说功能，我按照网络上的教程使用LeanCloud+Artitalk进行配置。&lt;/p&gt;
+      <description>&lt;p&gt;为了给博客安排一个说说功能，使用LeanCloud+Artitalk进行配置，记录一下学习过程。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;LeanCloud: &lt;a href=&quot;https://console.leancloud.app/apps&quot;&gt;LeanCloud国际版&lt;/a&gt;&lt;/l</description>
+&lt;li&gt;LeanCloud: &lt;a href=&quot;https://console.leancloud.app/apps&quot;&gt;LeanCloud国际版&lt;/a&gt; Le</description>
         
       
       
       
-      <content:encoded><![CDATA[<p>为了给博客配置一个说说功能，我按照网络上的教程使用LeanCloud+Artitalk进行配置。</p><ul><li>LeanCloud: <a href="https://console.leancloud.app/apps">LeanCloud国际版</a></li><li>Artitalk: <a href="https://artitalk.js.org/">Artitalk</a></li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<p>为了给博客安排一个说说功能，使用LeanCloud+Artitalk进行配置，记录一下学习过程。</p><ul><li>LeanCloud: <a href="https://console.leancloud.app/apps">LeanCloud国际版</a> LeanCloud是针对移动应用的一站式云端服务,提供包括LeanStorage 数据存储、LeanMessage 通信服务、LeanAnalytics 统计分析、LeanModules 拓展模块等四大类型的后端云服务，加速应用开发。简单来说就是给应用提供后台的云服务。</li><li>Artitalk: <a href="https://artitalk.js.org/">Artitalk</a> 基于 LeanCloud 实现的可实时发布说说&#x2F;微语的 js。<br>也就是使用Artitalk发布说说，数据存在LeanCloud云服务器上，可以实现在线发布。</li></ul><h2 id="1-注册LeanCloud"><a href="#1-注册LeanCloud" class="headerlink" title="1.注册LeanCloud"></a>1.注册LeanCloud</h2><ol><li>注册<a href="https://console.leancloud.app/apps">LeanCloud国际版</a>，需要邮箱注册。</li><li>创建应用，应用名称随便填，选择开发版，创建。</li><li>添加用户：进入该应用，选择左侧数据存储-&gt;结构化数据-&gt;_User-&gt;添加行-&gt;自定义username和pwd（发布说说时使用）。<img src="/2023/01/15/SetArtitalk/leancloud1.png" style="margin:0"></li><li>设置权限：结构化数据-&gt;_User-&gt;权限-&gt;修改class访问权限，前四个都添加指定用户为自己。<img src="/2023/01/15/SetArtitalk/leancloud2.png" style="margin:0"></li><li>获得密钥：左侧列表设置-&gt;应用凭证-&gt;获得AppID和AppKey。</li><li>设置域名：设置-&gt;安全中心-&gt;Web安全域名-&gt;添加域名。</li></ol><h2 id="2-博客配置"><a href="#2-博客配置" class="headerlink" title="2.博客配置"></a>2.博客配置</h2><ol><li>hexo new page chat 创建说说页面。</li><li>在该页面填入：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/artitalk&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;artitalk_main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">new</span> <span class="title class_">Artitalk</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">appId</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">appKey</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="3-解决问题"><a href="#3-解决问题" class="headerlink" title="3.解决问题"></a>3.解决问题</h2><p>做完步骤2发现说说功能只能在开着加速器的情况下使用，直接访问就一直显示加载中，控制台也有404报错。<br>在大佬的指点下，发现可能是LeanCloud国际版在国内无法使用了，需要解析一个新的域名去使用。</p><ol><li>在购买域名的网站上(我是用的<a href="https://wanwang.aliyun.com/">万网</a>)找到域名解析-&gt;解析设置-&gt;添加记录<img src="/2023/01/15/SetArtitalk/wanwang1.png" style="margin:0"><br>1.1 记录类型选择CNAME；<br>1.2 主机记录随便写一个，记住完整的域名；<br>1.3 记录值从LeanCloud-&gt;设置-&gt;域名绑定-&gt;API访问域名-&gt;绑定新域名(来自1.2)后复制CNAME获取。</li></ol>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
@@ -91,7 +118,8 @@
       <pubDate>Wed, 28 Dec 2022 06:28:41 GMT</pubDate>
       
       <description>&lt;h4 id=&quot;2023-01-17&quot;&gt;&lt;a href=&quot;#2023-01-17&quot; class=&quot;headerlink&quot; title=&quot;2023-01-17&quot;&gt;&lt;/a&gt;2023-01-17&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;添加主标题字体&lt;/li&gt;
+&lt;li&gt;添加主标题字体（需要配置一个自定义css文件引入）&lt;/li&gt;
+&lt;li&gt;将b站社交icon改为 &lt;a href=&quot;https://fontawesome.com/icons?from=io&quot;&gt;font-awesome v5&lt;/a&gt; 图标&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&quot;2023-01-16&quot;&gt;&lt;a href=&quot;#2023-01-16&quot; class=&quot;headerlink&quot; title=&quot;2023-01-16&quot;&gt;&lt;/a&gt;2023-01-16&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;配置分类标签页面&lt;/li&gt;
@@ -123,7 +151,7 @@
       
       
       
-      <content:encoded><![CDATA[<h4 id="2023-01-17"><a href="#2023-01-17" class="headerlink" title="2023-01-17"></a>2023-01-17</h4><ol><li>添加主标题字体</li></ol><h4 id="2023-01-16"><a href="#2023-01-16" class="headerlink" title="2023-01-16"></a>2023-01-16</h4><ol><li>配置分类标签页面</li><li>修改背景渐变色</li><li>修改主题颜色</li><li>进一步压缩图片大小</li></ol><h4 id="2023-01-15"><a href="#2023-01-15" class="headerlink" title="2023-01-15"></a>2023-01-15</h4><ol><li>配置说说功能</li></ol><h4 id="2023-01-14"><a href="#2023-01-14" class="headerlink" title="2023-01-14"></a>2023-01-14</h4><ol><li>更新游戏页面</li></ol><h4 id="2023-01-12"><a href="#2023-01-12" class="headerlink" title="2023-01-12"></a>2023-01-12</h4><ol><li>更新鼠标点击文字特效，打字特效</li><li>增加友链、书架和留言板页面</li></ol><h4 id="2023-01-10"><a href="#2023-01-10" class="headerlink" title="2023-01-10"></a>2023-01-10</h4><ol><li>博客更新为ButterFly主题，还有很多待完成的页面…</li></ol><h4 id="2022-12-28"><a href="#2022-12-28" class="headerlink" title="2022-12-28"></a>2022-12-28</h4><ol><li>添加博客更新日志</li><li>优化博客<ul><li>添加访问量统计(themes&#x2F;next&#x2F;_config.yml&#x2F;busuanzi_count)</li><li>修改友链页面手机端显示文字不全问题</li></ul></li></ol><span id="more"></span><h4 id="2022-12-27"><a href="#2022-12-27" class="headerlink" title="2022-12-27"></a>2022-12-27</h4><ol><li>添加页面Grains(书目等)和Play With Me(留言板)</li><li>优化博客<ul><li>实现底部信息居中（修改css）</li><li>添加友链页面</li></ul></li></ol><h4 id="2022-12-26"><a href="#2022-12-26" class="headerlink" title="2022-12-26"></a>2022-12-26</h4><ol><li>优化博客<ul><li>添加Gitalk评论功能</li></ul></li><li>学习使用Markdown语法，添加日志《十年后的重逢》</li></ol><h4 id="2022-12-25-🎄"><a href="#2022-12-25-🎄" class="headerlink" title="2022-12-25 🎄"></a>2022-12-25 🎄</h4><ol><li>优化博客<ul><li>修改菜单(themes&#x2F;next&#x2F;_config.yml&#x2F;menu)&amp;(theme&#x2F;next&#x2F;languages&#x2F;zh-CN.yml&#x2F;menu)</li><li>设置建站时间(themes&#x2F;next&#x2F;_config.yml&#x2F;footer&#x2F;since)</li><li>设置背景图：创建文件(Blog&#x2F;source&#x2F;_data&#x2F;styles.styl)</li><li>添加顶部加载条(themes&#x2F;next&#x2F;_config.yml&#x2F;pace)</li><li>设置博文链接为蓝色</li><li>显示文章字数：安装hexo-wordcount插件，增加配置Blog&#x2F;_config.yml&#x2F;symbols_count_time</li><li>显示站点文章总字数，修改&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig文件</li></ul></li></ol><h4 id="2022-12-24"><a href="#2022-12-24" class="headerlink" title="2022-12-24"></a>2022-12-24</h4><ol><li>部署和优化博客<ul><li>安装Hexo，Blog&#x2F;_config.yml&#x2F;deploy&#x2F;repository填入仓库地址，安装Git部署插件，执行hexo clean ,hexo g, hexo d部署到github仓库</li><li>在<a href="https://wanwang.aliyun.com/">万网</a>购买域名</li><li>解析域名，Blog&#x2F;source添加CHAME.txt文件，写入域名并部署，在Github Pages&#x2F;Custom domain添加域名</li><li>设置主题：Next:Gemini(themes&#x2F;next&#x2F;_config.yml&#x2F;Schemes)</li><li>修改头像(themes&#x2F;next&#x2F;_config.yml&#x2F;avatar)和标签图标(themes&#x2F;next&#x2F;_config.yml&#x2F;favicon)</li><li>增加社交链接(themes&#x2F;next&#x2F;_config.yml&#x2F;social)</li></ul></li></ol><h4 id="2022-12-23"><a href="#2022-12-23" class="headerlink" title="2022-12-23"></a>2022-12-23</h4><ol><li>部署博客 <ul><li>安装和学习使用Git</li><li>绑定Github仓库：创建Github仓库，使用SSH key克隆内容到本地，再更新提交</li><li>安装node.js（解决了nodejs本地文件夹只读问题）</li></ul></li></ol>]]></content:encoded>
+      <content:encoded><![CDATA[<h4 id="2023-01-17"><a href="#2023-01-17" class="headerlink" title="2023-01-17"></a>2023-01-17</h4><ol><li>添加主标题字体（需要配置一个自定义css文件引入）</li><li>将b站社交icon改为 <a href="https://fontawesome.com/icons?from=io">font-awesome v5</a> 图标</li></ol><h4 id="2023-01-16"><a href="#2023-01-16" class="headerlink" title="2023-01-16"></a>2023-01-16</h4><ol><li>配置分类标签页面</li><li>修改背景渐变色</li><li>修改主题颜色</li><li>进一步压缩图片大小</li></ol><h4 id="2023-01-15"><a href="#2023-01-15" class="headerlink" title="2023-01-15"></a>2023-01-15</h4><ol><li>配置说说功能</li></ol><h4 id="2023-01-14"><a href="#2023-01-14" class="headerlink" title="2023-01-14"></a>2023-01-14</h4><ol><li>更新游戏页面</li></ol><h4 id="2023-01-12"><a href="#2023-01-12" class="headerlink" title="2023-01-12"></a>2023-01-12</h4><ol><li>更新鼠标点击文字特效，打字特效</li><li>增加友链、书架和留言板页面</li></ol><h4 id="2023-01-10"><a href="#2023-01-10" class="headerlink" title="2023-01-10"></a>2023-01-10</h4><ol><li>博客更新为ButterFly主题，还有很多待完成的页面…</li></ol><h4 id="2022-12-28"><a href="#2022-12-28" class="headerlink" title="2022-12-28"></a>2022-12-28</h4><ol><li>添加博客更新日志</li><li>优化博客<ul><li>添加访问量统计(themes&#x2F;next&#x2F;_config.yml&#x2F;busuanzi_count)</li><li>修改友链页面手机端显示文字不全问题</li></ul></li></ol><span id="more"></span><h4 id="2022-12-27"><a href="#2022-12-27" class="headerlink" title="2022-12-27"></a>2022-12-27</h4><ol><li>添加页面Grains(书目等)和Play With Me(留言板)</li><li>优化博客<ul><li>实现底部信息居中（修改css）</li><li>添加友链页面</li></ul></li></ol><h4 id="2022-12-26"><a href="#2022-12-26" class="headerlink" title="2022-12-26"></a>2022-12-26</h4><ol><li>优化博客<ul><li>添加Gitalk评论功能</li></ul></li><li>学习使用Markdown语法，添加日志《十年后的重逢》</li></ol><h4 id="2022-12-25-🎄"><a href="#2022-12-25-🎄" class="headerlink" title="2022-12-25 🎄"></a>2022-12-25 🎄</h4><ol><li>优化博客<ul><li>修改菜单(themes&#x2F;next&#x2F;_config.yml&#x2F;menu)&amp;(theme&#x2F;next&#x2F;languages&#x2F;zh-CN.yml&#x2F;menu)</li><li>设置建站时间(themes&#x2F;next&#x2F;_config.yml&#x2F;footer&#x2F;since)</li><li>设置背景图：创建文件(Blog&#x2F;source&#x2F;_data&#x2F;styles.styl)</li><li>添加顶部加载条(themes&#x2F;next&#x2F;_config.yml&#x2F;pace)</li><li>设置博文链接为蓝色</li><li>显示文章字数：安装hexo-wordcount插件，增加配置Blog&#x2F;_config.yml&#x2F;symbols_count_time</li><li>显示站点文章总字数，修改&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig文件</li></ul></li></ol><h4 id="2022-12-24"><a href="#2022-12-24" class="headerlink" title="2022-12-24"></a>2022-12-24</h4><ol><li>部署和优化博客<ul><li>安装Hexo，Blog&#x2F;_config.yml&#x2F;deploy&#x2F;repository填入仓库地址，安装Git部署插件，执行hexo clean ,hexo g, hexo d部署到github仓库</li><li>在<a href="https://wanwang.aliyun.com/">万网</a>购买域名</li><li>解析域名，Blog&#x2F;source添加CHAME.txt文件，写入域名并部署，在Github Pages&#x2F;Custom domain添加域名</li><li>设置主题：Next:Gemini(themes&#x2F;next&#x2F;_config.yml&#x2F;Schemes)</li><li>修改头像(themes&#x2F;next&#x2F;_config.yml&#x2F;avatar)和标签图标(themes&#x2F;next&#x2F;_config.yml&#x2F;favicon)</li><li>增加社交链接(themes&#x2F;next&#x2F;_config.yml&#x2F;social)</li></ul></li></ol><h4 id="2022-12-23"><a href="#2022-12-23" class="headerlink" title="2022-12-23"></a>2022-12-23</h4><ol><li>部署博客 <ul><li>安装和学习使用Git</li><li>绑定Github仓库：创建Github仓库，使用SSH key克隆内容到本地，再更新提交</li><li>安装node.js（解决了nodejs本地文件夹只读问题）</li></ul></li></ol>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
