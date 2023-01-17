@@ -1471,7 +1471,7 @@ table td {
   vertical-align: middle;
 }
 *::selection {
-  background: #a2d7dd;
+  background: #98d98e;
   color: #f7f7f7;
 }
 button {
@@ -1495,6 +1495,13 @@ a {
 }
 a:hover {
   color: #87cefa;
+}
+#site-title,
+#site-subtitle,
+#site-name,
+#aside-content .author-info__name,
+#aside-content .author-info__description {
+  font-family: hanyitaozaizijian;
 }
 .is-center {
   text-align: center;
@@ -2793,7 +2800,7 @@ h1.page-title + .tag-cloud-list {
   color: #87cefa;
 }
 #aside-content #card-toc .toc-content .toc-link.active {
-  background: #00c4b6;
+  background: #98d98e;
   color: #fff;
 }
 #aside-content :only-child > .card-widget {
