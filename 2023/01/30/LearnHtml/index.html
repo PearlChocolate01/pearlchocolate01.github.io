@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HTML学习笔记 | 珍珠巧克力</title><meta name="author" content="Zong Yi"><meta name="copyright" content="Zong Yi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="&lt;table&gt;标签：&lt;tr&gt;是行，&lt;th&gt;是表头，&lt;td&gt;是单元格。  浏览器渲染流程：解析HTML并构建DOM树 -&gt; 构建render树 -&gt; 布局render树 -&gt; 绘制render树  浏览器的核心部分是渲染引擎，也称为浏览器的内核，负责对网页语法（如HTML、CSS、JavaScript等）的解释并显示网页。Firef">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习笔记">
+<meta property="og:url" content="https://pearlchocolatezy.com/2023/01/30/LearnHtml/index.html">
+<meta property="og:site_name" content="珍珠巧克力">
+<meta property="og:description" content="&lt;table&gt;标签：&lt;tr&gt;是行，&lt;th&gt;是表头，&lt;td&gt;是单元格。  浏览器渲染流程：解析HTML并构建DOM树 -&gt; 构建render树 -&gt; 布局render树 -&gt; 绘制render树  浏览器的核心部分是渲染引擎，也称为浏览器的内核，负责对网页语法（如HTML、CSS、JavaScript等）的解释并显示网页。Firef">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pearlchocolatezy.com/img/bg_html.jpg">
+<meta property="article:published_time" content="2023-01-30T13:07:20.000Z">
+<meta property="article:modified_time" content="2023-02-01T12:42:42.563Z">
+<meta property="article:author" content="Zong Yi">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pearlchocolatezy.com/img/bg_html.jpg"><link rel="shortcut icon" href="/img/touxiang_yuki_small.png"><link rel="canonical" href="https://pearlchocolatezy.com/2023/01/30/LearnHtml/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTML学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-02-01 20:42:42'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/zy.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="珍珠巧克力" type="application/rss+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang_yuki.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fa fa-gears"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fa-solid fa-fan"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bg_html.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">珍珠巧克力</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fa fa-gears"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fa-solid fa-fan"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HTML学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-30T13:07:20.000Z" title="发表于 2023-01-30 21:07:20">2023-01-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-01T12:42:42.563Z" title="更新于 2023-02-01 20:42:42">2023-02-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">621</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HTML学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ol>
+<li><p><code>&lt;table&gt;</code>标签：<code>&lt;tr&gt;</code>是行，<code>&lt;th&gt;</code>是表头，<code>&lt;td&gt;</code>是单元格。</p>
+</li>
+<li><p>浏览器渲染流程：<br>解析HTML并构建DOM树 -&gt; 构建render树 -&gt; 布局render树 -&gt; 绘制render树</p>
+<blockquote>
+<p>浏览器的核心部分是渲染引擎，也称为浏览器的内核，负责对网页语法（如HTML、CSS、JavaScript等）的解释并显示网页。Firefox使用Geoko——Mozilla自主研发的渲染引擎，Safari和Chrome使用webkit内核。</p>
+</blockquote>
+<p>（0）渲染引擎首先通过网络获得所请求文档的内容<br>（1）解析HTML文件，构建 DOM Tree<br>（2）解析CSS，构建 CSSOM Tree(CSS规则树)<br>（3）将 DOM Tree 和 CSSOM Tree合并，构建Render tree(渲染树)<br>（4）reflow(重排)：根据Render tree进行节点信息计算（Layout）<br>（5）repaint(重绘)：根据计算好的信息绘制整个页面（Painting）</p>
+</li>
+<li><p>HTML5新特性：<br>（1）绘画 canvas：创建一个画布，在网页中是一个矩形框，所有的绘制工作必须在 JavaScript 内部完成；<br>（2）SVG绘图：SVG 是一种使用 XML 描述 2D 图形的语言；<br>（2）video和audio元素；<br>（3）语意化更好的内容元素：header、footer、nav、article、section(节)、aside(侧边栏)、detailes、summary(包含details元素的标题)、dialog(对话框)；<br>（4）为表单input新增的输入类型：color、date、datetime、datetime-local、month、week、time、email、tel、number、range、url、search、<br>（5）新增表单元素：datalist、keygen、output；<br>（6）新增的表单属性：placeholder、required、pattern、min、max、step(为输入域规定合法的数字间隔)、height、width、autofocus、multiple；<br>（7）Web Worker：独立运行在后台的 JavaScript；<br>（8）Web Storage：数据以 键&#x2F;值 对存在，只允许该网页访问使用本地离线存储；</p>
+<blockquote>
+<p>localStorage长期存储数据，浏览器关闭后数据不丢失。<br>sessionStorage的数据在浏览器关闭后自动删除。</p>
+</blockquote>
+<p>（9）WebSocket：在单个 TCP 连接上进行全双工通讯的协议。在WebSocket API中，浏览器和服务器只需要做一个握手的动作，然后，浏览器和服务器之间就形成了一条快速通道。两者之间就直接可以数据互相传送。send()发送，onmessage事件接收。<br>（10）Geolocation：获取用户定位信息。</p>
+</li>
+<li><p>mark标签定义带有记号的文本。<br><mark>哈哈哈hh</mark></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>哈哈哈hh<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>link是HTML方式，且在HTML页面加载的同时加载；@import是CSS方式 。兼容性不同。link支持使用Javascript控制DOM去改变样式；而@import不支持。</p>
+</li>
+<li><p>head 标签中必不少的是：meta,title。</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com">Zong Yi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com/2023/01/30/LearnHtml/">https://pearlchocolatezy.com/2023/01/30/LearnHtml/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pearlchocolatezy.com" target="_blank">珍珠巧克力</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HTML/">HTML</a></div><div class="post_share"><div class="social-share" data-image="/img/bg_html.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/01/26/LearnMarkdown/"><img class="next-cover" src="/img/bg_markdown.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Markdown学习笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang_yuki.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zong Yi</div><div class="author-info__description">Mon panache. - 我的勇气。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pearlchocolate01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/32361811" target="_blank" title="Bili"><i class="fa-brands fa-bilibili"></i></a><a class="social-icon" href="https://kg.qq.com/node/personal?uid=67989a8d252a3e8d&amp;g_f=old_pc" target="_blank" title="全民K歌"><i class="fa fa-music"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">(๑╹ヮ╹๑)ﾉ  欢迎来到珍珠巧克力的小站~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/30/LearnHtml/" title="HTML学习笔记"><img src="/img/bg_html.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML学习笔记"/></a><div class="content"><a class="title" href="/2023/01/30/LearnHtml/" title="HTML学习笔记">HTML学习笔记</a><time datetime="2023-02-01T12:42:42.563Z" title="更新于 2023-02-01 20:42:42">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/10/LearnVue/" title="Vue学习笔记"><img src="/img/bg_vue.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue学习笔记"/></a><div class="content"><a class="title" href="/2023/01/10/LearnVue/" title="Vue学习笔记">Vue学习笔记</a><time datetime="2023-02-01T08:07:23.719Z" title="更新于 2023-02-01 16:07:23">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/26/LearnMarkdown/" title="Markdown学习笔记"><img src="/img/bg_markdown.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown学习笔记"/></a><div class="content"><a class="title" href="/2023/01/26/LearnMarkdown/" title="Markdown学习笔记">Markdown学习笔记</a><time datetime="2023-01-26T13:17:27.175Z" title="更新于 2023-01-26 21:17:27">2023-01-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/17/LearnPs/" title="Photoshop学习笔记"><img src="/img/bg_ps.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Photoshop学习笔记"/></a><div class="content"><a class="title" href="/2023/01/17/LearnPs/" title="Photoshop学习笔记">Photoshop学习笔记</a><time datetime="2023-01-26T12:55:36.631Z" title="更新于 2023-01-26 20:55:36">2023-01-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/15/SetArtitalk/" title="Hexo|Butterfly主题配置Artitalk说说功能"><img src="/img/bg_artitalk.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo|Butterfly主题配置Artitalk说说功能"/></a><div class="content"><a class="title" href="/2023/01/15/SetArtitalk/" title="Hexo|Butterfly主题配置Artitalk说说功能">Hexo|Butterfly主题配置Artitalk说说功能</a><time datetime="2023-01-26T12:55:14.258Z" title="更新于 2023-01-26 20:55:14">2023-01-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022-12 - 2023 By Zong Yi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '8a1150939f4fa795f439',
+      clientSecret: 'ba1c39ca577e914d7e48639a4e1fb9b6ce67d8c8',
+      repo: 'pearlchocolate01.github.io',
+      owner: 'PearlChocolate01',
+      admin: ['PearlChocolate01'],
+      id: 'fd38fdefb2d8a77f6cadc9233c32cd99',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="可爱+1,自信+1,水逆-1,无语+1,温柔+1,骄傲-1,爱你+1" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
