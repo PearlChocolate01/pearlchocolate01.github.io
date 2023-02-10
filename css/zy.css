@@ -4,6 +4,13 @@
   src: url('/css/fonts/hanyitaozaizijian.ttf') format("truetype");
 }
 
+/*全局应用，使用只需增加类*/
+.zy_img_shadow{
+	border:3px;
+	border-radius: 4px;
+	box-shadow:1px 1px 5px rgb(0 0 0 / 30%);
+	margin:2px;
+}
 
 
 
