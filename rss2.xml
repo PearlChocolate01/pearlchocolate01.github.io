@@ -9,8 +9,36 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sat, 11 Feb 2023 05:45:39 GMT</pubDate>
+    <pubDate>Sun, 12 Feb 2023 05:26:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>ES6学习笔记</title>
+      <link>https://pearlchocolatezy.com/2023/02/12/LearnES6/</link>
+      <guid>https://pearlchocolatezy.com/2023/02/12/LearnES6/</guid>
+      <pubDate>Sun, 12 Feb 2023 01:38:54 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;1-let&quot;&gt;&lt;a href=&quot;#1-let&quot; class=&quot;headerlink&quot; title=&quot;1. let&quot;&gt;&lt;/a&gt;1. let&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="1-let"><a href="#1-let" class="headerlink" title="1. let"></a>1. let</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a;</span><br><span class="line"><span class="keyword">let</span> b,c,d;</span><br><span class="line"><span class="keyword">let</span> e=<span class="number">100</span>;</span><br><span class="line"><span class="keyword">let</span> f=<span class="number">521</span>, g=<span class="string">&#x27;iloveyou&#x27;</span>, h=[];</span><br></pre></td></tr></table></figure><ol><li>变量不能重复声明。（var可以重复声明）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//let a=2;//×</span></span><br></pre></td></tr></table></figure></li><li>块级作用域<br>ES5中的三种作用域：全局，函数，eval(严格模式)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="keyword">let</span> doge=wangwang;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(doge);<span class="comment">//取不到，但是var取得到</span></span><br></pre></td></tr></table></figure></li><li>不存在变量提升<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(song);</span><br><span class="line"><span class="keyword">var</span> song=<span class="string">&#x27;海上日记&#x27;</span>;</span><br><span class="line"><span class="comment">//相当于：</span></span><br><span class="line"><span class="keyword">var</span> song;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(song);<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> song=<span class="string">&#x27;海上日记&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(song);<span class="comment">//使用let则会报错</span></span><br><span class="line"><span class="keyword">let</span> song=<span class="string">&#x27;一程山路&#x27;</span>;</span><br></pre></td></tr></table></figure></li></ol><h2 id="2-const"><a href="#2-const" class="headerlink" title="2. const"></a>2. const</h2>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/ES6/">ES6</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/JavaScript/">JavaScript</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/02/12/LearnES6/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>CMD学习笔记</title>
@@ -82,7 +110,7 @@
       
       
       
-      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1818978932&auto=0&height=66&vol=0.2"></iframe><br><p>坐在回杭的高铁上，因为戴了N95才过了一个小时就有点喘不过气。今年因为新冠的放开没怎么走亲访友，吃的很多又没有延续之前夜跑的习惯，大概又有几斤肉等着我去减了，肺活量也变得没那么好了，想想上个月刚回家那会带着两层口罩坐火车也没这么喘呢。</p><!----><p>倒也不是只有无奈的事，重新拥有独居生活意味着我拿回了生活的掌控权。打车回家的路上望着窗外的风景，体会到仍然紧绷着但心慢慢安定下来的感觉，“杭州才是我的精神故乡”，虽然不知道在这工作生活一段时间会不会还这样想，至少现在如此。</p><!----><p>裸辞半年在家自学以及互联网招聘寒冬的压力始终伴随着我。就我过往的经历来看，人生就像是过山车，物质世界的得失就像只是心的具象化，情绪只是表象，周围人的一言一行更像是能量崇拜、价值崇拜，但是换一种思路，只有自己去创造某种价值才能换来得到的机会，只有付出了什么才能得到什么。说得好像自己把人和事都看透了一样，其实距离实现还差得很远呢，就好像一直很整洁的房间需要规律地清扫，但是清扫任务有多繁琐会带来怎样的情绪变化却需要从实践中去体验的。总要做出点让自己确认“我做得到”这样的事，有很多的目标需要日复一日的积累去实现，才能从中体会到时间的美妙之处。</p><!----><p>好在在这艰难的探索旅途中，我终于不再是孤独一人了。和K一起走在细雨蒙蒙夜色下的运河边，看见雨滴在灯光下形成的星空时，亭子后边突然窜出来一只狗狗时，空无一人的河边拍下长长的水乡倒影时，才又一次对家乡有了美的感受，这一切都属于我们，我们在这熟悉而忧愁的地方创造了新的回忆。时间真的是很奇妙的东西，之前离开杭州的时候，我可连喊他的名字都有些害羞呢。</p><!----><p>虽然找工作很难，还是给自己打打气吧，新的一年也要勇往直前、心想事成呀~</p><!----><img src="/2023/02/08/BackToHangzhou/qie.jpg" width="50%">]]></content:encoded>
+      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1818978932&auto=0&height=66&vol=0.2"></iframe><br><p>坐在回杭的高铁上，因为戴了N95才过了一个小时就有点喘不过气。今年因为新冠的放开没怎么走亲访友，吃的很多又没有延续之前夜跑的习惯，大概又有几斤肉等着我去减了，肺活量也变得没那么好了，想想上个月刚回家那会带着两层口罩坐火车也没这么喘呢。</p><!----><p>倒也不是只有无奈的事，重新拥有独居生活意味着我拿回了生活的掌控权。打车回家的路上望着窗外的风景，体会到仍然紧绷着但心慢慢安定下来的感觉，“杭州才是我的精神故乡”，虽然不知道在这工作生活一段时间会不会还这样想，至少现在如此。</p><!----><p>裸辞半年在家自学以及互联网招聘寒冬的压力始终伴随着我。就我过往的经历来看，人生就像是过山车，物质世界的得失就像只是心的具象化，情绪只是表象，周围人的一言一行更像是能量崇拜、价值崇拜，但是换一种思路，只有自己去创造某种价值才能换来得到的机会，只有付出了什么才能得到什么。说得好像自己把人和事都看透了一样，其实距离实现还差得很远呢，就好像一直很整洁的房间需要规律地清扫，但是清扫任务有多繁琐会带来怎样的情绪变化却需要从实践中去体验的。总要做出点让自己确认“我做得到”这样的事，有很多的目标需要日复一日的积累去实现，才能从中体会到时间的美妙之处。</p><!----><p>好在在这艰难的探索旅途中，我终于不再是孤独一人了。和K一起走在细雨蒙蒙夜色下的运河边，看见雨滴在灯光下形成的星空时，亭子后边突然窜出来一只狗狗时，空无一人的河边拍下长长的水乡倒影时，才又一次对家乡有了美的感受，这一切都属于我们，我们在这熟悉而忧愁的地方创造了新的回忆。时间真的是很奇妙的东西，之前离开杭州的时候，我可连喊他的名字都有些害羞呢。</p><!----><p>虽然找工作很难，还是给自己打打气吧，新的一年也要勇往直前、心想事成呀~</p><!----><img class="zy_img_shadow" src="/2023/02/08/BackToHangzhou/qie.jpg" width="50%">]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
@@ -248,84 +276,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2023/01/03/YearEndReview2022/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>博客更新日志</title>
-      <link>https://pearlchocolatezy.com/2022/12/28/BlogUpdateLog/</link>
-      <guid>https://pearlchocolatezy.com/2022/12/28/BlogUpdateLog/</guid>
-      <pubDate>Wed, 28 Dec 2022 06:28:41 GMT</pubDate>
-      
-      <description>&lt;h4 id=&quot;ToDoList&quot;&gt;&lt;a href=&quot;#ToDoList&quot; class=&quot;headerlink&quot; title=&quot;ToDoList&quot;&gt;&lt;/a&gt;ToDoList&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;不蒜子计数每篇文章的阅读量显示的是所有的阅读量，需要检查一下(√)&lt;/li&gt;
-&lt;li&gt;个人信息框内的标签和分类超链接还没好&lt;/li&gt;
-&lt;li&gt;影视番剧页面设计(ing)&lt;/li&gt;
-&lt;li&gt;关于页面内容没写完(√)&lt;/li&gt;
-&lt;li&gt;书架添加年份分类按钮&lt;/li&gt;
-&lt;li&gt;Valine评论系统还没配置(ing)&lt;/li&gt;
-&lt;li&gt;主页侧边去掉归档和分类(√)&lt;/li&gt;
-&lt;li&gt;有空再改改友链的样式(ing)&lt;/li&gt;
-&lt;li&gt;改个鼠标&lt;/li&gt;
-&lt;li&gt;自定义icon的使用&lt;/li&gt;
-&lt;li&gt;其它可爱的配件……(ing)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-02-09&quot;&gt;&lt;a href=&quot;#2023-02-09&quot; class=&quot;headerlink&quot; title=&quot;2023-02-09&quot;&gt;&lt;/a&gt;2023-02-09&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;重写友链样式（手机页面还没改好）&lt;/li&gt;
-&lt;li&gt;修正不蒜子每篇文章计数错误问题，增加了meta|referrer，但是火狐浏览器需要对本站地址单独放开tracking权限&lt;/li&gt;
-&lt;li&gt;增加页面加载进度条&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-02-06&quot;&gt;&lt;a href=&quot;#2023-02-06&quot; class=&quot;headerlink&quot; title=&quot;2023-02-06&quot;&gt;&lt;/a&gt;2023-02-06&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;配置Valine评论功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-02-01&quot;&gt;&lt;a href=&quot;#2023-02-01&quot; class=&quot;headerlink&quot; title=&quot;2023-02-01&quot;&gt;&lt;/a&gt;2023-02-01&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;补完关于页面内容&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-01-30&quot;&gt;&lt;a href=&quot;#2023-01-30&quot; class=&quot;headerlink&quot; title=&quot;2023-01-30&quot;&gt;&lt;/a&gt;2023-01-30&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;影视番剧书单页面改为统一的Vue格式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-01-17&quot;&gt;&lt;a href=&quot;#2023-01-17&quot; class=&quot;headerlink&quot; title=&quot;2023-01-17&quot;&gt;&lt;/a&gt;2023-01-17&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;添加主标题字体（需要配置一个自定义css文件引入）&lt;/li&gt;
-&lt;li&gt;将b站社交icon改为 &lt;a href=&quot;https://fontawesome.com/icons?from=io&quot;&gt;font-awesome v5&lt;/a&gt; 图标&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-01-16&quot;&gt;&lt;a href=&quot;#2023-01-16&quot; class=&quot;headerlink&quot; title=&quot;2023-01-16&quot;&gt;&lt;/a&gt;2023-01-16&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;配置分类标签页面&lt;/li&gt;
-&lt;li&gt;修改背景渐变色&lt;/li&gt;
-&lt;li&gt;修改主题颜色&lt;/li&gt;
-&lt;li&gt;进一步压缩图片大小&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-01-15&quot;&gt;&lt;a href=&quot;#2023-01-15&quot; class=&quot;headerlink&quot; title=&quot;2023-01-15&quot;&gt;&lt;/a&gt;2023-01-15&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;配置说说功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-01-14&quot;&gt;&lt;a href=&quot;#2023-01-14&quot; class=&quot;headerlink&quot; title=&quot;2023-01-14&quot;&gt;&lt;/a&gt;2023-01-14&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;更新游戏页面&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-01-12&quot;&gt;&lt;a href=&quot;#2023-01-12&quot; class=&quot;headerlink&quot; title=&quot;2023-01-12&quot;&gt;&lt;/a&gt;2023-01-12&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;更新鼠标点击文字特效，打字特效&lt;/li&gt;
-&lt;li&gt;增加友链、书架和留言板页面&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2023-01-10&quot;&gt;&lt;a href=&quot;#2023-01-10&quot; class=&quot;headerlink&quot; title=&quot;2023-01-10&quot;&gt;&lt;/a&gt;2023-01-10&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;博客更新为ButterFly主题，还有很多待完成的页面…&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;2022-12-28&quot;&gt;&lt;a href=&quot;#2022-12-28&quot; class=&quot;headerlink&quot; title=&quot;2022-12-28&quot;&gt;&lt;/a&gt;2022-12-28&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;添加博客更新日志&lt;/li&gt;
-&lt;li&gt;优化博客&lt;ul&gt;
-&lt;li&gt;添加访问量统计(themes&amp;#x2F;next&amp;#x2F;_config.yml&amp;#x2F;busuanzi_count)&lt;/li&gt;
-&lt;li&gt;修改友链页面手机端显示文字不全问题&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h4 id="ToDoList"><a href="#ToDoList" class="headerlink" title="ToDoList"></a>ToDoList</h4><ol><li>不蒜子计数每篇文章的阅读量显示的是所有的阅读量，需要检查一下(√)</li><li>个人信息框内的标签和分类超链接还没好</li><li>影视番剧页面设计(ing)</li><li>关于页面内容没写完(√)</li><li>书架添加年份分类按钮</li><li>Valine评论系统还没配置(ing)</li><li>主页侧边去掉归档和分类(√)</li><li>有空再改改友链的样式(ing)</li><li>改个鼠标</li><li>自定义icon的使用</li><li>其它可爱的配件……(ing)</li></ol><h4 id="2023-02-09"><a href="#2023-02-09" class="headerlink" title="2023-02-09"></a>2023-02-09</h4><ol><li>重写友链样式（手机页面还没改好）</li><li>修正不蒜子每篇文章计数错误问题，增加了meta|referrer，但是火狐浏览器需要对本站地址单独放开tracking权限</li><li>增加页面加载进度条</li></ol><h4 id="2023-02-06"><a href="#2023-02-06" class="headerlink" title="2023-02-06"></a>2023-02-06</h4><ol><li>配置Valine评论功能</li></ol><h4 id="2023-02-01"><a href="#2023-02-01" class="headerlink" title="2023-02-01"></a>2023-02-01</h4><ol><li>补完关于页面内容</li></ol><h4 id="2023-01-30"><a href="#2023-01-30" class="headerlink" title="2023-01-30"></a>2023-01-30</h4><ol><li>影视番剧书单页面改为统一的Vue格式</li></ol><h4 id="2023-01-17"><a href="#2023-01-17" class="headerlink" title="2023-01-17"></a>2023-01-17</h4><ol><li>添加主标题字体（需要配置一个自定义css文件引入）</li><li>将b站社交icon改为 <a href="https://fontawesome.com/icons?from=io">font-awesome v5</a> 图标</li></ol><h4 id="2023-01-16"><a href="#2023-01-16" class="headerlink" title="2023-01-16"></a>2023-01-16</h4><ol><li>配置分类标签页面</li><li>修改背景渐变色</li><li>修改主题颜色</li><li>进一步压缩图片大小</li></ol><h4 id="2023-01-15"><a href="#2023-01-15" class="headerlink" title="2023-01-15"></a>2023-01-15</h4><ol><li>配置说说功能</li></ol><h4 id="2023-01-14"><a href="#2023-01-14" class="headerlink" title="2023-01-14"></a>2023-01-14</h4><ol><li>更新游戏页面</li></ol><h4 id="2023-01-12"><a href="#2023-01-12" class="headerlink" title="2023-01-12"></a>2023-01-12</h4><ol><li>更新鼠标点击文字特效，打字特效</li><li>增加友链、书架和留言板页面</li></ol><h4 id="2023-01-10"><a href="#2023-01-10" class="headerlink" title="2023-01-10"></a>2023-01-10</h4><ol><li>博客更新为ButterFly主题，还有很多待完成的页面…</li></ol><h4 id="2022-12-28"><a href="#2022-12-28" class="headerlink" title="2022-12-28"></a>2022-12-28</h4><ol><li>添加博客更新日志</li><li>优化博客<ul><li>添加访问量统计(themes&#x2F;next&#x2F;_config.yml&#x2F;busuanzi_count)</li><li>修改友链页面手机端显示文字不全问题</li></ul></li></ol><span id="more"></span><h4 id="2022-12-27"><a href="#2022-12-27" class="headerlink" title="2022-12-27"></a>2022-12-27</h4><ol><li>添加页面Grains(书目等)和Play With Me(留言板)</li><li>优化博客<ul><li>实现底部信息居中（修改css）</li><li>添加友链页面</li></ul></li></ol><h4 id="2022-12-26"><a href="#2022-12-26" class="headerlink" title="2022-12-26"></a>2022-12-26</h4><ol><li>优化博客<ul><li>添加Gitalk评论功能</li></ul></li><li>学习使用Markdown语法，添加日志《十年后的重逢》</li></ol><h4 id="2022-12-25-🎄"><a href="#2022-12-25-🎄" class="headerlink" title="2022-12-25 🎄"></a>2022-12-25 🎄</h4><ol><li>优化博客<ul><li>修改菜单(themes&#x2F;next&#x2F;_config.yml&#x2F;menu)&amp;(theme&#x2F;next&#x2F;languages&#x2F;zh-CN.yml&#x2F;menu)</li><li>设置建站时间(themes&#x2F;next&#x2F;_config.yml&#x2F;footer&#x2F;since)</li><li>设置背景图：创建文件(Blog&#x2F;source&#x2F;_data&#x2F;styles.styl)</li><li>添加顶部加载条(themes&#x2F;next&#x2F;_config.yml&#x2F;pace)</li><li>设置博文链接为蓝色</li><li>显示文章字数：安装hexo-wordcount插件，增加配置Blog&#x2F;_config.yml&#x2F;symbols_count_time</li><li>显示站点文章总字数，修改&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_partials&#x2F;footer.swig文件</li></ul></li></ol><h4 id="2022-12-24"><a href="#2022-12-24" class="headerlink" title="2022-12-24"></a>2022-12-24</h4><ol><li>部署和优化博客<ul><li>安装Hexo，Blog&#x2F;_config.yml&#x2F;deploy&#x2F;repository填入仓库地址，安装Git部署插件，执行hexo clean ,hexo g, hexo d部署到github仓库</li><li>在<a href="https://wanwang.aliyun.com/">万网</a>购买域名</li><li>解析域名，Blog&#x2F;source添加CHAME.txt文件，写入域名并部署，在Github Pages&#x2F;Custom domain添加域名</li><li>设置主题：Next:Gemini(themes&#x2F;next&#x2F;_config.yml&#x2F;Schemes)</li><li>修改头像(themes&#x2F;next&#x2F;_config.yml&#x2F;avatar)和标签图标(themes&#x2F;next&#x2F;_config.yml&#x2F;favicon)</li><li>增加社交链接(themes&#x2F;next&#x2F;_config.yml&#x2F;social)</li></ul></li></ol><h4 id="2022-12-23"><a href="#2022-12-23" class="headerlink" title="2022-12-23"></a>2022-12-23</h4><ol><li>部署博客 <ul><li>安装和学习使用Git</li><li>绑定Github仓库：创建Github仓库，使用SSH key克隆内容到本地，再更新提交</li><li>安装node.js（解决了nodejs本地文件夹只读问题）</li></ul></li></ol>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
-      
-      
-      
-      <comments>https://pearlchocolatezy.com/2022/12/28/BlogUpdateLog/#disqus_thread</comments>
       
     </item>
     
