@@ -9,8 +9,36 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Fri, 17 Feb 2023 12:10:52 GMT</pubDate>
+    <pubDate>Tue, 28 Feb 2023 08:53:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>如何在网页中添加iconfont图标</title>
+      <link>https://pearlchocolatezy.com/2023/02/28/SetIconfont/</link>
+      <guid>https://pearlchocolatezy.com/2023/02/28/SetIconfont/</guid>
+      <pubDate>Tue, 28 Feb 2023 05:49:46 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;1-选择想要的图标&quot;&gt;&lt;a href=&quot;#1-选择想要的图标&quot; class=&quot;headerlink&quot; title=&quot;1. 选择想要的图标&quot;&gt;&lt;/a&gt;1. 选择想要的图标&lt;/h2&gt;&lt;p&gt;打开 &lt;a href=&quot;https://www.iconfont.cn/&quot;&gt;阿里</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="1-选择想要的图标"><a href="#1-选择想要的图标" class="headerlink" title="1. 选择想要的图标"></a>1. 选择想要的图标</h2><p>打开 <a href="https://www.iconfont.cn/">阿里iconfont</a> 网站，注册账号或登录，找到想要的图标；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/1.jpg"><br>加入购物车。<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/2.jpg" width="20%"></p><h2 id="2-下载压缩包"><a href="#2-下载压缩包" class="headerlink" title="2. 下载压缩包"></a>2. 下载压缩包</h2><p>打开购物车，点击添加至项目，项目名称可随意；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/3.jpg" width="30%"><br>得到图标编码；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/4.jpg" width="30%"><br>回到购物车，点击下载代码，或者直接在图标上找到下载按钮；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/5.jpg" width="30%"><br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/6.jpg" width="30%"><br>在css文件夹下新建iconfont文件夹，将压缩包解压到这里。<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/7.jpg" width="30%"><br>解压出来的文件除了有些是我们需要使用的，还有些是为了样例展示用，可以保留。</p><h2 id="3-在html文件中插入图标"><a href="#3-在html文件中插入图标" class="headerlink" title="3. 在html文件中插入图标"></a>3. 在html文件中插入图标</h2><p>在html文件中引入iconfont.css文件；</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/css/iconfont/iconfont.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在html标签中插入图标编码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;iconfont&quot;</span>&gt;</span><span class="symbol">&amp;#xe66b;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure><p>除了上述方法，还可按照解压出来的demo_index.html提示方法插入图标。<br>刷新页面，成功显示小图标！</p>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/HTML/">HTML</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/CSS/">CSS</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/02/28/SetIconfont/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>C#学习笔记</title>
@@ -256,34 +284,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2023/01/17/LearnPs/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Hexo|Butterfly主题配置Artitalk说说功能</title>
-      <link>https://pearlchocolatezy.com/2023/01/15/SetArtitalk/</link>
-      <guid>https://pearlchocolatezy.com/2023/01/15/SetArtitalk/</guid>
-      <pubDate>Sun, 15 Jan 2023 09:54:48 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;为了给博客安排一个说说功能，使用LeanCloud+Artitalk进行配置，记录一下学习过程。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;LeanCloud: &lt;a href=&quot;https://console.leancloud.app/apps&quot;&gt;LeanCloud国际版&lt;/a&gt; Le</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>为了给博客安排一个说说功能，使用LeanCloud+Artitalk进行配置，记录一下学习过程。</p><ul><li>LeanCloud: <a href="https://console.leancloud.app/apps">LeanCloud国际版</a> LeanCloud是针对移动应用的一站式云端服务,提供包括LeanStorage 数据存储、LeanMessage 通信服务、LeanAnalytics 统计分析、LeanModules 拓展模块等四大类型的后端云服务，加速应用开发。简单来说就是给应用提供后台的云服务。</li><li>Artitalk: <a href="https://artitalk.js.org/">Artitalk</a> 基于 LeanCloud 实现的可实时发布说说&#x2F;微语的 js。<br>也就是使用Artitalk发布说说，数据存在LeanCloud云服务器上，可以实现在线发布。</li></ul><h2 id="1-注册LeanCloud"><a href="#1-注册LeanCloud" class="headerlink" title="1.注册LeanCloud"></a>1.注册LeanCloud</h2><p>1.1 注册<a href="https://console.leancloud.app/apps">LeanCloud国际版</a>，需要邮箱注册。<br>1.2 创建应用，应用名称随便填，选择开发版，创建。<br>1.3 添加用户：进入该应用，选择左侧数据存储-&gt;结构化数据-&gt;_User-&gt;添加行-&gt;自定义username和pwd（发布说说时使用）。<img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/leancloud1.png">1.4 设置权限：结构化数据-&gt;_User-&gt;权限-&gt;修改class访问权限，前四个都添加指定用户为自己。<img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/leancloud2.png">1.5 添加类shuoshuso：结构化数据-&gt;创建class-&gt;名称为”shuoshuo”，修改class访问权限，前四个都添加指定用户为自己。<br>1.6 添加类atComment：结构化数据-&gt;创建class-&gt;名称为”atComment”，class访问权限全都为所有用户。（待解决：其他用户如何上传头像？）<br>1.7 获得密钥：左侧列表设置-&gt;应用凭证-&gt;获得AppID和AppKey。<br>1.8 设置域名：设置-&gt;安全中心-&gt;Web安全域名-&gt;添加域名(完整域名，带协议，如：https)。</p><h2 id="2-博客配置"><a href="#2-博客配置" class="headerlink" title="2.博客配置"></a>2.博客配置</h2><p>2.1 hexo new page chat 创建说说页面。<br>2.2 在该页面填入：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/artitalk&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;artitalk_main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">new</span> <span class="title class_">Artitalk</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">appId</span>: <span class="string">&#x27;使用自己的appId&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">appKey</span>: <span class="string">&#x27;使用自己的appKey&#x27;</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="3-解决问题"><a href="#3-解决问题" class="headerlink" title="3.解决问题"></a>3.解决问题</h2><p>做完步骤2发现说说功能只能在开着加速器的情况下使用，直接访问就一直显示加载中，控制台也有404报错。<br>在大佬的指点下，发现可能是LeanCloud国际版在国内无法使用了，需要解析一个新的域名去使用。<br>3.1 在购买域名的网站上(我是用的<a href="https://wanwang.aliyun.com/">万网</a>)找到域名解析-&gt;解析设置-&gt;添加记录<img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/wanwang1.png" style="margin:2px;"><br>3.1.1 记录类型选择CNAME；</p><blockquote><p>CNAME(Canonical Name,规范名字):允许将多个名字映射到同一台计算机，通常可以为该计算机设置两个别名：WWW和MAIL。可以用于当有多个域名需要指向同一服务器IP，此时就可以将一个域名做A记录指向服务器IP，然后将其他的域名做别名(即CNAME)到A记录的域名上；那么当服务器IP地址变更时，就可以不必对一个一个域名做更改指向了，只需要更改A记录的那个域名到服务器新IP上，其他做别名（即CNAME）的那些域名的指向将自动更改到新的IP地址上（以上操作均需要在DNS处执行）。<br>DNS(Domain Name Server,域名服务器):是进行域名和与之相对应的IP地址转换的服务器。一个域名解析到某一台服务器上，并且把网页文件放到这台服务器上，用户的电脑才知道去哪一台服务器获取这个域名的网页信息。这是通过域名服务器来实现的。<br>域名(Domain Name):域名是Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。域名是由一串用点分隔的名字组成的，通常包含组织名，而且始终包括两到三个字母的后缀，以指明组织的类型或该域所在的国家或地区。</p></blockquote><p>3.1.2 主机记录随便写一个（我填的chat），记住完整的域名（我的是chat.pearlchocolatezy.com）；<br>3.1.3 记录值从LeanCloud-&gt;设置-&gt;域名绑定-&gt;API访问域名-&gt;绑定新域名(来自1.2)后复制CNAME获取。然后点击确认。<br><img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/leancloud3.png"><br>3.2 LeanCloud配置：设置-&gt;域名绑定<br>3.2.1 上图中的“请配置DNS”在万网提交新域名后会变为“等待配置DNS”等，几分钟后解析完成显示“已绑定”。<br>3.2.2 设置-&gt;安全中心-&gt;Web安全域名：把新的域名也加上。<br>3.3 博客配置<br>3.3.1 在“说说”页面index.md文件中appId和appKey下面增加配置项serverURL: ‘我的新域名(来自1.2)’</p><p>这时候，说说功能应该已经可以使用了，效果如下：<br><img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/artitalk1.png"><br>发说说需要登录之前设好的用户名和密码。<br>可以修改说说背景。（已完成）<br>可以插入图片，当成markdown编辑，插入img标签，图片要事先上传到仓库。（或许还有其它插入图片的方法…）</p><h2 id="4-更新"><a href="#4-更新" class="headerlink" title="4.更新"></a>4.更新</h2><p>4.1 修改说说背景 (2023-02-13)<br>想要设置渐变背景色<code>linear-gradient(45deg,rgba(109,208,242,0.75) 15%,rgba(245,154,190,0.75) 85%)</code>，实际效果为：<br><img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/shuoshuoBg.jpg"><br>按照Artitalk官网，只需要配置color1，color2即可</p><pre><code>功能：说说的配色color1：说说背景颜色 1 &amp; 按钮颜色 1color2：说说背景颜色 2 &amp; 按钮颜色 2color3：说说字体颜色 1默认值：demo 页中当前配色参数类型: string</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Artitalk</span>(&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">color1</span>: <span class="string">&#x27;linear-gradient(45deg,rgba(109,208,242,0.75) 15%,rgba(245,154,190,0.75) 85%)&#x27;</span>,</span><br><span class="line">    <span class="attr">color2</span>: <span class="string">&#x27;linear-gradient(45deg,rgba(109,208,242,0.75) 15%,rgba(245,154,190,0.75) 85%)&#x27;</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure><p>实际配置color1和color2后发现按钮的背景颜色没了，所以找到类名后添加一段style:</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.at_button</span>&#123;</span><br><span class="line"><span class="attribute">background</span>:<span class="built_in">linear-gradient</span>(<span class="number">45deg</span>,<span class="built_in">rgba</span>(<span class="number">137</span>,<span class="number">195</span>,<span class="number">235</span>,<span class="number">0.75</span>) <span class="number">15%</span>,<span class="built_in">rgba</span>(<span class="number">44</span>,<span class="number">169</span>,<span class="number">225</span>,<span class="number">0.75</span>) <span class="number">85%</span>)<span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>发现左边的小尖尖颜色也没了<br><img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/shuoshuoBg2.jpg"><br>发现是某个元素的after样式，再添加一段css样式，原本的li写为li:child-nth(2n+1)是考虑到说说颜色交替的设计，我用的统一的颜色，所以把li后边的去掉就行了：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#artitalk_main</span> <span class="selector-class">.cbp_tmtimeline</span> &gt; <span class="selector-tag">li</span> <span class="selector-class">.cbp_tmlabel</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">border-right-color</span>: <span class="built_in">rgba</span>(<span class="number">109</span>,<span class="number">208</span>,<span class="number">242</span>,<span class="number">0.75</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>4.2 添加说说输入框背景：配置bgImg (2023-02-13)<br>4.3 添加说说placeholder：配置shuoPla (2023-02-13)<br><img class="zy_img_shadow" src="/2023/01/15/SetArtitalk/gifSample.gif"></p><p>End.🐧</p>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Hexo-Butterfly/">Hexo|Butterfly</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2023/01/15/SetArtitalk/#disqus_thread</comments>
       
     </item>
     
