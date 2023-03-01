@@ -9,7 +9,7 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Tue, 28 Feb 2023 08:53:09 GMT</pubDate>
+    <pubDate>Wed, 01 Mar 2023 07:37:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -25,7 +25,7 @@
       
       
       
-      <content:encoded><![CDATA[<h2 id="1-选择想要的图标"><a href="#1-选择想要的图标" class="headerlink" title="1. 选择想要的图标"></a>1. 选择想要的图标</h2><p>打开 <a href="https://www.iconfont.cn/">阿里iconfont</a> 网站，注册账号或登录，找到想要的图标；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/1.jpg"><br>加入购物车。<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/2.jpg" width="20%"></p><h2 id="2-下载压缩包"><a href="#2-下载压缩包" class="headerlink" title="2. 下载压缩包"></a>2. 下载压缩包</h2><p>打开购物车，点击添加至项目，项目名称可随意；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/3.jpg" width="30%"><br>得到图标编码；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/4.jpg" width="30%"><br>回到购物车，点击下载代码，或者直接在图标上找到下载按钮；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/5.jpg" width="30%"><br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/6.jpg" width="30%"><br>在css文件夹下新建iconfont文件夹，将压缩包解压到这里。<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/7.jpg" width="30%"><br>解压出来的文件除了有些是我们需要使用的，还有些是为了样例展示用，可以保留。</p><h2 id="3-在html文件中插入图标"><a href="#3-在html文件中插入图标" class="headerlink" title="3. 在html文件中插入图标"></a>3. 在html文件中插入图标</h2><p>在html文件中引入iconfont.css文件；</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/css/iconfont/iconfont.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在html标签中插入图标编码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;iconfont&quot;</span>&gt;</span><span class="symbol">&amp;#xe66b;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure><p>除了上述方法，还可按照解压出来的demo_index.html提示方法插入图标。<br>刷新页面，成功显示小图标！</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="1-选择想要的图标"><a href="#1-选择想要的图标" class="headerlink" title="1. 选择想要的图标"></a>1. 选择想要的图标</h2><p>打开 <a href="https://www.iconfont.cn/">阿里iconfont</a> 网站，注册账号或登录，找到想要的图标；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/1.jpg"><br>加入购物车。<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/2.jpg" width="20%"></p><h2 id="2-下载压缩包"><a href="#2-下载压缩包" class="headerlink" title="2. 下载压缩包"></a>2. 下载压缩包</h2><p>打开购物车，点击添加至项目，项目名称可随意；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/3.jpg" width="30%"><br>得到图标编码；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/4.jpg" width="30%"><br>回到购物车，点击下载代码，或者直接在图标上找到下载按钮；<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/5.jpg" width="30%"><br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/6.jpg" width="30%"><br>在css文件夹下新建iconfont文件夹，将压缩包解压到这里。<br><img class="zy_img_shadow" src="/2023/02/28/SetIconfont/7.jpg" width="30%"><br>解压出来的文件除了有些是我们需要使用的，还有些是为了样例展示用，可以保留。</p><h2 id="3-在html文件中插入图标"><a href="#3-在html文件中插入图标" class="headerlink" title="3. 在html文件中插入图标"></a>3. 在html文件中插入图标</h2><p>在html文件中引入iconfont.css文件；</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/css/iconfont/iconfont.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在html标签中插入图标编码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;iconfont&quot;</span>&gt;</span><span class="symbol">&amp;#xe66b;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure><p>除了上述方法，还可按照解压出来的demo_index.html提示方法插入图标。<br>刷新页面，成功显示小图标！</p><h2 id="4-注意"><a href="#4-注意" class="headerlink" title="4. 注意"></a>4. 注意</h2><ul><li>iconfont共三种引用方式：Unicode，font-class，Symbol。</li><li>Unicode仅能在span中使用。</li><li>input框中要同时设置value值为Unicode以及font-class。</li></ul>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
@@ -87,9 +87,9 @@
       <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
       
       
-      <category domain="https://pearlchocolatezy.com/tags/Hexo-Butterfly/">Hexo|Butterfly</category>
-      
       <category domain="https://pearlchocolatezy.com/tags/CSS/">CSS</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Hexo-Butterfly/">Hexo|Butterfly</category>
       
       
       <comments>https://pearlchocolatezy.com/2023/02/15/SetBlogCursorCSS/#disqus_thread</comments>
