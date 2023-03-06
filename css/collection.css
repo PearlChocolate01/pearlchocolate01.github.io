@@ -11,7 +11,11 @@
 	height: 180px;
 	width: 130px;
 	overflow: hidden;
-
+}
+.animation_img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
 }
 
 .ani_info {
@@ -36,4 +40,5 @@
 	.ani_info {
 		width: 100%;
 	}
+	
 }
