@@ -9,8 +9,35 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sun, 19 Mar 2023 08:11:15 GMT</pubDate>
+    <pubDate>Fri, 24 Mar 2023 12:57:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Git常用操作</title>
+      <link>https://pearlchocolatezy.com/2023/03/24/LearnGit/</link>
+      <guid>https://pearlchocolatezy.com/2023/03/24/LearnGit/</guid>
+      <pubDate>Fri, 24 Mar 2023 11:11:12 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。&lt;/p&gt;
+&lt;h3 id=&quot;官网&quot;&gt;&lt;a href=&quot;#官网</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。</p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><p><a href="https://git-scm.com/">https://git-scm.com/</a></p><h3 id="原理-amp-对比"><a href="#原理-amp-对比" class="headerlink" title="原理&amp;对比"></a>原理&amp;对比</h3><img class="zy_img_shadow" src="/2023/03/24/LearnGit/logic.png" width="80%"><img class="zy_img_shadow" src="/2023/03/24/LearnGit/logic2.jpg" width="80%"><img class="zy_img_shadow" src="/2023/03/24/LearnGit/svnAndGit.png"><h3 id="Github相关操作"><a href="#Github相关操作" class="headerlink" title="Github相关操作"></a>Github相关操作</h3><h4 id="初始化配置-amp-本地创建仓库上传至Github"><a href="#初始化配置-amp-本地创建仓库上传至Github" class="headerlink" title="初始化配置 &amp; 本地创建仓库上传至Github"></a>初始化配置 &amp; 本地创建仓库上传至Github</h4><ol><li>安装Git后，自选本地文件夹作为仓库，右键选择Git Bash Here</li><li>初始化：在弹出的Git命令行执行 <code>git init</code> ，出现.git文件夹则初始化成功</li><li>生成&amp;配置秘钥：执行 <code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> 使用注册Github的邮箱；<br>直接按回车不设密码，重复密码也直接回车，进入提示的地址下查看ssh key文件xxx.ssh，打开id_rsa.pub，复制里面的key；<br>在Github网站Settings-&gt;SSH keys-&gt;Add SSH key，title随便填，粘贴key；<br>回到Git Bash命令行，验证SSH配置，执行 <code>ssh -T git@github.com</code> ，看到…successfully…表示连接成功</li><li>设置username和email：<br>执行 <code>git config --global user.name &quot;your name&quot;</code> 随便命名<br>执行 <code>git config --global user.email &quot;your_email@youremail.com&quot;</code><br>可以用 <code>git config -l</code> 检查配置</li><li>创建Github仓库：Create a new repository，自定义仓库名</li><li>配置地址：检查git bash上显示的是不是要上传的仓库所在文件夹，添加远程地址 <code>git remote add origin git@github.com:yourName/yourRepo.git</code> yourName为Github用户名，yourRepo为Github上的仓库名，之后可以在文件夹.git&#x2F;config-&gt;[remote “origin”]-&gt;url看到，也可以直接修改这个值配置远程地址</li><li>上传：先 <code>git pull</code> 确认仓库的内容都拷贝下来了</li><li>新增README文件 <code>git add README</code> ，也可以在第5步就创建好<br>使用 <code>git status</code> 检查状态<br>提交并添加标注： <code>git commit -m &quot;first commit&quot;</code> 引号内的内容自己填<br>执行 <code>git push origin main</code> 提交到github<br>完成。</li><li>不需要手动配置远程地址的方法：第5步创建好仓库后进入仓库，在code中复制SSH<br>执行 <code>git clone 拷贝的地址</code>，然后同上步骤7-8提交。<img class="zy_img_shadow" src="/2023/03/24/LearnGit/github_clone.png" width="60%"></li></ol>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/Git/">Git</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/03/24/LearnGit/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>前端笔试题（背书专用）</title>
@@ -262,35 +289,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2023/01/30/LearnHtml/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Markdown学习笔记</title>
-      <link>https://pearlchocolatezy.com/2023/01/26/LearnMarkdown/</link>
-      <guid>https://pearlchocolatezy.com/2023/01/26/LearnMarkdown/</guid>
-      <pubDate>Thu, 26 Jan 2023 12:23:44 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;文字加粗：前后各两个“*” 。&lt;/p&gt;
-&lt;p&gt;文字居中：使用html:center标签。&lt;/p&gt;
-&lt;p&gt;文字下划线：&lt;code&gt;&amp;lt;u&amp;gt;&lt;/code&gt;标签 或 &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;标签&lt;/p&gt;
-&lt;p&gt;代码块：前后各三个“&amp;#96;”（</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>文字加粗：前后各两个“*” 。</p><p>文字居中：使用html:center标签。</p><p>文字下划线：<code>&lt;u&gt;</code>标签 或 <code>&lt;span&gt;</code>标签</p><p>代码块：前后各三个“&#96;”（键盘左上角~键），可以在前三个符号后加上语言名。</p><p>行内代码块：前后各两个“&#96;”。</p><p>表格：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure><br><center style="font-family:'hanyitaozaizijian';">🐧🐧🐧<br>To be continued...</center>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Markdown/">Markdown</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2023/01/26/LearnMarkdown/#disqus_thread</comments>
       
     </item>
     
