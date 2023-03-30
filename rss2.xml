@@ -9,11 +9,66 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sat, 25 Mar 2023 12:37:21 GMT</pubDate>
+    <pubDate>Wed, 29 Mar 2023 05:41:20 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>JS中的常用循环遍历方法</title>
+      <title>HTML中的meta标签</title>
+      <link>https://pearlchocolatezy.com/2023/03/28/HtmlMeta/</link>
+      <guid>https://pearlchocolatezy.com/2023/03/28/HtmlMeta/</guid>
+      <pubDate>Tue, 28 Mar 2023 12:14:57 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;meta标签用来提供有关html文档的元数据，用户看不到，蛋浏览器可以识别，对SEO（搜索引擎优化）有重要作用。&lt;/p&gt;
+&lt;h2 id=&quot;常</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>meta标签用来提供有关html文档的元数据，用户看不到，蛋浏览器可以识别，对SEO（搜索引擎优化）有重要作用。</p><h2 id="常用meta标签列举"><a href="#常用meta标签列举" class="headerlink" title="常用meta标签列举"></a>常用meta标签列举</h2><h3 id="1-author"><a href="#1-author" class="headerlink" title="1. author"></a>1. author</h3><p>表示网页作者的名字、组织、机构。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">content</span>=<span class="string">&quot;www.author.com&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="2-description"><a href="#2-description" class="headerlink" title="2. description"></a>2. description</h3><p>一段简短的，对页面的描述。<br>一般显示在搜索引擎中对网页的描述。但是搜索引擎也会抓取网页中最匹配的一段文字显示。<br>怎么写：一到两个关键词，150字左右，添加关键信息，内容匹配度高，适当增加一些“learn more”等引导词。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;欢迎来到珍珠巧克力的小站！&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-keywords"><a href="#3-keywords" class="headerlink" title="3. keywords"></a>3. keywords</h3><p>与页面相关的关键词，部分搜索引擎会根据这些关键词对文章进行分类。<br>目前对于SEO不一定有用了（关键词的堆砌有讨好搜索引擎的嫌疑）。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;关键词1、关键词2、关键词3&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="4-viewport"><a href="#4-viewport" class="headerlink" title="4. viewport"></a>4. viewport</h3><p>viewport(视口)是指设备屏幕上能用来显示网页的那一块区域。<br>为视口的初始大小提供指示，仅用于移动设备。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>width设置viewport的宽度为设备宽度（css像素），device-width是指这个设备最理想的viewport宽度；<br>initial-scale为设备宽度与viewport大小之间的缩放比例。</p>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/HTML/">HTML</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/03/28/HtmlMeta/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webpack学习笔记</title>
+      <link>https://pearlchocolatezy.com/2023/03/28/LearnWebpack/</link>
+      <guid>https://pearlchocolatezy.com/2023/03/28/LearnWebpack/</guid>
+      <pubDate>Tue, 28 Mar 2023 11:25:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;定义：Webpack是一个静态资源打包工具。&lt;/li&gt;
+&lt;li&gt;作用：将各类语法编译为浏览器可以识别的html,css,js等语</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ol><li>定义：Webpack是一个静态资源打包工具。</li><li>作用：将各类语法编译为浏览器可以识别的html,css,js等语法。</li><li>各种打包工具：Grunt, Gulp, Parcel, Webpack, Rollup, Vite…</li><li>功能：开发模式（编译），生产模式（编译+压缩）</li></ol><p>public 放长久不变的静态资源<br>src 放主要代码</p>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/Webpack/">Webpack</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/03/28/LearnWebpack/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>JS中的常用循环遍历方法|数组的常用方法</title>
       <link>https://pearlchocolatezy.com/2023/03/25/LoopInJS/</link>
       <guid>https://pearlchocolatezy.com/2023/03/25/LoopInJS/</guid>
       <pubDate>Sat, 25 Mar 2023 06:19:36 GMT</pubDate>
@@ -84,11 +139,11 @@
       <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
       
       
-      <category domain="https://pearlchocolatezy.com/tags/Vue/">Vue</category>
-      
       <category domain="https://pearlchocolatezy.com/tags/HTML/">HTML</category>
       
       <category domain="https://pearlchocolatezy.com/tags/CSS/">CSS</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Vue/">Vue</category>
       
       <category domain="https://pearlchocolatezy.com/tags/JavaScript/">JavaScript</category>
       
@@ -235,60 +290,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2023/02/10/LearnCMD/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>HBuilderX+uniapp开发微信小程序</title>
-      <link>https://pearlchocolatezy.com/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/</link>
-      <guid>https://pearlchocolatezy.com/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/</guid>
-      <pubDate>Fri, 10 Feb 2023 05:39:49 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;一、创建项目&quot;&gt;&lt;a href=&quot;#一、创建项目&quot; class=&quot;headerlink&quot; title=&quot;一、创建项目&quot;&gt;&lt;/a&gt;一、创建项目&lt;/h1&gt;&lt;h2 id=&quot;1-安装HBuilderX&quot;&gt;&lt;a href=&quot;#1-安装HBuilderX&quot; class=&quot;he</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="一、创建项目"><a href="#一、创建项目" class="headerlink" title="一、创建项目"></a>一、创建项目</h1><h2 id="1-安装HBuilderX"><a href="#1-安装HBuilderX" class="headerlink" title="1.安装HBuilderX"></a>1.安装HBuilderX</h2><p><a href="https://www.dcloud.io/hbuilderx.html">HbuilderX 安装地址</a><br>HBuiderX：支持H5的前端开发IDE。内置uni-app项目。<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/hbuilderx.jpg"></p><h2 id="2-创建uni-app项目"><a href="#2-创建uni-app项目" class="headerlink" title="2.创建uni-app项目"></a>2.创建uni-app项目</h2><p>左上角 文件-&gt;新建-&gt;项目<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/createProj.jpg"></p><p>选择uni-app项目<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/createProj2.jpg"></p><p>得到如下目录<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/createProj3.jpg"></p><h2 id="3-配置小程序AppId"><a href="#3-配置小程序AppId" class="headerlink" title="3.配置小程序AppId"></a>3.配置小程序AppId</h2><p>选择目录下manifest.json，在微信小程序配置中需要填入AppID<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/setId.jpg"></p><p>打开<a href="https://mp.weixin.qq.com/cgi-bin/wx">微信小程序官网</a>，按步骤注册账号（只要完成下图第一步）<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/regisAppletWX.jpg"></p><p>登入后选择 开发管理-&gt;开发设置，获取AppID<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/xcxkaifa.jpg"></p><p>或者也可以在注册界面选择测试号（注意：一个微信只能申请一个测试号）获取AppID<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/testApplet.jpg"></p><p>填入manifest.json配置<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/setIdAndCheck.jpg"></p><h2 id="4-安装和配置微信开发者工具"><a href="#4-安装和配置微信开发者工具" class="headerlink" title="4.安装和配置微信开发者工具"></a>4.安装和配置微信开发者工具</h2><ol><li><p>在HBuilderX中配置<br>下载并安装<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">微信开发者工具</a><br>将安装路径配置到HBuilderX-&gt;运行-&gt;运行到小程序模拟器-&gt;运行设置</p><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/toolSet.jpg"><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/toolSet2.jpg"></li><li><p>在微信开发者工具中配置<br>打开微信开发者工具，微信登录填入AppID和项目位置，选择不需要云服务<br>右上角设置</p><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/toolSet3.jpg">点击安全，开启服务端口<img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/toolSet4.jpg">配置完成即可关闭微信开发者工具</li></ol><h2 id="5-运行项目"><a href="#5-运行项目" class="headerlink" title="5.运行项目"></a>5.运行项目</h2><p>添加项目必须的插件：工具-&gt;插件安装，按需添加<br>在HBuilderX中选择运行-&gt;运行到小程序模拟器-&gt;微信开发者工具<br>会自动打开微信开发者工具运行项目<br><img class="zy_img_shadow" src="/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/runProj.jpg"></p><h1 id="二、开发项目"><a href="#二、开发项目" class="headerlink" title="二、开发项目"></a>二、开发项目</h1><p>小程序首页的入口文件位于&#x2F;pages&#x2F;index&#x2F;index.vue，配置文件为pages.json。</p><p>openEditorCache()修改。</p><h1 id="三、上线小程序"><a href="#三、上线小程序" class="headerlink" title="三、上线小程序"></a>三、上线小程序</h1><p>配置服务器域名</p><br><center style="font-family:'hanyitaozaizijian';">🐧🐧🐧<br>To be continued...</center>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/uni-app/">uni-app</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Vue/">Vue</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2023/02/10/DevelopUniappWeixinAppletByHBuilderX/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>回杭的日子</title>
-      <link>https://pearlchocolatezy.com/2023/02/08/BackToHangzhou/</link>
-      <guid>https://pearlchocolatezy.com/2023/02/08/BackToHangzhou/</guid>
-      <pubDate>Wed, 08 Feb 2023 11:42:24 GMT</pubDate>
-      
-        
-        
-      <description>&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1818978932&auto=0&height=66&vol=0.2"></iframe><br><p>坐在回杭的高铁上，因为戴了N95才过了一个小时就有点喘不过气。今年因为新冠的放开没怎么走亲访友，吃的很多又没有延续之前夜跑的习惯，大概又有几斤肉等着我去减了，肺活量也变得没那么好了，想想上个月刚回家那会带着两层口罩坐火车也没这么喘呢。</p><!----><p>倒也不是只有无奈的事，重新拥有独居生活意味着我拿回了生活的掌控权。打车回家的路上望着窗外的风景，体会到仍然紧绷着但心慢慢安定下来的感觉，“杭州才是我的精神故乡”，虽然不知道在这工作生活一段时间会不会还这样想，至少现在如此。</p><!----><p>裸辞半年在家自学以及互联网招聘寒冬的压力始终伴随着我。就我过往的经历来看，人生就像是过山车，物质世界的得失就像只是心的具象化，情绪只是表象，周围人的一言一行更像是能量崇拜、价值崇拜，但是换一种思路，只有自己去创造某种价值才能换来得到的机会，只有付出了什么才能得到什么。说得好像自己把人和事都看透了一样，其实距离实现还差得很远呢，就好像一直很整洁的房间需要规律地清扫，但是清扫任务有多繁琐会带来怎样的情绪变化却需要从实践中去体验的。总要做出点让自己确认“我做得到”这样的事，有很多的目标需要日复一日的积累去实现，才能从中体会到时间的美妙之处。</p><!----><p>好在在这艰难的探索旅途中，我终于不再是孤独一人了。和K一起走在细雨蒙蒙夜色下的运河边，看见雨滴在灯光下形成的星空时，亭子后边突然窜出来一只狗狗时，空无一人的河边拍下长长的水乡倒影时，才又一次对家乡有了美的感受，这一切都属于我们，我们在这熟悉而忧愁的地方创造了新的回忆。时间真的是很奇妙的东西，之前离开杭州的时候，我可连喊他的名字都有些害羞呢。</p><!----><p>虽然找工作很难，还是给自己打打气吧，新的一年也要勇往直前、心想事成呀~</p><!----><img class="zy_img_shadow" src="/2023/02/08/BackToHangzhou/qie.jpg" width="50%">]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
-      
-      
-      
-      <comments>https://pearlchocolatezy.com/2023/02/08/BackToHangzhou/#disqus_thread</comments>
       
     </item>
     
