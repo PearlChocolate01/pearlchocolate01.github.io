@@ -9,8 +9,32 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Fri, 08 Sep 2023 03:01:04 GMT</pubDate>
+    <pubDate>Sun, 15 Oct 2023 15:37:34 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>考后小小总结</title>
+      <link>https://pearlchocolatezy.com/2023/10/15/diary20231015/</link>
+      <guid>https://pearlchocolatezy.com/2023/10/15/diary20231015/</guid>
+      <pubDate>Sun, 15 Oct 2023 10:46:47 GMT</pubDate>
+      
+        
+        
+      <description>&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1951259654&auto=0&height=66&vol=0.2"></iframe><br><p>自从9月初P4考完之后，已经过去一个多月了，还是没有完全从最近加班的疲劳中缓过来，却必须得对这段时间的感受做一下总结，毕竟等出了成绩大抵又是另一种心情了。<br>前几天看到一位博主说，想要逃离这种卷为人上人否则就毫无希望的环境和生活，卷不过别人的终点就是自我放逐。自我放逐并不是陷入绝望或是麻木地活着，而是遵从当下的感受，做想做的事，不再受外界思潮的裹挟。<br>要说做想做的事，虽然通过平衡他人和自己的期望最终也能选我所爱，但却始终没办法痛快地踏出那一步，更别说在迈出那一步之前就得到他人的支持了。始终伴随着世俗的、近亲的、周围人的不理解，毕竟没有经验，从小受的熏陶却是发达国家上等人的那一套，理解、支持以及从生活中发现乐趣、创造乐趣。忘不了的故事之一，就是小男孩心爱的宠物狗狗去世了，爸爸做了一个小动画模仿狗狗告诉他自己在天国安好；以及外面下起了雨，爸爸从屋檐下冲进雨里，第一次看见雨、还不太会走路的小宝宝也跟着跑出来，爸爸开心的跑回去，宝宝也快乐的跑回家……这样家庭的孩子怎么会带着创伤长大呢。只是生长在发展中国家的我，因为互联网全球化而看到这些差异有些残忍罢了。<br>时代留下的习惯之一，就是总在注视着不那么重要的东西，把他人的感受放在自己前面就是一种表现。或许是因为没有办法完全抛掉别人的看法，或许是因为自己的执念，明明劝了自己无数次放弃的ACCA，我又参与了一次，因为这次备考环境基本合适，备考过程也没有痛苦到变为创伤。或许我是可以不讨厌财会专业的，如果只为知识而学习的话，可是理论学得太多终究会厌恶的。我能原谅自己对于考试的执着吗？我能原谅自己在不擅长的领域不过关吗？在时间抚平一切之前，我也想对自己说，这段时间真是辛苦了。<br>想起坐在高三教室里的那个自己，对很多人，渴求着：看看我吧、给我一点关心吧、我也是很努力的、关注一定要用努力来换取吗、那这样的关心不要也罢、我还是比不过别人、我重视的人再也不会看着我了、关心如此糟糕的我会害了别人的……如此孤独，如此卑微。如果能和当时的自己重逢，一定要好好拥抱一下，对她说“没关系”。<br>努力学习、扮乖巧、追名逐利、自我证明……弯弯绕绕走了那么多路，不过是为了寻求爱，还有会慢慢变好的的生活，这些可以从别人那里得到，也可以自己给自己，更不用觉得为自己追求这些是需要退让于他人的需求的，只是每一次面对选择还要多加练习。<br>考完休息了一段时间后，在喜欢的事情上开始一些新的计划，一切就会慢慢好起来的。<br>“我觉得好幸福呀，但是又害怕物极必反，不敢敞开肚皮开心。”<br>“那就慢慢的，慢慢敞开肚皮。”</p>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
+      
+      
+      
+      <comments>https://pearlchocolatezy.com/2023/10/15/diary20231015/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>ACCA AFM文字题整理</title>
@@ -257,34 +281,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2023/02/17/LearnCSharp/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Hexo|Butterfly修改鼠标指针样式</title>
-      <link>https://pearlchocolatezy.com/2023/02/15/SetBlogCursorCSS/</link>
-      <guid>https://pearlchocolatezy.com/2023/02/15/SetBlogCursorCSS/</guid>
-      <pubDate>Wed, 15 Feb 2023 12:29:16 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;想要为博客设置自定义的可爱鼠标指针，先从网上找到鼠标指针的资源。&lt;br&gt;动态指针一般为ani或gif文件，静态指针为cur或ico文件。据说目前的浏览器已经不支持动态鼠标指针了，所以将找到的ani文件转为cur格式，&lt;a href=&quot;https://jingyan.baid</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>想要为博客设置自定义的可爱鼠标指针，先从网上找到鼠标指针的资源。<br>动态指针一般为ani或gif文件，静态指针为cur或ico文件。据说目前的浏览器已经不支持动态鼠标指针了，所以将找到的ani文件转为cur格式，<a href="https://jingyan.baidu.com/article/90895e0f928e7e64ec6b0be9.html">转换教程</a>。<br>在theme&#x2F;source&#x2F;css文件夹中创建自己的css文件，并在主目录下的_config.butterfly.yml文件中Inject下添加css文件路径。<br>在css文件中添加如下内容：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 全局默认鼠标指针 */</span></span><br><span class="line"><span class="selector-tag">body</span>,</span><br><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>),auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停图片时的鼠标指针 */</span></span><br><span class="line"><span class="selector-tag">img</span> &#123; </span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停图片弹出窗口时的鼠标指针 */</span></span><br><span class="line"><span class="selector-class">.fancybox__slide</span>&#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.carousel__slide</span>&#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 选择链接标签时的鼠标指针 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>,<span class="selector-id">#site-name</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 选择代码框展开和复制按钮时的鼠标指针 */</span></span><br><span class="line"><span class="selector-class">.copy-button</span><span class="selector-pseudo">:hover</span>,<span class="selector-class">.expand</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 选中输入框时的鼠标指针 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:hover</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停按钮时的鼠标指针 */</span></span><br><span class="line"><span class="selector-tag">button</span><span class="selector-pseudo">:hover</span>,<span class="selector-class">.scroll-down-effects</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停页脚链接标签（例如页脚徽标）时的鼠标指针 */</span></span><br><span class="line"><span class="selector-id">#footer-wrap</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停页码时的鼠标指针 */</span></span><br><span class="line"><span class="selector-id">#pagination</span> <span class="selector-class">.page-number</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停菜单栏时的鼠标指针 */</span></span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-class">.site-page</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停滚动条的鼠标指针（只对Chrome有效） */</span></span><br><span class="line">::-webkit-scrollbar:hover&#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto<span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停评论按钮的鼠标指针（我使用的是Gitalk/Valine） */</span></span><br><span class="line"><span class="selector-class">.switch-btn</span>,<span class="selector-class">.switch-btn</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.gt-user-inner</span>,<span class="selector-class">.gt-ico</span>,<span class="selector-class">.gt-user-name</span>,<span class="selector-class">.gt-btn</span>,<span class="selector-class">.vbtn</span>,svg,<span class="selector-class">.at_button</span>&#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停非链接文本时的鼠标指针 */</span></span><br><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>,<span class="selector-tag">h5</span>,<span class="selector-tag">h6</span>,<span class="selector-id">#subtitle</span>,<span class="selector-class">.content</span>,<span class="selector-class">.line</span>,<span class="selector-class">.post-content</span> <span class="selector-tag">p</span>,<span class="selector-class">.post-content</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 悬停文章日期 */</span></span><br><span class="line"><span class="selector-class">.post-meta-date</span><span class="selector-pseudo">:hover</span>,<span class="selector-class">.post-meta-date-created</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(<span class="string">&#x27;./mouse/xxx.cur&#x27;</span>), auto<span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>暂时不会修改的元素：iframe，FireFox滚动条，鼠标右击、加载时等样式。</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E6%8A%80%E6%9C%AF/">技术</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/CSS/">CSS</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Hexo-Butterfly/">Hexo|Butterfly</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2023/02/15/SetBlogCursorCSS/#disqus_thread</comments>
       
     </item>
     
