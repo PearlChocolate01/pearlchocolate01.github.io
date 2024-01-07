@@ -15,6 +15,10 @@ document.write(`
 				<p class="ani_p" v-text="a.time"></p>
 				<p class="ani_p" v-text="a.score"></p>
 			</div>
+			<div class="ani_comment">
+				<p style="margin-bottom:0;text-decoration:underline;" v-text="a.comment==null?'':'简评：'"></p>
+				<p style="margin-left:20px;" v-text="a.comment"></p>
+			</div>
 		</li>
 	</div>
 </div>`);

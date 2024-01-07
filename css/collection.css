@@ -11,6 +11,7 @@
 	height: 180px;
 	width: 130px;
 	overflow: hidden;
+	display:inline-block;
 }
 .animation_img{
 	width:100%;
@@ -19,11 +20,18 @@
 }
 
 .ani_info {
-	width: 75%;
+	width: 45%;
+	display:inline-block;
 }
 
 .ani_p {
 	line-height: 1.03;
+}
+
+.ani_comment{
+	width: 35%;
+	display:inline-block;
+	
 }
 
 @media(max-width:368px) {
@@ -38,6 +46,10 @@
 	}
 
 	.ani_info {
+		width: 100%;
+	}
+	
+	.ani_comment{
 		width: 100%;
 	}
 	

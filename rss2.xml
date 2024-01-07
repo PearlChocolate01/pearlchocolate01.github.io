@@ -9,8 +9,37 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Thu, 28 Dec 2023 13:48:03 GMT</pubDate>
+    <pubDate>Sun, 07 Jan 2024 15:09:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>JS中for循环使用let和var声明计数变量i的区别</title>
+      <link>https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/</link>
+      <guid>https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/</guid>
+      <pubDate>Mon, 01 Jan 2024 14:11:51 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;使用var声明i：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>使用var声明i：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">0</span>]);<span class="comment">//2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">1</span>]);<span class="comment">//2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">2</span>]);<span class="comment">//2</span></span><br></pre></td></tr></table></figure><p>使用let声明i：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">0</span>]);<span class="comment">//0</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">1</span>]);<span class="comment">//1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">2</span>]);<span class="comment">//2</span></span><br></pre></td></tr></table></figure><h3 id="一、for循环中的父子作用域"><a href="#一、for循环中的父子作用域" class="headerlink" title="一、for循环中的父子作用域"></a>一、for循环中的父子作用域</h3><p>初始化for循环时，()内的代码处在父作用域，{}内的代码处在子作用域，以var声明i&#x3D;0为例，写法可以等同于：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="二、循环内部局部变量与调用栈"><a href="#二、循环内部局部变量与调用栈" class="headerlink" title="二、循环内部局部变量与调用栈"></a>二、循环内部局部变量与调用栈</h3><p>程序中的变量存储在栈或堆中。<br>基本数据类型（值类型）存储在栈中，八种基本数据类型包括：byte, short, int, long, float, double, char, boolean。<br>引用数据类型存储在堆中，包括：类(包括列表List等)，接口Interator，数组Array，枚举，注释，字符串等。<br>JS中有8种数据类型：Boolean, undefined, null, Number, BigInt(ES10), String ,Symbol(ES6), Object。前7种为基本类型，最后一种为引用类型。</p><center style="font-family:'hanyitaozaizijian';">🐧🐧🐧<br>To be continued...</center>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/ES6/">ES6</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/JavaScript/">JavaScript</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>SQLServer安装时默认Windows身份验证如何改为SQLServer身份验证</title>
@@ -51,7 +80,7 @@
       
       
       
-      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1396049476&auto=0&height=66&vol=0.2"></iframe><br>]]></content:encoded>
+      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1396049476&auto=0&height=66&vol=0.2"></iframe><br><p>“最忆是杭州”，对杭州的思恋从未停歇，想着什么时候再去一次。买了关于杭州的小说，还没读完，就到了出发的日子。<br>天气骤冷，这个冬天第一次穿上小面包羽绒服便是出发那天。<br>抵达城站的时候，外面并未如网上所说的那样下雪，路边堆着湿漉漉的落叶，公交车经过的西湖边几乎一个人也没有。</p>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
@@ -240,33 +269,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2023/03/25/LoopInJS/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Git常用操作</title>
-      <link>https://pearlchocolatezy.com/2023/03/24/LearnGit/</link>
-      <guid>https://pearlchocolatezy.com/2023/03/24/LearnGit/</guid>
-      <pubDate>Fri, 24 Mar 2023 11:11:12 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。&lt;/p&gt;
-&lt;h3 id=&quot;官网&quot;&gt;&lt;a href=&quot;#官网</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。</p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><p><a href="https://git-scm.com/">https://git-scm.com/</a></p><h3 id="原理-amp-对比"><a href="#原理-amp-对比" class="headerlink" title="原理&amp;对比"></a>原理&amp;对比</h3><img class="zy_img_shadow" src="/2023/03/24/LearnGit/logic.png" width="80%"><img class="zy_img_shadow" src="/2023/03/24/LearnGit/logic2.jpg" width="80%"><img class="zy_img_shadow" src="/2023/03/24/LearnGit/svnAndGit.png"><h3 id="Github相关操作"><a href="#Github相关操作" class="headerlink" title="Github相关操作"></a>Github相关操作</h3><h4 id="初始化配置-amp-本地创建仓库上传至Github"><a href="#初始化配置-amp-本地创建仓库上传至Github" class="headerlink" title="初始化配置 &amp; 本地创建仓库上传至Github"></a>初始化配置 &amp; 本地创建仓库上传至Github</h4><ol><li>安装Git后，自选本地文件夹作为仓库，右键选择Git Bash Here</li><li>初始化：在弹出的Git命令行执行 <code>git init</code> ，出现.git文件夹则初始化成功</li><li>生成&amp;配置秘钥：执行 <code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> 使用注册Github的邮箱；<br>直接按回车不设密码，重复密码也直接回车，进入提示的地址下查看ssh key文件xxx.ssh，打开id_rsa.pub，复制里面的key；<br>在Github网站Settings-&gt;SSH keys-&gt;Add SSH key，title随便填，粘贴key；<br>回到Git Bash命令行，验证SSH配置，执行 <code>ssh -T git@github.com</code> ，看到…successfully…表示连接成功</li><li>设置username和email：<br>执行 <code>git config --global user.name &quot;your name&quot;</code> 随便命名<br>执行 <code>git config --global user.email &quot;your_email@youremail.com&quot;</code><br>可以用 <code>git config -l</code> 检查配置</li><li>创建Github仓库：Create a new repository，自定义仓库名</li><li>配置地址：检查git bash上显示的是不是要上传的仓库所在文件夹，添加远程地址 <code>git remote add origin git@github.com:yourName/yourRepo.git</code> yourName为Github用户名，yourRepo为Github上的仓库名，之后可以在文件夹.git&#x2F;config-&gt;[remote “origin”]-&gt;url看到，也可以直接修改这个值配置远程地址</li><li>上传：先 <code>git pull</code> 确认仓库的内容都拷贝下来了</li><li>新增README文件 <code>git add README</code> ，也可以在第5步就创建好<br>使用 <code>git status</code> 检查状态<br>提交并添加标注： <code>git commit -m &quot;first commit&quot;</code> 引号内的内容自己填<br>执行 <code>git push origin main</code> 提交到github<br>完成。</li><li>不需要手动配置远程地址的方法：第5步创建好仓库后进入仓库，在code中复制SSH<br>执行 <code>git clone 拷贝的地址</code>，然后同上步骤7-8提交。<img class="zy_img_shadow" src="/2023/03/24/LearnGit/github_clone.png" width="60%"></li></ol>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Git/">Git</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2023/03/24/LearnGit/#disqus_thread</comments>
       
     </item>
     
