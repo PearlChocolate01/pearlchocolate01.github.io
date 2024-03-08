@@ -11,7 +11,7 @@ document.write(`
 				<p class="ani_p" v-text="a.name"></p>
 				<p class="ani_p" v-text="a.author"></p>
 				<p class="ani_p" v-text="a.element"></p>
-				<p class="ani_p" v-text="a.lines"></p>
+				<p class="ani_p p_line" v-html="a.lines"></p>
 				<p class="ani_p" v-text="a.time"></p>
 				<p class="ani_p" v-text="a.score"></p>
 			</div>

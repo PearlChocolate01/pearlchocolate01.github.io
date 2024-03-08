@@ -28,6 +28,10 @@
 	line-height: 1.03;
 }
 
+.p_line{
+	line-height:1.7;
+}
+
 .ani_comment{
 	width: 35%;
 	display:inline-block;
