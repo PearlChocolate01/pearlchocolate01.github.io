@@ -9,11 +9,11 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sun, 07 Jul 2024 03:57:29 GMT</pubDate>
+    <pubDate>Sun, 07 Jul 2024 06:45:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>JS中throw的用法</title>
+      <title>JS：throw的用法</title>
       <link>https://pearlchocolatezy.com/2024/07/07/JS-throw/</link>
       <guid>https://pearlchocolatezy.com/2024/07/07/JS-throw/</guid>
       <pubDate>Sun, 07 Jul 2024 03:39:01 GMT</pubDate>
@@ -89,7 +89,7 @@
     </item>
     
     <item>
-      <title>JS中for循环使用let和var声明计数变量i的区别</title>
+      <title>JS：for循环中的闭包问题</title>
       <link>https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/</link>
       <guid>https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/</guid>
       <pubDate>Mon, 01 Jan 2024 14:11:51 GMT</pubDate>
