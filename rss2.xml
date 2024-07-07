@@ -9,8 +9,33 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Tue, 18 Jun 2024 14:20:56 GMT</pubDate>
+    <pubDate>Sun, 07 Jul 2024 03:57:29 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>JS中throw的用法</title>
+      <link>https://pearlchocolatezy.com/2024/07/07/JS-throw/</link>
+      <guid>https://pearlchocolatezy.com/2024/07/07/JS-throw/</guid>
+      <pubDate>Sun, 07 Jul 2024 03:39:01 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;js抛出异常的写法：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>js抛出异常的写法：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> <span class="string">&#x27;...&#x27;</span>;</span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;...&#x27;</span>);<span class="comment">//抛出错误提示</span></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ReferenceError</span>(<span class="string">&#x27;...&#x27;</span>);<span class="comment">//没有某个变量或属性</span></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&#x27;...&#x27;</span>);<span class="comment">//变量类型错误</span></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RangeError</span>(<span class="string">&#x27;...&#x27;</span>);<span class="comment">//比如判断a&gt;100则抛出错误</span></span><br></pre></td></tr></table></figure><p>js可以通过try catch(err)捕获异常。<br>以<code>throw &#39;...&#39;</code>为例：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="keyword">let</span> thisHour=<span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getHours</span>();</span><br><span class="line"><span class="keyword">if</span>(thisHour&gt;<span class="number">20</span>)&#123;</span><br><span class="line"><span class="keyword">throw</span> <span class="string">&#x27;Too Late!&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">concole.<span class="title function_">log</span>(e);<span class="comment">//Too Late!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>js可用于throw的原生构造函数详见<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Error">mdn</a>，这些方法都有自带的属性可用于获取error信息。<br>throw方法通过主观判断选用，选择标准就是方法名字面含义，这些手动抛出的错误不是语法错误，而是逻辑错误。</p><p>也可以自己写一个构造函数MyError抛出：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">MyError</span>(<span class="params">msg</span>)&#123;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">message</span>=msg;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">my_title</span>=<span class="string">&#x27;MyException&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="keyword">let</span> thisMonth=<span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getMonth</span>()+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(thisMonth&gt;<span class="number">10</span>)&#123;</span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">MyError</span>(<span class="string">&#x27;So Cold!!!&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;<span class="comment">//throw的实例对象获取在catch的参数里</span></span><br><span class="line">concole.<span class="title function_">log</span>(e.<span class="property">my_title</span>,e.<span class="property">message</span>);<span class="comment">//MyException So Cold!!!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>catch块内还可以再次抛出错误，由外层捕获。</p><p>End.🐧</p>]]></content:encoded>
+      
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/JavaScript/">JavaScript</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2024/07/07/JS-throw/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>回杭的日子3</title>
@@ -20,12 +45,12 @@
       
         
         
-      <description>&lt;p&gt;我感觉到杭州在呼唤我，于是我就来了。&lt;br&gt;唤我的是源自法喜寺『莫向外求』的牌匾。不过，要真悟透了这个词，我就不该来杭州才对，而是自己去践行这份困难的领悟。&lt;br&gt;可我还是来了，我太想念杭州了。&lt;br&gt;落地便是一场雨，杭州的雨和街景总像是一道传说，闻一闻空气中的水汽，我便也</description>
+      <description>&lt;iframe id=&quot;music_iframe&quot; frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain</description>
         
       
       
       
-      <content:encoded><![CDATA[<p>我感觉到杭州在呼唤我，于是我就来了。<br>唤我的是源自法喜寺『莫向外求』的牌匾。不过，要真悟透了这个词，我就不该来杭州才对，而是自己去践行这份困难的领悟。<br>可我还是来了，我太想念杭州了。<br>落地便是一场雨，杭州的雨和街景总像是一道传说，闻一闻空气中的水汽，我便也在传说之中了。<br>团购了一家酒店的自助餐，这家酒店有种二十年前的典雅和干净。吃到了可露丽和好多种海鲜，小酌了一点点白葡萄酒，比想象中的要好喝，举着高脚杯走在大堂里的自己像是宴会上的名媛。<br>最让人惊喜的是，从酒店走出没几步就望见了西湖。原来这是我们之前因为迷路而错过1314路公交车的地方，说不定这一次不会再错过。看见为了觅食在水流湍急的桥洞边疯狂试探的白鹭，看见带着女儿笑眯眯问路的美女，看见远处融化在水墨画里的西湖。“你知道西湖在哪里吗？”真是一句太美的话语了，足够我怀念许久。而让我更欣喜的，是这个面带笑容的女人也即将见到如画的风光。</p><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/smh.jpg" alt="水墨江南" width="50%"><h3 id="雨西湖"><a href="#雨西湖" class="headerlink" title="雨西湖"></a>雨西湖</h3><p>雨渐渐变小了，等我们抵达苏东坡纪念馆，坐上西湖边的手摇船，就只剩下濛濛细雨。<br>坐上船的那一刻，我们便成为了路人眼里的风景，而我已无暇顾及。飘荡在西湖的中央，被丝绸般的涟漪托举着，时而有小动物从船身边游过，伸手抚过柔软的湖水……有点像是<a href="https://book.douban.com/subject/1455527/">《风之谷》</a>中穿梭在森林里的娜乌西卡。<br>划过桥洞，穿越绿野仙踪，前面是里西湖，雨已经停了，风平浪静，绿意葱茏。这里真的是动植物的乐园，与充满烟火气的人间社会仿佛是两个世界，要是沉浸于此好像就会被留在这里再也回不去一样。由于没有野外生存经验，再加上里西湖平静得几乎听不到人的声音，我反而感受到了一丝恐惧。西湖，我看见了她温柔与包容以外的另一面，这种苍茫的不顾人反对的生命力自成威慑和统治。<br>但是相比恐惧，我感受到更多的是美丽和感动。<br>船篷与被雨打湿垂下的树叶擦肩而过，船夫指给我们看树干边站着躲雨的灰鹭，那么她的对象夜鹭在哪儿呢？原来是站在湖中的桩子上梳洗毛发呢。水是绿色的，却不觉得浑浊，隐约能看到湖中的水草和小鱼，这使我想起了刚刚打过照面那只险中觅食的白鹭，它真应该到这儿来瞧一瞧。远处的、近处的不同品种的草木各有各的绿，如果大自然是调色盘，那必定绿色是统治色。居住在城市里太少接近这样扑面而来的绿了，好几次我几乎要落下泪来。<br>随着小船驶入乌龟潭，映入眼帘的是“丹心托月”于谦祠，牌坊上俊秀的字迹一下子又把我带到了明代，虽然记不太清关于他的历史，却几乎人人能背上两句《石灰吟》——“粉骨碎身全不怕，要留清白在人间。”即使不知道他的故事，也能想象古往今来的人们路过此地会如何怀念这位名士。即使不记得，这片山水也会静静守护着这段历史记忆，英雄的灵魂与西湖的生命力相互依托、彼此守护，引人入胜——“要记得”。<br>关于西湖给我的震撼说不尽，道不尽……</p><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/syc1.jpg" alt="包包上是西湖风景区古地图哦" width="50%"><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/syc2.jpg" alt="手摇船" width="50%"><h3 id="天竺路"><a href="#天竺路" class="headerlink" title="天竺路"></a>天竺路</h3><p>此行的目的地是天竺路和法喜寺。因为读了王旭烽的<a href="https://book.douban.com/subject/36207951/">《南方有嘉木》</a>，书中赠送的古地图上有长长的天竺路，和它途经的三天竺、中天竺、上天竺。很好奇，手机地图上的天竺路是一片绿色中间的狭长路线。这使我不禁想象，如果我打车走天竺路，是不是吃饭只能找沿途的小餐馆，连地图都没有录上那种……<br>我并没有带着我的主观猜测去走天竺路，因为那天突然发现，没办法打车去法喜寺了，西湖风景区内小汽车限行了。只好改变计划，坐要花费多一倍时间的公交车，奇妙的是，可以进入天竺路的竟然是1314路。就像我和咕咕一样，错过又相遇。命运终究会以另一种方式弥补我的遗憾。<br>公交车开进了只有一条车道的山路，两侧除了偶有卖茶的小房子，就是大片的茶园，满山的茶树。这条路在古代是怎样的呢？是因为山路本身有些崎岖，还是因为前往上天竺朝圣的人内心纯粹？所以没在这条路上留下太多人为的痕迹。到站下车，还需往山上步行一段路，不远处就是法喜寺。<br>寺庙是心的容器，“莫向外求”，所以即便到了这里也得不到什么答案，从佛像的眼中只能看见自己。走在寺庙里，最好是人不太多的时候，总能给我一种舒适的感觉，它不掠夺我，它不引诱我，它只问我“我是谁”，它祈祷我如我所是，不管他人或者自己再怎样否认，再怎样批判自己的存在，我终将如我所是，我终将经历我想要的过程，抵达我想去的地方。旅行是假，修行是真，借假修真，那更要玩得尽兴。网红推荐的美景机位要看一看，前人留下的警世名句要读一读，卖周边的小店要逛一逛，赏鱼赏鸟赏亭台楼阁。<br>去年去灵隐寺是带着诉求的，灵隐寺给了我祝福，而这次游玩法喜寺不带诉求也能尽兴而归。这让我想到，我在灵隐寺的诉求并不是在当时得到回应的，而是通过后来“向内求”逐渐实现的，从法喜寺回来后，关于如何创造自己的人生，我好像更明白一点了。</p><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/fxs.jpg" alt="法喜寺" width="30%">]]></content:encoded>
+      <content:encoded><![CDATA[<iframe id="music_iframe" frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=4&id=979407635&auto=0&height=66"></iframe><br><p>我感觉到杭州在呼唤我，于是我就来了。<br>唤我的是源自法喜寺『莫向外求』的牌匾。不过，要真悟透了这个词，我就不该来杭州才对，而是自己去践行这份困难的领悟。<br>可我还是来了，我太想念杭州了。<br>落地便是一场雨，杭州的雨和街景总像是一道传说，闻一闻空气中的水汽，我便也在传说之中了。<br>团购了一家酒店的自助餐，这家酒店有种二十年前的典雅和干净。吃到了可露丽和好多种海鲜，小酌了一点点白葡萄酒，比想象中的要好喝，举着高脚杯走在大堂里的自己像是宴会上的名媛。<br>最让人惊喜的是，从酒店走出没几步就望见了西湖。原来这是我们之前因为迷路而错过1314路公交车的地方，说不定这一次不会再错过。看见为了觅食在水流湍急的桥洞边疯狂试探的白鹭，看见带着女儿笑眯眯问路的美女，看见远处融化在水墨画里的西湖。“你知道西湖在哪里吗？”真是一句太美的话语了，足够我怀念许久。而让我更欣喜的，是这个面带笑容的女人也即将见到如画的风光。</p><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/smh.jpg" alt="水墨江南" width="50%"><h3 id="雨西湖"><a href="#雨西湖" class="headerlink" title="雨西湖"></a>雨西湖</h3><p>雨渐渐变小了，等我们抵达苏东坡纪念馆，坐上西湖边的手摇船，就只剩下濛濛细雨。<br>坐上船的那一刻，我们便成为了路人眼里的风景，而我已无暇顾及。飘荡在西湖的中央，被丝绸般的涟漪托举着，时而有小动物从船身边游过，伸手抚过柔软的湖水……有点像是<a href="https://book.douban.com/subject/1455527/">《风之谷》</a>中穿梭在森林里的娜乌西卡。<br>划过桥洞，穿越绿野仙踪，前面是里西湖，雨已经停了，风平浪静，绿意葱茏。这里真的是动植物的乐园，与充满烟火气的人间社会仿佛是两个世界，要是沉浸于此好像就会被留在这里再也回不去一样。由于没有野外生存经验，再加上里西湖平静得几乎听不到人的声音，我反而感受到了一丝恐惧。西湖，我看见了她温柔与包容以外的另一面，这种苍茫的不顾人反对的生命力自成威慑和统治。<br>但是相比恐惧，我感受到更多的是美丽和感动。<br>船篷与被雨打湿垂下的树叶擦肩而过，船夫指给我们看树干边站着躲雨的灰鹭，那么她的对象夜鹭在哪儿呢？原来是站在湖中的桩子上梳洗毛发呢。水是绿色的，却不觉得浑浊，隐约能看到湖中的水草和小鱼，这使我想起了刚刚打过照面那只险中觅食的白鹭，它真应该到这儿来瞧一瞧。远处的、近处的不同品种的草木各有各的绿，如果大自然是调色盘，那必定绿色是统治色。居住在城市里太少接近这样扑面而来的绿了，好几次我几乎要落下泪来。<br>随着小船驶入乌龟潭，映入眼帘的是“丹心托月”于谦祠，牌坊上俊秀的字迹一下子又把我带到了明代，虽然记不太清关于他的历史，却几乎人人能背上两句《石灰吟》——“粉骨碎身全不怕，要留清白在人间。”即使不知道他的故事，也能想象古往今来的人们路过此地会如何怀念这位名士。即使不记得，这片山水也会静静守护着这段历史记忆，英雄的灵魂与西湖的生命力相互依托、彼此守护，引人入胜——“要记得”。<br>关于西湖给我的震撼说不尽，道不尽……</p><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/syc1.jpg" alt="包包上是西湖风景区古地图哦" width="50%"><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/syc2.jpg" alt="手摇船" width="50%"><h3 id="天竺路"><a href="#天竺路" class="headerlink" title="天竺路"></a>天竺路</h3><p>此行的目的地是天竺路和法喜寺。因为读了王旭烽的<a href="https://book.douban.com/subject/36207951/">《南方有嘉木》</a>，书中赠送的古地图上有长长的天竺路，和它途经的三天竺、中天竺、上天竺。很好奇，手机地图上的天竺路是一片绿色中的狭长路线。这使我不禁想象，如果我打车走天竺路，是不是吃饭只能找沿途的小餐馆，连地图都没有录上那种……<br>我并没有带着我的主观猜测去走天竺路，因为那天突然发现，没办法打车去法喜寺了，西湖风景区内小汽车限行了。只好改变计划，坐要花费多一倍时间的公交车，奇妙的是，可以进入天竺路的竟然是1314路！就像我和咕咕一样，错过又相遇。命运终究会以另一种方式弥补我的遗憾。<br>公交车开进了只有一条车道的山路，两侧除了偶有卖茶的小房子，就是大片的茶园，满山的茶树。这条路在古代是怎样的呢？是因为山路本身有些崎岖，还是因为前往上天竺朝圣的人内心纯粹？所以没在这条路上留下太多人为的痕迹。到站下车，还需往山上步行一段路，不远处就是法喜寺。<br>寺庙是心的容器，“莫向外求”，所以即便到了这里也得不到什么答案，从佛像的眼中只能看见自己。走在寺庙里，最好是人不太多的时候，总能给我一种舒适的感觉，它不掠夺我，它不引诱我，它只问我“我是谁”，它祈祷我如我所是，不管他人或者自己再怎样否认，再怎样批判自己的存在，我终将如我所是，我终将经历我想要的过程，抵达我想去的地方。旅行是假，修行是真，借假修真，那更要玩得尽兴。网红推荐的美景机位要看一看，前人留下的警世名句要读一读，卖周边的小店要逛一逛，赏鱼赏鸟赏亭台楼阁。<br>去年去灵隐寺是带着诉求的，灵隐寺给了我祝福，而这次游玩法喜寺不带诉求也能尽兴而归。这让我想到，我在灵隐寺的诉求并不是在当时得到回应的，而是通过后来“向内求”逐渐实现的，从法喜寺回来后，关于如何创造自己的人生，我好像更明白一点了。</p><img class="zy_img_shadow" src="/2024/06/16/BackToHangzhou3/fxs.jpg" alt="法喜寺" width="30%">]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
@@ -131,7 +156,7 @@
       
       
       
-      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1396049476&auto=0&height=66&vol=0.2"></iframe><br><p>“最忆是杭州”，对杭州的思恋从未停歇，想着什么时候再去一次。买了关于杭州的小说，还没读完，就到了出发的日子。<br>天气骤冷，这个冬天第一次穿上小面包羽绒服便是出发那天。<br>抵达城站的时候已是夜晚，外面并未如网上所说的那样下雪，路边堆着湿漉漉的落叶，公交车经过的西湖边几乎一个人也没有。</p>]]></content:encoded>
+      <content:encoded><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1396049476&auto=0&height=66&vol=0.2"></iframe><br><p>“最忆是杭州”，对杭州的思恋从未停歇，想着什么时候再去一次。买了关于杭州的小说，还没读完，就到了出发的日子。<br>天气骤冷，这个冬天第一次穿上小面包羽绒服便是出发那天。<br>抵达城站的时候已是夜晚，外面并未如网上所说的那样下雪，路边堆着湿漉漉的落叶，公交车经过的西湖边几乎一个人也没有。晚间的杭州是橘褐色的。</p>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
@@ -239,33 +264,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2023/04/06/ThousandSails/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>HTML中的meta标签</title>
-      <link>https://pearlchocolatezy.com/2023/03/28/HtmlMeta/</link>
-      <guid>https://pearlchocolatezy.com/2023/03/28/HtmlMeta/</guid>
-      <pubDate>Tue, 28 Mar 2023 12:14:57 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;meta标签用来提供有关html文档的元数据，用户看不到，蛋浏览器可以识别，对SEO（搜索引擎优化）有重要作用。&lt;/p&gt;
-&lt;h2 id=&quot;常</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>meta标签用来提供有关html文档的元数据，用户看不到，蛋浏览器可以识别，对SEO（搜索引擎优化）有重要作用。</p><h2 id="常用meta标签列举"><a href="#常用meta标签列举" class="headerlink" title="常用meta标签列举"></a>常用meta标签列举</h2><h3 id="1-author"><a href="#1-author" class="headerlink" title="1. author"></a>1. author</h3><p>表示网页作者的名字、组织、机构。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">content</span>=<span class="string">&quot;www.author.com&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="2-description"><a href="#2-description" class="headerlink" title="2. description"></a>2. description</h3><p>一段简短的，对页面的描述。<br>一般显示在搜索引擎中对网页的描述。但是搜索引擎也会抓取网页中最匹配的一段文字显示。<br>怎么写：一到两个关键词，150字左右，添加关键信息，内容匹配度高，适当增加一些“learn more”等引导词。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;欢迎来到珍珠巧克力的小站！&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-keywords"><a href="#3-keywords" class="headerlink" title="3. keywords"></a>3. keywords</h3><p>与页面相关的关键词，部分搜索引擎会根据这些关键词对文章进行分类。<br>目前对于SEO不一定有用了（关键词的堆砌有讨好搜索引擎的嫌疑）。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;关键词1、关键词2、关键词3&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="4-viewport"><a href="#4-viewport" class="headerlink" title="4. viewport"></a>4. viewport</h3><p>viewport(视口)是指设备屏幕上能用来显示网页的那一块区域。<br>为视口的初始大小提供指示，仅用于移动设备。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>width设置viewport的宽度为设备宽度（css像素），device-width是指这个设备最理想的viewport宽度；<br>initial-scale为设备宽度与viewport大小之间的缩放比例。</p>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/HTML/">HTML</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2023/03/28/HtmlMeta/#disqus_thread</comments>
       
     </item>
     
