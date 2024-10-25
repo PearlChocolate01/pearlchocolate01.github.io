@@ -26,5 +26,12 @@ console.log(`
 
 `);
 
+// document.write(`
+// <script type="module">
+//   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+//   mermaid.initialize({ startOnLoad: true });
+// </script>
+// `);
+
 //console.log($("iframe"))
 //$("#zy_iframe").contents().find("a").css('cursor', '../css/mouse/ania/ania_link.cur');
