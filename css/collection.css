@@ -1,0 +1,60 @@
+.ani {
+	display: flex;
+	text-align: left;
+	margin-bottom: 30px;
+}
+
+.img_d {
+	/* margin-top: 10px; */
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 180px;
+	width: 130px;
+	overflow: hidden;
+	display:inline-block;
+}
+.animation_img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+
+.ani_info {
+	width: 45%;
+	display:inline-block;
+}
+
+.ani_p {
+	line-height: 1.03;
+}
+
+.p_line{
+	line-height:1.7;
+}
+
+.ani_comment{
+	width: 35%;
+	display:inline-block;
+	
+}
+
+@media(max-width:368px) {
+	.ani {
+		display: block;
+	}
+
+	.img_d {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.ani_info {
+		width: 100%;
+	}
+	
+	.ani_comment{
+		width: 100%;
+	}
+	
+}

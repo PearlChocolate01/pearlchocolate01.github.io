@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JS：for循环中的闭包问题 | 珍珠巧克力</title><meta name="author" content="Zong Yi"><meta name="copyright" content="Zong Yi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer-when-downgrade"><meta name="description" content="一、for循环的基本情况 父子作用域初始化for循环时，()内的代码处在父作用域，{}内的代码处在子作用域。 块作用域var声明的是全局变量，每次循环修改的都是同一个i。let声明的变量具有块作用域，每次循环创建新的i。 变量提升var声明的变量会被提升到所在函数作用域的顶部，即便在声明该变量之前使用也不会抛出错误，而是返回undefined。let声明的变量不存在变量提升，如果在声明之前使用le">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS：for循环中的闭包问题">
+<meta property="og:url" content="https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/index.html">
+<meta property="og:site_name" content="珍珠巧克力">
+<meta property="og:description" content="一、for循环的基本情况 父子作用域初始化for循环时，()内的代码处在父作用域，{}内的代码处在子作用域。 块作用域var声明的是全局变量，每次循环修改的都是同一个i。let声明的变量具有块作用域，每次循环创建新的i。 变量提升var声明的变量会被提升到所在函数作用域的顶部，即便在声明该变量之前使用也不会抛出错误，而是返回undefined。let声明的变量不存在变量提升，如果在声明之前使用le">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pearlchocolatezy.com/img/bg_js.jpg">
+<meta property="article:published_time" content="2024-01-01T14:11:51.000Z">
+<meta property="article:modified_time" content="2024-07-14T05:53:36.000Z">
+<meta property="article:author" content="Zong Yi">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="ES6">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pearlchocolatezy.com/img/bg_js.jpg"><link rel="shortcut icon" href="/img/touxiang_yuki_small.png"><link rel="canonical" href="https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JS：for循环中的闭包问题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-14 13:53:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/zy.css"><script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script><script type="text/javascript" src="/js/zy.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="珍珠巧克力" type="application/rss+xml">
+</head><body><link rel="stylesheet" href="/css/loading-bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang_yuki.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bg_js.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">珍珠巧克力</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JS：for循环中的闭包问题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-01T14:11:51.000Z" title="发表于 2024-01-01 22:11:51">2024-01-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-14T05:53:36.000Z" title="更新于 2024-07-14 13:53:36">2024-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JS：for循环中的闭包问题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="一、for循环的基本情况"><a href="#一、for循环的基本情况" class="headerlink" title="一、for循环的基本情况"></a>一、for循环的基本情况</h3><ol>
+<li>父子作用域<br>初始化for循环时，()内的代码处在父作用域，{}内的代码处在子作用域。</li>
+<li>块作用域<br>var声明的是全局变量，每次循环修改的都是同一个i。<br>let声明的变量具有块作用域，每次循环创建新的i。</li>
+<li>变量提升<br>var声明的变量会被提升到所在函数作用域的顶部，即便在声明该变量之前使用也不会抛出错误，而是返回undefined。<br>let声明的变量不存在变量提升，如果在声明之前使用let声明的变量，会报错，该语法现象称为“<font title="TDZ:temporal dead zone" style="text-decoration:underline;">暂时性死区</font>”。<br>（如果在let块之外先用var声明的了同一名称的变量，在块外使用不会报错）<br>（在同一块内，不能重复声明let所声明的变量）</li>
+</ol>
+<p>首先得出结论，let比var更合理。</p>
+<h3 id="二、循环内部局部变量与调用栈"><a href="#二、循环内部局部变量与调用栈" class="headerlink" title="二、循环内部局部变量与调用栈"></a>二、循环内部局部变量与调用栈</h3><p>程序中的变量存储在栈或堆中。<br>基本数据类型（值类型）存储在栈中，八种基本数据类型包括：byte, short, int, long, float, double, char, boolean。<br>引用数据类型存储在堆中，包括：类(包括列表List等)，接口Interator，数组Array，枚举，注释，字符串等。<br>JS中有8种数据类型：Boolean, undefined, null, Number, BigInt(ES10), String ,Symbol(ES6), Object。前7种为基本类型，最后一种为引用类型。<br>栈是一整块连续的存储区域。由于栈有“先进后出”的特性，适合存储临时变量、局部变量、方法调用信息。<br>所以在JS的for循环中，最开始声明的计数变量i作为Number类型是存储在栈中。</p>
+<p>如果用let声明i，每循环一次，先释放前一次执行时的局部变量i，下一次又声明一个局部变量i，总是先释放栈，再压栈。<br>由于JavaScript引擎会进行垃圾回收、释放内存，每一次循环结束会销毁当前<font title="lexical envionment" style="text-decoration:underline;">词法环境</font>内所有不再需要的变量和引用，一般情况下每次循环声明的i都会位于同一内存地址；<br>特殊情况是，如果for循环内存在闭包函数，包含闭包函数的词法环境（也包括其中的i）不会被销毁，直到闭包函数自身被销毁，这种情况每次循环的i就不是位于同一地址了。</p>
+<h3 id="三、闭包"><a href="#三、闭包" class="headerlink" title="三、闭包"></a>三、闭包</h3><ol>
+<li><p>闭包是什么<br>只有用let声明变量i才会为每次循环创建一个新的块作用域，所以关于闭包的讨论仅限于用let声明i。<br>创建一个能够访问另一作用域变量的函数会产生闭包。<br>一个闭包包含一个函数及其所在词法环境。<br>以for循环为例，如在for循环内创建可以访问该循环作用域内的变量的函数，这个函数构成一个闭包。<br>闭包所在的作用域返回的局部变量不会被销毁，会占用内存，过度使用闭包会导致性能下降，建议不必要不使用。</p>
+</li>
+<li><p>JavaScript闭包机制<br>JavaScript闭包机制会保留for循环内部声明的闭包函数所在词法环境，闭包函数所引用的i就是它所属的那个循环内的i（同一个）。<br>当for循环内部创建的函数被调用时，会创建一个新的词法环境（词法环境是闭包的关键），但函数内调用的还是for循环当时的i。</p>
+</li>
+<li><p>闭包问题<br>当用var声明循环变量i时，在循环结束后执行闭包函数，如下示例，显然这段代码原本的目的是每次循环打出当时i的值，而此时每次打出来的都是i的最终值2，是一个常见的JS陷阱。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">	arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">0</span>]);<span class="comment">//2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">1</span>]);<span class="comment">//2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">2</span>]);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<p>写法等同于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">var</span> i=<span class="number">0</span>;<span class="comment">//全局变量</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">		arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">		i++;<span class="comment">//i=1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">		arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">		i++;<span class="comment">//i=2</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">		arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">		i++;<span class="comment">//i=3</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用var声明的i被提升到了父作用域的顶部，所以for循环结束后调用arr内的函数所引用的i都是最终值。<br>为了解决这个问题，有两种方法：<br>（1）使用let声明i</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">	arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">0</span>]);<span class="comment">//0</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">1</span>]);<span class="comment">//1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">2</span>]);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<p>写法等同于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line">&#123;</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">			arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">			i++;<span class="comment">//i=1</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">let</span> i=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">			arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">			i++;<span class="comment">//i=2</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">let</span> i=<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">			arr[i]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;</span><br><span class="line">			i++;<span class="comment">//i=3</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）使用立即执行函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  (<span class="keyword">function</span>(<span class="params">j</span>) &#123;</span><br><span class="line">    arr[j]=<span class="keyword">function</span>(<span class="params"></span>)&#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(j); &#125;</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>目的都是记录每个循环当时的变量i。<br>闭包会记住其外部的词法环境，即使外部作用域已经执行完毕，仍然能在将来某个时刻访问和使用这些变量，就是用这个原理闭包函数记住了当时的i。（占用内存警告_(:з」∠)_）</p>
+</li>
+</ol>
+<p>End.🐧</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com">Zong Yi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/">https://pearlchocolatezy.com/2024/01/01/JSForLetVsVar/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pearlchocolatezy.com" target="_blank">珍珠巧克力</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a><a class="post-meta__tags" href="/tags/ES6/">ES6</a></div><div class="post_share"><div class="social-share" data-image="/img/bg_js.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/02/01/YearEndReview2023/"><img class="prev-cover" src="/img/bg_ye2023.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2023年终总结</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/28/SwitchToSqlServerLogin/"><img class="next-cover" src="/img/bg_sqlserver.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQLServer安装时默认Windows身份验证如何改为SQLServer身份验证</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/07/13/JS-yield/" title="JS：yield、Iterator遍历器 与 Generator生成器函数"><img class="cover" src="/img/bg_js.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-13</div><div class="title">JS：yield、Iterator遍历器 与 Generator生成器函数</div></div></a></div><div><a href="/2023/03/16/FrontQuestions/" title="前端八股文"><img class="cover" src="/img/bg_frontQ.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-16</div><div class="title">前端八股文</div></div></a></div><div><a href="/2023/02/12/LearnES6/" title="ES6学习笔记"><img class="cover" src="/img/bg_es6_note.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-12</div><div class="title">ES6学习笔记</div></div></a></div><div><a href="/2024/07/07/JS-throw/" title="JS：throw的用法"><img class="cover" src="/img/bg_js.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-07</div><div class="title">JS：throw的用法</div></div></a></div><div><a href="/2023/03/25/LoopInJS/" title="JS中的常用循环遍历方法|数组的常用方法"><img class="cover" src="/img/bg_loop.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-25</div><div class="title">JS中的常用循环遍历方法|数组的常用方法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang_yuki.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zong Yi</div><div class="author-info__description">Mon panache. - 我的勇气。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pearlchocolate01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://pearlchocolatezy.com/rss2.xml" target="_blank" title="RSS"><i class="fa-solid fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">(๑╹ヮ╹๑)ﾉ  欢迎来到珍珠巧克力的小站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81for%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5"><span class="toc-number">1.</span> <span class="toc-text">一、for循环的基本情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BE%AA%E7%8E%AF%E5%86%85%E9%83%A8%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%8E%E8%B0%83%E7%94%A8%E6%A0%88"><span class="toc-number">2.</span> <span class="toc-text">二、循环内部局部变量与调用栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%97%AD%E5%8C%85"><span class="toc-number">3.</span> <span class="toc-text">三、闭包</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/05/LearnJSP/" title="JavaWeb：JSP概述"><img src="/img/bg_jsp.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaWeb：JSP概述"/></a><div class="content"><a class="title" href="/2024/09/05/LearnJSP/" title="JavaWeb：JSP概述">JavaWeb：JSP概述</a><time datetime="2024-10-25T14:54:08.000Z" title="更新于 2024-10-25 22:54:08">2024-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/16/LearnOS2/" title="操作系统概述2"><img src="/img/bg_os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统概述2"/></a><div class="content"><a class="title" href="/2024/10/16/LearnOS2/" title="操作系统概述2">操作系统概述2</a><time datetime="2024-10-16T14:35:52.000Z" title="更新于 2024-10-16 22:35:52">2024-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/26/LearnOS/" title="操作系统概述"><img src="/img/bg_os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统概述"/></a><div class="content"><a class="title" href="/2024/09/26/LearnOS/" title="操作系统概述">操作系统概述</a><time datetime="2024-10-16T14:26:46.000Z" title="更新于 2024-10-16 22:26:46">2024-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/02/LearnDB/" title="数据库系统原理概述"><img src="/img/bg_db.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库系统原理概述"/></a><div class="content"><a class="title" href="/2024/10/02/LearnDB/" title="数据库系统原理概述">数据库系统原理概述</a><time datetime="2024-10-06T01:28:54.000Z" title="更新于 2024-10-06 09:28:54">2024-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/16/FrontQuestions/" title="前端八股文"><img src="/img/bg_frontQ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端八股文"/></a><div class="content"><a class="title" href="/2023/03/16/FrontQuestions/" title="前端八股文">前端八股文</a><time datetime="2024-09-05T12:27:58.000Z" title="更新于 2024-09-05 20:27:58">2024-09-05</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022-12 - 2024 By Zong Yi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '8a1150939f4fa795f439',
+      clientSecret: 'ba1c39ca577e914d7e48639a4e1fb9b6ce67d8c8',
+      repo: 'pearlchocolate01.github.io',
+      owner: 'PearlChocolate01',
+      admin: ['PearlChocolate01'],
+      id: '798a95d3db7d5341f5707dc3f06dc1b6',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'DPq7jAfPBtKwlm2h1mA2KUVb-MdYXbMMI',
+      appKey: 'uLosrTMuocJInslQDE0UJEGE',
+      avatar: 'retro',
+      serverURLs: 'https://valine.pearlchocolatezy.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
