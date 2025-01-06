@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>计算机网络自顶向下（二）——应用层 | 珍珠巧克力</title><meta name="author" content="Zong Yi"><meta name="copyright" content="Zong Yi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer-when-downgrade"><meta name="description" content="应用层提纲目标：原理&amp;实例&amp;编程  应用层协议原理 Web and HTTP FTP* Email（1）SMTP（2）POP3（3）IMAP DNS P2P应用 CDN TCP套接字（Soclet）编程 UDP套接字编程  应用层原理网络应用的例子：E-mail，Web，文本消息，远程登录，P2P文件共享，即时通信，多用户网络游戏，流媒体（YouTube,Netflix），Inte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络自顶向下（二）——应用层">
+<meta property="og:url" content="https://pearlchocolatezy.com/2025/01/06/LearnNet2/index.html">
+<meta property="og:site_name" content="珍珠巧克力">
+<meta property="og:description" content="应用层提纲目标：原理&amp;实例&amp;编程  应用层协议原理 Web and HTTP FTP* Email（1）SMTP（2）POP3（3）IMAP DNS P2P应用 CDN TCP套接字（Soclet）编程 UDP套接字编程  应用层原理网络应用的例子：E-mail，Web，文本消息，远程登录，P2P文件共享，即时通信，多用户网络游戏，流媒体（YouTube,Netflix），Inte">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pearlchocolatezy.com/img/bg_net.jpg">
+<meta property="article:published_time" content="2025-01-06T13:19:12.000Z">
+<meta property="article:modified_time" content="2025-01-06T14:20:13.186Z">
+<meta property="article:author" content="Zong Yi">
+<meta property="article:tag" content="Net">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pearlchocolatezy.com/img/bg_net.jpg"><link rel="shortcut icon" href="/img/touxiang_yuki_small.png"><link rel="canonical" href="https://pearlchocolatezy.com/2025/01/06/LearnNet2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络自顶向下（二）——应用层',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-06 22:20:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/zy.css"><script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script><script type="text/javascript" src="/js/zy.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="珍珠巧克力" type="application/rss+xml">
+</head><body><link rel="stylesheet" href="/css/loading-bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang_yuki.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bg_net.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">珍珠巧克力</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络自顶向下（二）——应用层</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-06T13:19:12.000Z" title="发表于 2025-01-06 21:19:12">2025-01-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-06T14:20:13.186Z" title="更新于 2025-01-06 22:20:13">2025-01-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机网络自顶向下（二）——应用层"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="提纲"><a href="#提纲" class="headerlink" title="提纲"></a>提纲</h3><p>目标：原理&amp;实例&amp;编程</p>
+<ol>
+<li>应用层协议原理</li>
+<li>Web and HTTP</li>
+<li>FTP*</li>
+<li>Email<br>（1）SMTP（2）POP3（3）IMAP</li>
+<li>DNS</li>
+<li>P2P应用</li>
+<li>CDN</li>
+<li>TCP套接字（Soclet）编程</li>
+<li>UDP套接字编程</li>
+</ol>
+<h3 id="应用层原理"><a href="#应用层原理" class="headerlink" title="应用层原理"></a>应用层原理</h3><p>网络应用的例子：E-mail，Web，文本消息，远程登录，P2P文件共享，即时通信，多用户网络游戏，流媒体（YouTube,Netflix），Internet电话，实时电视会议，社交网络，搜索……<br>网络应用得到体系结构：客户-服务器模式（C/S），对等模式（P2P），混合体</p>
+<ol>
+<li>客户-服务器（C/S）体系结构<br>服务器：一直运行；固定的IP地址和周知的端口号（约定）；扩展性差；可靠性差（服务器会宕机）。<br>客户端：主动与服务器通信；与互联网有间歇性的连接；可能是动态IP地址；不直接与其它客户端通信。</li>
+<li>对等体（P2P）体系结构<br>（几乎）没有一直运行的服务器；<br>任意端系统之间可以进行通信；<br><font color="purple">每一个节点即是客户端又是服务器</font>，自扩展性；<br>参与的主机间歇性连接且可以改变IP地址（难以管理）。<br>e.g.迅雷</li>
+<li><p>C/S和P2P混合体<br>（1）e.g.Napster</p>
+<blockquote>
+<p>《Napster》是一个真实的案例，是一家音乐分享平台的。它以其革命性的P2P（点对点）文件共享技术引发了音乐行业的巨大变革，但最终因未能应对法律和商业压力而走向失败。如今Napster以经营付费服务为主，而免费的Napster的流行和回响使其在电脑界和娱乐业里成为一个传奇的象征。</p>
+</blockquote>
+<p> 文件搜索：集中<br> 文件传输：P2P<br> （2）即时通信</p>
+</li>
+<li>进程通信<br>进程：在主机上运行的应用程序<br>客户端进程：发起通信的进程<br>服务器进程：等待连接的进程<br>在同一个主机内，使用进程间通信机制通信（由操作系统定义）。<br>不同主机，通过交换报文（message）来通信（使用OS提供的通信服务；借助传输层的服务，按照应用协议交换报文）。<br>P2P架构也有客户端进程和服务器进程之分。</li>
+<li>分布式应用进程需要解决的问题<br>（1）进程标识和寻址问题（服务用户）<br>（2）传输层-应用层怎样提供服务（位置：层间界面的SAP；形式：应用程序接口API）<br>（3）如何使用传输层提供的服务，实现应用进程间的报文交换，实现应用（用户使用服务）（定义应用层协议，编制程序）<br><br><strong>（1）-&gt; 对进程进行编址（addressing）</strong><br>进程为了接收报文，必须有一个标识，即SAP（发送也需要标识）：<br>①每台主机有唯一的32位IP地址，但IP地址无法唯一标识一个进程。<br>②采用的传输层协议：TCP or UDP<br>③端口号（Port Numbers）<br>约定默认端口号：<br>FTP：21<br>Telnet：23<br>HTTP:TCP：80<br>MAIL:TCP：25<br>ftp:TCP：2<br>一个进程：IP+port标示端节点<br>本质上，一对主机进程之间的通信由2个端节点构成。<br>TCP和UDP使用端口的方式不同。<br><strong>（2）-&gt; 传输层提供的服务-需要穿过层间的信息</strong><br>层间接口必须要携带的信息：<br>①要传输的报文（本层SDU）<br>②谁传的：对方的应用进程标示：IP+TCP(UDP)端口<br>③传给谁：对方的应用进程标示：对方的IP+TCP(UDP)端口号<br>传输层实体（TCP or UDP实体）根据这些信息进程TCP报文段（UDP数据报）的封装。<br>如果Socket API每次传输报文，都携带这么多信息（IP+TCP/UDP端口），易出错，不易管理。<br><mark class="hl-label pink">TCP Socket</mark> ：TCP服务，两个进程通信之前需要建立连接（持续一段时间）。<br>可以用一个整数表示两个实体之间的通信关系（本地标示）；穿过层间的信息量最小。<br><font color="purple">TCP Socket是本地IP、本地TCP端口、对方IP、对方TCP端口以及连接状态的一个本地标识，是一个整数。</font>（会话关系的本地标识）<br>Socket是TCP之上的套接字。<font color="purple">4元组</font>，唯一指定一个会话。简单，便于管理。<br>TCP是传数据报和Socket这两样东西。<br><mark class="hl-label pink">UDP Socket</mark> ：UDP服务，两个进程通信前无需建立连接。<br>每条报文独立传输；前后报文可能给不同的分布式进程。因此只能用一个整数表示本应用实体的标示。穿过层间接口的信息量最小。<br><font color="purple">UDP Socket是本地IP、本地端口号的标识。2元组。</font>传输报文时需要提供对方IP、对方端口；接收报文时需要上传对方IP、对方端口。<br>UDP是传数据报、Socket、对方IP、对方端口号这四样东西。<br>套接字Socket像是门（饥荒小木牌）。进程向套接字发送报文或从套接字接收报文。<br><strong>（3.1）-&gt; 如何使用传输层提供的服务实现应用</strong><br>定义应用层协议：报文格式、解释、时序等。<br>编制程序：通过API调用网络基础设施提供通信服务传报文、解析报文、实现应用时序等。<br><mark class="hl-label pink">应用层协议</mark> 定义了运行在不同端系统上的应用进程如何交换报文，规范了报文类型、语法、语义、规则。<br>应用协议是应用的一个组成成分。<br>公开协议：HTTP，SMTP等。由RFC文档定义。<br>私有协议：Skype等。<br><strong>（3.2）-&gt; 应用层需要传输层提供什么样的服务</strong><br>要素：数据丢失率，延迟，吞吐，安全性。</li>
+<li>安全TCP<br>（1）TCP&amp;UDP<br>（2）SSL（Security Socket Layer）：基于TCP提供加密的TCP连接，位于应用层。<br>网站http开头：跑在TCP之上；https开头：跑在SSL over TCP之上。</li>
+</ol>
+<h3 id="Web-and-HTTP"><a href="#Web-and-HTTP" class="headerlink" title="Web and HTTP"></a>Web and HTTP</h3><p>Web网页：由一些对象组成（e.g.HTML文件、图片、Java小程序、mp3文件等）。<br>Web页含有一个基本的HTML文件，该文件包含若干对象的引用（链接）。<br>通过URL对每个对象进行引用，URL包含访问协议，用户名，口令字，端口号等。</p>
+<ol>
+<li>HTTP概况<br>HTTP：超文本传输协议。Web的应用层协议。<br>客户/服务器模式：<br>（1）客户：请求、接收和显示Web对象的浏览器。<br>（2）服务器：对请求进行响应，发送对象的Web服务器。<pre><code> PC/mobile browser-&gt;HTTP request
+                     HTTP response&lt;-Web server
+</code></pre>HTTP跑在TCP之上：<br>（1）客户发起与服务器的TCP连接（建立套接字）；<br>（2）服务器接收客户的TCP连接；<br>（3）在浏览器与Web服务器交换HTTP报文；<br>（4）关闭TCP连接。<br>HTTP是无状态的，服务器不维护。<br>服务器刚刚建立的时候，守候在默认的80端口，套接字为Socket1（S1）；一个连接建立起来后得到S2，又一个连接建立后得到S3，原来的S1等待着其它Web浏览器的并发建立连接请求。（S1是waiting socket，特殊socket）<br><strong>非持久HTTP</strong><br>最多只有一个对象在TCP连接上发送；<br>下载多个对象需要多个TCP连接；<br>HTTP/1.0使用非持久连接。<br>三次握手：[连接请求，连接确认，http request]，http response，关闭连接。（上传10个文件就重复操作这五步10次）<br>缺点：每个对象要两个RTT；操作系统必须为每个TCP连接分配资源；浏览器通常打开并行TCP连接以获取引用对象。<br><strong>持久HTTP</strong><br>多个对象可以在一个TCP上传输；<br>HTTP/1.1默认使用持久连接。<br>三次握手基础上不关闭连接。<br>优点：保持连接；反复请求，使用相同连接传送；引用对象可以尽快发送。<br>（1）非流水方式的持久HTTP：客户端收到一个响应才能发送新的请求；每个引用对象花费一个RTT。（串行）<br>（2）流水方式的持久HTTP：HTTP/1.1默认模式；客户端遇到一个引用对象就立刻产生一个请求；有可能所有引用对象只花费一个RTT。（并行，多线程）<br><strong>响应时间模型</strong><br>往返时间RTT：一次往返传播的时间（传播是两主机的距离要有时间，传输是把数据打到电线上要的时间。这里传输时间不计）<br>响应时间：一个RTT用来发起TCP连接，一个RTT用来发送HTTP请求并等待HTTP响应。<br>文件传输时间：2RTT+1个对象传输时间</li>
+<li>HTTP请求报文<br>两种类型：请求，响应<br>格式：ASCII，可读<br>HTTP请求报文：请求行（get,post,head命令） + 首部行（host,user-agent,connection等信息） + 换行回车符（表示结束）<br><img class="zy_img_shadow" src="/2025/01/06/LearnNet2/1.jpg" width="50%"><br>提交表单输入：post方式（网页通常包括表单输入，包含在实体主体中的输入被提交到服务器），url方式（通过请求行额度url字段上载）<br><code>www.123.com/test?monkeys&amp;banana</code></li>
+<li>HTTP响应报文<br>状态行（协议版本，状态码，状态信息） + 首部行 + 数据（e.g.请求的HTML文件）<br><a href>HTTP响应状态码</a>（待补充）</li>
+<li>用户-服务器状态：cookies<br>四个组成部分：。。。（刷到题再记）</li>
+<li>Web缓存 代理服务器（proxy server）<br>不访问原始服务器，就满足客户请求。<blockquote>
+<p>一类是Gib Mib Kib,代表的是1024进制的计数单位,一类是gb mb kb,代表的是1000进制的计数单位无特殊标注。<br>大部分简写都表示1024进制换算单位，u盘厂商一般是按1000进制换算的，这也是u盘插电脑上显示的内存都会比标注的少的原因。<br>速率按1000，大小按1024。<br>b是bit，B是字节。MBps和Mbps不一样。</p>
+</blockquote>
+</li>
+<li>条件get</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com">Zong Yi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com/2025/01/06/LearnNet2/">https://pearlchocolatezy.com/2025/01/06/LearnNet2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pearlchocolatezy.com" target="_blank">珍珠巧克力</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Net/">Net</a></div><div class="post_share"><div class="social-share" data-image="/img/bg_net.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/12/28/LearnNet/"><img class="next-cover" src="/img/bg_net.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机网络自顶向下（一）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/12/28/LearnNet/" title="计算机网络自顶向下（一）"><img class="cover" src="/img/bg_net.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-28</div><div class="title">计算机网络自顶向下（一）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang_yuki.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zong Yi</div><div class="author-info__description">Mon panache. - 我的勇气。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pearlchocolate01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://pearlchocolatezy.com/rss2.xml" target="_blank" title="RSS"><i class="fa-solid fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">(๑╹ヮ╹๑)ﾉ  欢迎来到珍珠巧克力的小站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%BA%B2"><span class="toc-number">1.1.</span> <span class="toc-text">提纲</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">应用层原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-and-HTTP"><span class="toc-number">1.3.</span> <span class="toc-text">Web and HTTP</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/01/06/LearnNet2/" title="计算机网络自顶向下（二）——应用层"><img src="/img/bg_net.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络自顶向下（二）——应用层"/></a><div class="content"><a class="title" href="/2025/01/06/LearnNet2/" title="计算机网络自顶向下（二）——应用层">计算机网络自顶向下（二）——应用层</a><time datetime="2025-01-06T14:20:13.186Z" title="更新于 2025-01-06 22:20:13">2025-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/28/LearnNet/" title="计算机网络自顶向下（一）"><img src="/img/bg_net.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络自顶向下（一）"/></a><div class="content"><a class="title" href="/2024/12/28/LearnNet/" title="计算机网络自顶向下（一）">计算机网络自顶向下（一）</a><time datetime="2025-01-06T13:23:05.419Z" title="更新于 2025-01-06 21:23:05">2025-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/26/LearnMarkdown/" title="Markdown常用语法"><img src="/img/bg_markdown.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown常用语法"/></a><div class="content"><a class="title" href="/2023/01/26/LearnMarkdown/" title="Markdown常用语法">Markdown常用语法</a><time datetime="2025-01-05T09:47:05.875Z" title="更新于 2025-01-05 17:47:05">2025-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/12/LearnES6/" title="ES6学习笔记"><img src="/img/bg_es6_note.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6学习笔记"/></a><div class="content"><a class="title" href="/2023/02/12/LearnES6/" title="ES6学习笔记">ES6学习笔记</a><time datetime="2024-12-27T14:25:18.482Z" title="更新于 2024-12-27 22:25:18">2024-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/13/JS-yield/" title="JS：yield、Iterator遍历器 与 Generator生成器函数"><img src="/img/bg_js.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS：yield、Iterator遍历器 与 Generator生成器函数"/></a><div class="content"><a class="title" href="/2024/07/13/JS-yield/" title="JS：yield、Iterator遍历器 与 Generator生成器函数">JS：yield、Iterator遍历器 与 Generator生成器函数</a><time datetime="2024-12-27T14:20:15.225Z" title="更新于 2024-12-27 22:20:15">2024-12-27</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022-12 - 2025 By Zong Yi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '8a1150939f4fa795f439',
+      clientSecret: 'ba1c39ca577e914d7e48639a4e1fb9b6ce67d8c8',
+      repo: 'pearlchocolate01.github.io',
+      owner: 'PearlChocolate01',
+      admin: ['PearlChocolate01'],
+      id: '13eddaa0240a7fd020e517465f3b5c4b',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'DPq7jAfPBtKwlm2h1mA2KUVb-MdYXbMMI',
+      appKey: 'uLosrTMuocJInslQDE0UJEGE',
+      avatar: 'retro',
+      serverURLs: 'https://valine.pearlchocolatezy.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
