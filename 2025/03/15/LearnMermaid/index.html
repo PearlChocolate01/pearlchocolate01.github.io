@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>如何在hexo-butterfly中画思维导图：Mermaid插件 | 珍珠巧克力</title><meta name="author" content="Zong Yi"><meta name="copyright" content="Zong Yi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer-when-downgrade"><meta name="description" content="mermaid在butterfly中的配置过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在hexo-butterfly中画思维导图：Mermaid插件">
+<meta property="og:url" content="https://pearlchocolatezy.com/2025/03/15/LearnMermaid/index.html">
+<meta property="og:site_name" content="珍珠巧克力">
+<meta property="og:description" content="mermaid在butterfly中的配置过程。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pearlchocolatezy.com/img/bg_mermaid.jpg">
+<meta property="article:published_time" content="2025-03-15T13:06:55.000Z">
+<meta property="article:modified_time" content="2025-03-15T14:21:27.016Z">
+<meta property="article:author" content="Zong Yi">
+<meta property="article:tag" content="Hexo|Butterfly">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pearlchocolatezy.com/img/bg_mermaid.jpg"><link rel="shortcut icon" href="/img/touxiang_yuki_small.png"><link rel="canonical" href="https://pearlchocolatezy.com/2025/03/15/LearnMermaid/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '如何在hexo-butterfly中画思维导图：Mermaid插件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-03-15 22:21:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/zy.css"><script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script><script type="text/javascript" src="/js/zy.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="珍珠巧克力" type="application/rss+xml">
+</head><body><link rel="stylesheet" href="/css/loading-bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang_yuki.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">51</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bg_mermaid.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">珍珠巧克力</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">如何在hexo-butterfly中画思维导图：Mermaid插件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-15T13:06:55.000Z" title="发表于 2025-03-15 21:06:55">2025-03-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-15T14:21:27.016Z" title="更新于 2025-03-15 22:21:27">2025-03-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">264</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="如何在hexo-butterfly中画思维导图：Mermaid插件"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>想要在hexo博客的markdown文档中添加思维导图（树状图/流程图）插件，问了下百度说有mermaid这个工具，发现butterfly的配置选项中自带mermaid。<br><a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/4aa8abbe">Butterfly 文檔(三) 主題配置</a>这篇教程说最好hexo要更新至7.0或以上版本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo --version</span><br></pre></td></tr></table></figure><br>使用这个语句查了一下发现我的hexo版本是6.3.0，时间有限想先试试不更新的办法。</p>
+<ol>
+<li>先在_config.butterfly.yml文件配置mermaid：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mermaid:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">code_write:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">default</span></span><br></pre></td></tr></table></figure></li>
+<li>在hexo的文件中配置：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">exclude_languages:</span> [<span class="string">&#x27;mermaid&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+<li>在markdown文章中添加code：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```&quot;mermaid&quot;  (实际没有引号)</span></span><br><span class="line"><span class="code">graph LR</span></span><br><span class="line"><span class="code">	A[根节点] --&gt; B[子节点1]</span></span><br><span class="line"><span class="code">	A --&gt; C[子节点2]</span></span><br><span class="line"><span class="code">	B --&gt; D[子节点1.1]</span></span><br><span class="line"><span class="code">```</span></span><br><span class="line">&#123;% mermaid %&#125;</span><br><span class="line">&#123;% endmermaid %&#125; </span><br></pre></td></tr></table></figure>
+写法很怪，但在hexo没升级的情况下能生效。<br>效果如下：<br><pre class="mermaid">graph LR
+ A[根节点] --> B[子节点1]
+ A --> C[子节点2]
+ B --> D[子节点1.1]</pre><div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  
+  </pre></div> 
+<img class="zy_img_shadow" src="/2025/03/15/LearnMermaid/../../../../album-doge/index/001-code.jpg" width="30%"><!--往上翻这么多层是因为编译后是按年月日分文件夹的--></li>
+</ol>
+<p>mermaid除了可以画思维导图、流程图以外，还可以画饼图等。<br>mermaid<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/627356428">中文教程</a><br>mermaid<a target="_blank" rel="noopener" href="https://mermaid.js.org/">官方文档</a></p>
+<p>End.🐧</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com">Zong Yi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com/2025/03/15/LearnMermaid/">https://pearlchocolatezy.com/2025/03/15/LearnMermaid/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pearlchocolatezy.com" target="_blank">珍珠巧克力</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo-Butterfly/">Hexo|Butterfly</a><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a></div><div class="post_share"><div class="social-share" data-image="/img/bg_mermaid.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/02/25/LearnNet13017/"><img class="next-cover" src="/img/bg_net.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">13017 计算机网络与信息安全</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/12/06/DeployHexoOnNewComputer/" title="换电脑后怎样迁移Hexo博客"><img class="cover" src="/img/bg_hexonewcomp.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-06</div><div class="title">换电脑后怎样迁移Hexo博客</div></div></a></div><div><a href="/2023/02/15/SetBlogCursorCSS/" title="Hexo|Butterfly修改鼠标指针样式"><img class="cover" src="/img/bg_ania_cursor.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-15</div><div class="title">Hexo|Butterfly修改鼠标指针样式</div></div></a></div><div><a href="/2023/01/15/SetArtitalk/" title="Hexo|Butterfly主题配置Artitalk说说功能"><img class="cover" src="/img/bg_artitalk.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-15</div><div class="title">Hexo|Butterfly主题配置Artitalk说说功能</div></div></a></div><div><a href="/2025/02/05/SolveSshError/" title="解决ssh: connect to host github.com port 22: Connection timed out"><img class="cover" src="/img/bg_hexonewcomp.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-05</div><div class="title">解决ssh: connect to host github.com port 22: Connection timed out</div></div></a></div><div><a href="/2023/01/26/LearnMarkdown/" title="Markdown常用语法"><img class="cover" src="/img/bg_markdown.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-26</div><div class="title">Markdown常用语法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang_yuki.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zong Yi</div><div class="author-info__description">Mon panache. - 我的勇气。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">51</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pearlchocolate01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://pearlchocolatezy.com/rss2.xml" target="_blank" title="RSS"><i class="fa-solid fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">(๑╹ヮ╹๑)ﾉ  欢迎来到珍珠巧克力的小站</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/02/25/LearnNet13017/" title="13017 计算机网络与信息安全"><img src="/img/bg_net.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="13017 计算机网络与信息安全"/></a><div class="content"><a class="title" href="/2025/02/25/LearnNet13017/" title="13017 计算机网络与信息安全">13017 计算机网络与信息安全</a><time datetime="2025-03-15T14:59:18.794Z" title="更新于 2025-03-15 22:59:18">2025-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/15/LearnMermaid/" title="如何在hexo-butterfly中画思维导图：Mermaid插件"><img src="/img/bg_mermaid.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何在hexo-butterfly中画思维导图：Mermaid插件"/></a><div class="content"><a class="title" href="/2025/03/15/LearnMermaid/" title="如何在hexo-butterfly中画思维导图：Mermaid插件">如何在hexo-butterfly中画思维导图：Mermaid插件</a><time datetime="2025-03-15T14:21:27.016Z" title="更新于 2025-03-15 22:21:27">2025-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/15/LearnCO/" title="13015 计算机系统原理"><img src="/img/bg_co.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="13015 计算机系统原理"/></a><div class="content"><a class="title" href="/2025/02/15/LearnCO/" title="13015 计算机系统原理">13015 计算机系统原理</a><time datetime="2025-02-25T14:04:05.117Z" title="更新于 2025-02-25 22:04:05">2025-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/20/PgsqlSumover/" title="PostgreSQL逐行累加——实现账目余额报表"><img src="/img/bg_pgsql.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PostgreSQL逐行累加——实现账目余额报表"/></a><div class="content"><a class="title" href="/2025/02/20/PgsqlSumover/" title="PostgreSQL逐行累加——实现账目余额报表">PostgreSQL逐行累加——实现账目余额报表</a><time datetime="2025-02-20T14:59:01.662Z" title="更新于 2025-02-20 22:59:01">2025-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/20/PgsqlRecursion/" title="PostgreSQL递归语法——读取树形结构表"><img src="/img/bg_pgsql.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PostgreSQL递归语法——读取树形结构表"/></a><div class="content"><a class="title" href="/2025/02/20/PgsqlRecursion/" title="PostgreSQL递归语法——读取树形结构表">PostgreSQL递归语法——读取树形结构表</a><time datetime="2025-02-20T14:55:20.124Z" title="更新于 2025-02-20 22:55:20">2025-02-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022-12 - 2025 By Zong Yi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '8a1150939f4fa795f439',
+      clientSecret: 'ba1c39ca577e914d7e48639a4e1fb9b6ce67d8c8',
+      repo: 'pearlchocolate01.github.io',
+      owner: 'PearlChocolate01',
+      admin: ['PearlChocolate01'],
+      id: 'cbd43c1ad651111e691bff79779d3f1a',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'DPq7jAfPBtKwlm2h1mA2KUVb-MdYXbMMI',
+      appKey: 'uLosrTMuocJInslQDE0UJEGE',
+      avatar: 'retro',
+      serverURLs: 'https://valine.pearlchocolatezy.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
