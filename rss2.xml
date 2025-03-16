@@ -9,8 +9,32 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sat, 15 Mar 2025 14:21:27 GMT</pubDate>
+    <pubDate>Sun, 16 Mar 2025 07:54:18 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>2024年终总结</title>
+      <link>https://pearlchocolatezy.com/2025/03/16/YearEndReview2024/</link>
+      <guid>https://pearlchocolatezy.com/2025/03/16/YearEndReview2024/</guid>
+      <pubDate>Sun, 16 Mar 2025 05:57:54 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;已经是2025年的3月了，生活没那么容易，但也没那么难，有很多要做也正在做的事，过去的一年做了很多的探索。生活的表象都仿佛是对内心世界的度量，苦苦渴求却还没得到的，真的不如现在带有偏见却已经拥有的吗？还是说，这苦苦追逐的感觉根本不是我想要的，根本就不存在需要去追逐的外物，我</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>已经是2025年的3月了，生活没那么容易，但也没那么难，有很多要做也正在做的事，过去的一年做了很多的探索。生活的表象都仿佛是对内心世界的度量，苦苦渴求却还没得到的，真的不如现在带有偏见却已经拥有的吗？还是说，这苦苦追逐的感觉根本不是我想要的，根本就不存在需要去追逐的外物，我能拥有的，只有当下，那些求不得是否都不如求自己来得痛快……<br>不一样的感觉是从何而来的？是因为我看着事物的区别，我评价，我归类，我选择了其中之一，否定了另一个选择，循环往复……即便我选择了其一，另一种存在也无法凭空消失，我看不惯，我感到不适，我觉得不想要的在干扰我获得想要的……人生就是这样子的吗？不对的。</p><p><strong>我只能创造我想要的生活。</strong></p><p>得不到的，只能祛魅，必须祛魅。已经得到的，学会珍惜，学会发现它们对我的意义。在已有的基础之上，将梦想变为现实。</p><p>前段时间看到的一段话给了我很大的触动，大致是说，“人的欲望分为三种：努力追求而求不得的，努力追求而得到的，没有追求就得到的。”这三种情形的感受是大不相同的，而只有最后一种才是理想的状态。<br>我在2023年终总结中所写的“向内求”，似乎在过去的一年里一定程度的落实了，但还不够，因为我很多时候还会因为求不得而痛苦，不够强大的内心还需要修炼。<br>但是无论如何，相对而言是对自己满意的。过去一年的思考与积累，承受过的情绪波澜，让我在新的一年里，自我攻击越来越少了，面对困难寻求解决方案的执行力更强了，即便还没有做成什么事，我也珍惜此刻充实的生活。</p><p>几年间一直在心头回响的“我不想得到答案”，在潜意识里的愿望就是“我要自己找到答案”。<br>只有创造的过程是幸福的。去创造，无论是否够到达彼岸。<br>这是我对2025年的祈愿。</p>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
+      
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/03/16/YearEndReview2024/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>如何在hexo-butterfly中画思维导图：Mermaid插件</title>
@@ -258,32 +282,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/02/04/LearnNet5/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>计算机网络自顶向下（四）——网络层</title>
-      <link>https://pearlchocolatezy.com/2025/01/30/LearnNet4/</link>
-      <guid>https://pearlchocolatezy.com/2025/01/30/LearnNet4/</guid>
-      <pubDate>Thu, 30 Jan 2025 02:44:10 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;网络层：数据平面&quot;&gt;&lt;a href=&quot;#网络层：数据平面&quot; class=&quot;headerlink&quot; title=&quot;网络层：数据平面&quot;&gt;&lt;/a&gt;网络层：数据平面&lt;/h2&gt;&lt;h3 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; titl</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="网络层：数据平面"><a href="#网络层：数据平面" class="headerlink" title="网络层：数据平面"></a>网络层：数据平面</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>理解网络服务的基本原理<br>网络服务模型<br>转发和路由<br>路由器工作原理<br>通用转发<br>网络层协议的实例</p><h3 id="网络层服务"><a href="#网络层服务" class="headerlink" title="网络层服务"></a>网络层服务</h3><ol><li>在发送主机和接收主机对之间传送段</li><li>在发送端，将段封装到数据报中</li><li>在接收端，将段上交给传输层实体</li><li>网络层协议存在于每一个主机和路由器</li><li>路由器检查每一个经过它的IP数据报的头部</li></ol><h3 id="路由器组成"><a href="#路由器组成" class="headerlink" title="路由器组成"></a>路由器组成</h3><h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>IP分片和重组<br>IP编址<br>子网：IP地址高位部分相同，无需路由器介入。<br>IP地址分类：A类（126 networks, 16million hosts），B类，C类（大部分）<br>127.x.x.x 表示回路地址：自上而下到达IP层再反转回去<br>DHCP协议：动态从服务器获取IP地址</p><h3 id="通用转发和SDN"><a href="#通用转发和SDN" class="headerlink" title="通用转发和SDN"></a>通用转发和SDN</h3><p>每个路由器都有控制平面和数据平面，分布化实现，用路由表粘连控制平面和数据平面（控制平面控制路由表，数据平面利用路由表信息进行转发）<br>SDN特点：1）基于流的匹配+行动；2）控制平面和数据平面分离；3）控制平面功能在数据交换设备之外实现；4）可编程控制应用。<br>SDN架构：（自下而上） 数据平面交换机（基于南向API，SDN控制器访问基于流的交换机)，SDN控制器（通过北向API和控制应用交互，通过南向API和网络交换机交互；逻辑上集中，实现上分布），控制应用（采用下层SDN控制器提供的API，实现网络功能，e.g.防火墙、接入控制、负载均衡）。<br>南向接口：SDN控制器（软件层面）与网络设备（硬件层面）之间的通信接口。e.g.OpenFlow<br>北向接口：提供给其他厂家或运营商进行接入和管理的接口，即向上提供的接口。<br>通用流表的组成：模式，行动，优先权，计数器<br>转发表和流表是怎样计算出来的：通过控制平面</p><h2 id="网络层：控制平面"><a href="#网络层：控制平面" class="headerlink" title="网络层：控制平面"></a>网络层：控制平面</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>传统路由选择算法<br>SDN控制器<br>ICMP<br>网络管理</p><h3 id="路由选择算法"><a href="#路由选择算法" class="headerlink" title="路由选择算法"></a>路由选择算法</h3><p>路由：按照某种指标（站数、延迟、费用、队列长度）找到一条从源节点到目标节点的较好路径<br>路由器之间的最优路径=主机对之间的最优路径<br>路由选择算法就是为所有路由路由器找到并使用汇集树。<br>路由选择算法的原则：正确性，简单性（不应为获取路由信息而增加通信量），健壮性（能适应通信量和网络拓扑变化），稳定性，公平性，最优性。<br><strong>链路状态算法 link state</strong><br>步骤：1）获得整个网络拓扑和边的代价信息（我的链路状态分组在全网泛洪）；2）计算本站点到其它站点的最优路径（Dijkstra算法，可以找例题！复杂度O(n^2)，堆优化后是O(nlogn)），得到路由表；3）按此路由表转发分组。<br>e.g.OSPF，IS-IS<br><strong>距离矢量算法 distance vector</strong><br>思想：各路由器维护一张到目标的路由表；各路由器与相邻路由器交换路由表；根据获得的路由信息更新路由表。（最后让各个节点收敛到一个真实状态）<br>特点：好消息传得快，坏消息传的慢（无穷计算-&gt;水平分裂算法：减少影响，不能杜绝发生）。</p><p>比较：<br>（1）消息复杂度：DV胜出<br>（2）收敛时间：LS胜出<br>（3）健壮性：LS胜出</p><h3 id="因特网中自治系统内部的路由器选择"><a href="#因特网中自治系统内部的路由器选择" class="headerlink" title="因特网中自治系统内部的路由器选择"></a>因特网中自治系统内部的路由器选择</h3><p>路由分为内部网关协议和外部网关协议。<br>内部网关协议有RIP协议和OSPF协议。<br>RIP(routing information protocal)协议基于DV算法。<br>OSPF(open shortest path first)协议基于LS算法。特性：安全，允许多个代价相同的路径存在，有多重代价矩阵。</p><h3 id="ISP之间的路由选择"><a href="#ISP之间的路由选择" class="headerlink" title="ISP之间的路由选择"></a>ISP之间的路由选择</h3><p>（自治区之间的路由选择协议，外部网关协议）<br>BGP协议：边界网关协议。将互联网各个自治系统(AS)粘在一起的胶水。<br>使用TCP协议交换BGP报文。（只要了解什么是层次性路由，为什么要用层次性路由）<br>层次路由的优点：解决了规模问题，解决了管理问题。<br>热土豆策略：选择具备最小内部区域代价的网关作为出口，不考虑代价。</p><h3 id="SDN控制平面"><a href="#SDN控制平面" class="headerlink" title="SDN控制平面"></a>SDN控制平面</h3><p>传统方式：per-router控制平面<br>SDN方式：逻辑上的集中控制平面（2005年后，详见上）<br>为什么需要逻辑上的集中控制平面：管理更容易，允许可编程的路由器，控制平面的开放实现<br>传统方式实现流量工程困难，用SDN方式容易。<br>SDN控制器的实现：ODL,ONOS</p><h3 id="ICMP-因特网控制报文协议"><a href="#ICMP-因特网控制报文协议" class="headerlink" title="ICMP 因特网控制报文协议"></a>ICMP 因特网控制报文协议</h3><h3 id="网络管理和SNMP"><a href="#网络管理和SNMP" class="headerlink" title="网络管理和SNMP"></a>网络管理和SNMP</h3>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Net/">Net</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/01/30/LearnNet4/#disqus_thread</comments>
       
     </item>
     
