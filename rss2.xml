@@ -9,8 +9,61 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sun, 16 Mar 2025 07:54:18 GMT</pubDate>
+    <pubDate>Tue, 18 Mar 2025 00:17:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>TCP拥塞控制</title>
+      <link>https://pearlchocolatezy.com/2025/03/17/13017-TCP-CC/</link>
+      <guid>https://pearlchocolatezy.com/2025/03/17/13017-TCP-CC/</guid>
+      <pubDate>Mon, 17 Mar 2025 13:26:38 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h3 id=&quot;一、原理-概念&quot;&gt;&lt;a href=&quot;#一、原理-概念&quot; class=&quot;headerlink&quot; title=&quot;一、原理/概念&quot;&gt;&lt;/a&gt;一、原理/概念&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;拥塞：某段时间内，对网络的某一资源的需求超过了该资源所能提供的可用部分，网络的性能就要变</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h3 id="一、原理-概念"><a href="#一、原理-概念" class="headerlink" title="一、原理/概念"></a>一、原理/概念</h3><ol><li>拥塞：某段时间内，对网络的某一资源的需求超过了该资源所能提供的可用部分，网络的性能就要变坏，这种情况就叫拥塞。</li><li>拥塞的直接后果：（1）时延增加；（2）分组丢弃。</li><li>拥塞控制：通过合理调度、规范、调整向网络中发送数据的主机数量、发送速率或数据量，以避免拥塞或尽快消除已发生的拥塞。</li><li>拥塞控制与流量控制的区别：拥塞控制就是防止过多的数据注入到网络中这样可以使网络中的路由器或链路不至于过载，拥塞控制有一个前提，就是网络能够承受现有的网络负荷，他是一个全局性过程。而流量控制往往是指点对点通信量的控制，是个端到端的问题。</li></ol><h3 id="二、方法-算法"><a href="#二、方法-算法" class="headerlink" title="二、方法/算法"></a>二、方法/算法</h3><p><pre class="mermaid">graph LRA[拥塞控制策略] -->B[拥塞预防]A-->C[拥塞消除]C-->|网络层| D[基于拥塞状态反馈的拥塞控制方法]C-->|传输层| E[无须拥塞状态反馈的拥塞控制方法]E-->F[慢开始 - 拥塞避免 - 快重传 - 快恢复]</pre><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div><br>无须进行拥塞状态反馈的拥塞控制方法：在主机(即端系统)推断网络是否发生拥塞（是否发生报文段的超时），如果推断网络已发生拥塞，则主动调整向网络中发送数据的速率和数据量，以便消除拥塞。e.g.TCP拥塞控制。</p><p>TCP进行拥塞控制的算法有四种（拥塞控制过程的四个部分）：慢开始，拥塞避免，快重传，快恢复。</p><p>窗口是什么？ 拥塞窗口是一个状态变量，变量大小取决于网络拥塞程度。<br>MSS是指TCP/IP协议栈中TCP协议层所能发送的最大报文段长度。</p><p>TCP 的拥塞控制也叫做基于窗口的拥塞控制。为此，发送方维持了叫做<strong>拥塞窗口 cwnd</strong>（congestion window）的状态变量。拥塞窗口的大小取决于网络的拥塞程度，并且动态地变化。发送方让自己的发送窗口等于拥塞窗口。<br><img src="/2025/03/17/13017-TCP-CC/TCP拥塞控制.png" width="70%"><br><img src="/2025/03/17/13017-TCP-CC/TCP拥塞控制2.png" width="70%"></p><p>发送方控制拥塞窗口cwnd的原则是：只要网络没有出现拥塞，拥塞窗口就可以再增大一些，以便把更多的分组发送出去，这样就可以提供网络的利用率。但只要网络出现拥塞或者可能出现拥塞，就必须把拥塞窗口减小一些，以减少注入到网络中的分组数，以便缓解网络出现的拥塞。<br>当网络发生拥塞时，路由器就要丢弃分组。只要发送方没有按时收到应当到达的确认报文，即出现了超时，可判断出现了网络拥塞。</p><p>TCP拥塞控制的窗口调节分为慢启动阶段和拥塞避免阶段，慢启动阶段窗口从一个MSS快速增长，达到某个阈值后转为拥塞避免阶段，拥塞避免阶段的窗口增长放慢。</p><p>慢启动阶段，每收到1个确认段，拥塞窗口增加1个MSS，每经过1RTT，拥塞窗口增长1倍；<br>在拥塞避免阶段，每经过l个RTT，拥塞窗口增加1个MSS。<br>发生超时（丢包）时，cwnd降至1MSS，阈值下降一半。<br>3次重复确认（丢包）时，旧版Tahoe中cwnd降至1MSS，新版Reno只下降一半。（题意不明时以新版为主）阈值均下降一半。</p>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/03/17/13017-TCP-CC/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>13017 计算机网络与信息安全——计算题</title>
+      <link>https://pearlchocolatezy.com/2025/03/17/LearnNet13017-2/</link>
+      <guid>https://pearlchocolatezy.com/2025/03/17/LearnNet13017-2/</guid>
+      <pubDate>Mon, 17 Mar 2025 12:53:40 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h3 id=&quot;三、传输层&quot;&gt;&lt;a href=&quot;#三、传输层&quot; class=&quot;headerlink&quot; title=&quot;三、传输层&quot;&gt;&lt;/a&gt;三、传输层&lt;/h3&gt;&lt;h4 id=&quot;1-假设甲、乙双方采用GBN协议发送报文段，甲已经发送了编号为0-7的报文段。当计时器超时时，若甲只收到0</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h3 id="三、传输层"><a href="#三、传输层" class="headerlink" title="三、传输层"></a>三、传输层</h3><h4 id="1-假设甲、乙双方采用GBN协议发送报文段，甲已经发送了编号为0-7的报文段。当计时器超时时，若甲只收到0号和3号报文段的确认，则甲需要重发的报文段有哪些？"><a href="#1-假设甲、乙双方采用GBN协议发送报文段，甲已经发送了编号为0-7的报文段。当计时器超时时，若甲只收到0号和3号报文段的确认，则甲需要重发的报文段有哪些？" class="headerlink" title="1. 假设甲、乙双方采用GBN协议发送报文段，甲已经发送了编号为0~7的报文段。当计时器超时时，若甲只收到0号和3号报文段的确认，则甲需要重发的报文段有哪些？"></a>1. 假设甲、乙双方采用<font color="mediumvioletred">GBN协议</font>发送报文段，甲已经发送了编号为0~7的报文段。当计时器超时时，若甲只收到0号和3号报文段的确认，则甲需要重发的报文段有哪些？</h4><blockquote><p>4~7号报文段要重新发送。</p></blockquote><p>【分析】GBN协议采用累积确认机制：即接收方只能按序接收数据分组，当发送方收到$ACK_n$时，表明接收方已正确接收序号$\le{n}$的所有分组。<br>GBN协议发送端的发送窗口数量$W_s\ge1$，接收端的接收窗口数量$W_r=1$（GBN协议的接收端无缓存能力，不能缓存未按序到达的分组）。<br>GBN发送方必须响应的三种事件：<br>（1）上层调用；<br>（2）收到1个$ACK_n$；<br>（3）计时器超时。<br>发送方收到3号帧的确认，意味着0、1、2、3号帧已被接收，因此需要重传的帧是 4、5、6、7 号帧。</p><h4 id="2-主机甲、乙通过128kbit-s卫星信道互连，采用滑动窗口协议发送数据，链路单向传播时延为250ms，分组长度为1000B。不考虑确认分组的开销，为使信道利用率不小于80-，分组序号字段的位数至少要达到多少？"><a href="#2-主机甲、乙通过128kbit-s卫星信道互连，采用滑动窗口协议发送数据，链路单向传播时延为250ms，分组长度为1000B。不考虑确认分组的开销，为使信道利用率不小于80-，分组序号字段的位数至少要达到多少？" class="headerlink" title="2. 主机甲、乙通过128kbit/s卫星信道互连，采用滑动窗口协议发送数据，链路单向传播时延为250ms，分组长度为1000B。不考虑确认分组的开销，为使信道利用率不小于80%，分组序号字段的位数至少要达到多少？"></a>2. 主机甲、乙通过128kbit/s卫星信道互连，采用<font color="mediumvioletred">滑动窗口协议</font>发送数据，链路单向传播时延为250ms，分组长度为1000B。不考虑确认分组的开销，为使信道利用率不小于80%，分组序号字段的位数至少要达到多少？</h4><blockquote><p>至少4位。</p></blockquote><p><img src="/2025/03/17/LearnNet13017-2/滑动窗口协议.png" width="70%"><br>【分析】（本题的分组理解为图上的帧）数据链路层，一次发一帧，相当于一次发1000B。发送帧有延迟，确认帧无延迟。<br>发送一帧的时间=发送延迟+发送时延+接收时延+接受延迟（接受延迟为0），即图中的a+b+c。<font color="silver">（一个RTT=一组发送时延+接收时延）</font><br>发送一帧的时间= $t_{seg}$ +RTT+ $t_{ack}$ ，本题$t_{seg}$=250ms，$t_{ack}$=0，RTT=1000*8bit/(128*1000)*2=1/$2_4$ms<br>按照信号利用率公式：<script type="math/tex">U_{sender} = \frac{W_s \times t_{seg}}{t_{seg}+RTT+t_{ack}}</script><br>发送延迟=一帧长度的发送延迟=$t_{seg}$=1000*8bit/(128*1000)=1/$2^3$ms<br>$W_s$相当于发送窗口的个数。</p><script type="math/tex; mode=display">U_{sender} = \frac{W_s \times 1/2^3}{1/2^4 + 1/2^3} \ge 0.8</script><script type="math/tex; mode=display">W_s \ge 7.2</script><p>分组序号范围是[1,$2^{n-1}$]<br>至少有：$7.2 \le W_s \le 8=2^3=2^{4-1}$<br>即窗口个数至少为8，n（位数）至少为4。</p><h4 id="3-若甲、乙之间已建立一条TCP连接，拥塞控制处于拥塞避免阶段，阈值为8MSS，当甲的拥塞窗口大小为24MSS时发生了超时，则甲的拥塞窗口和阈值将分别调整为多少？"><a href="#3-若甲、乙之间已建立一条TCP连接，拥塞控制处于拥塞避免阶段，阈值为8MSS，当甲的拥塞窗口大小为24MSS时发生了超时，则甲的拥塞窗口和阈值将分别调整为多少？" class="headerlink" title="3. 若甲、乙之间已建立一条TCP连接，拥塞控制处于拥塞避免阶段，阈值为8MSS，当甲的拥塞窗口大小为24MSS时发生了超时，则甲的拥塞窗口和阈值将分别调整为多少？"></a>3. 若甲、乙之间已建立一条TCP连接，拥塞控制处于拥塞避免阶段，阈值为8MSS，当甲的拥塞窗口大小为24MSS时发生了超时，则甲的拥塞窗口和阈值将分别调整为多少？</h4><blockquote><p>阈值=24/2=12MSS<br>拥塞窗口=1MSS</p></blockquote><p>【分析】结合 <a href="/2025/03/17/13017-TCP-CC/" title="TCP拥塞控制">TCP拥塞控制</a> 理解。<br>TCP拥塞避免阶段发生超时，cwnd降至1MSS，阈值降至原来的一半。</p><h4 id="4-主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了两个连续的TCP报文段，分别包含300B和500B的有效载荷，第一个报文段的序号为200，主机乙正确接收两个报文段后，发送给主机甲的确认序号是多少？"><a href="#4-主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了两个连续的TCP报文段，分别包含300B和500B的有效载荷，第一个报文段的序号为200，主机乙正确接收两个报文段后，发送给主机甲的确认序号是多少？" class="headerlink" title="4. 主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了两个连续的TCP报文段，分别包含300B和500B的有效载荷，第一个报文段的序号为200，主机乙正确接收两个报文段后，发送给主机甲的确认序号是多少？"></a>4. 主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了两个连续的TCP报文段，分别包含300B和500B的有效载荷，第一个报文段的序号为200，主机乙正确接收两个报文段后，发送给主机甲的确认序号是多少？</h4><blockquote><p>第一个报文段的确认序列号是200+300=500<br>第二个报文段的确认序列号是500+500=1000</p></blockquote><p>【分析】确认序列号=原始序列号+TCP段的长度</p><h4 id="5-主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了3-个连续的TCP报文段，分别包含300B、400B和500B的有效载荷，第3个报文段的序号为900。若主机乙仅正确接收到第1和第3个报文段，则主机乙发送给主机甲的确认序号是多少？"><a href="#5-主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了3-个连续的TCP报文段，分别包含300B、400B和500B的有效载荷，第3个报文段的序号为900。若主机乙仅正确接收到第1和第3个报文段，则主机乙发送给主机甲的确认序号是多少？" class="headerlink" title="5. 主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了3 个连续的TCP报文段，分别包含300B、400B和500B的有效载荷，第3个报文段的序号为900。若主机乙仅正确接收到第1和第3个报文段，则主机乙发送给主机甲的确认序号是多少？"></a>5. 主机甲与主机乙之间已建立一条TCP连接，主机甲向主机乙发送了3 个连续的TCP报文段，分别包含300B、400B和500B的有效载荷，第3个报文段的序号为900。若主机乙仅正确接收到第1和第3个报文段，则主机乙发送给主机甲的确认序号是多少？</h4><blockquote><p>500</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/03/17/LearnNet13017-2/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>2024年终总结</title>
@@ -62,7 +115,7 @@
     </item>
     
     <item>
-      <title>13017 计算机网络与信息安全</title>
+      <title>13017 计算机网络与信息安全——主观题</title>
       <link>https://pearlchocolatezy.com/2025/02/25/LearnNet13017/</link>
       <guid>https://pearlchocolatezy.com/2025/02/25/LearnNet13017/</guid>
       <pubDate>Tue, 25 Feb 2025 14:03:59 GMT</pubDate>
@@ -75,7 +128,7 @@
       
       
       
-      <content:encoded><![CDATA[<p>共十一章</p><h2 id="一、计算机网络与信息安全概述"><a href="#一、计算机网络与信息安全概述" class="headerlink" title="一、计算机网络与信息安全概述"></a>一、计算机网络与信息安全概述</h2><p><strong>大纲知识点</strong></p><ol><li><p>什么是计算机网络？</p><blockquote><p>计算机网络是计算机技术与通信技术相互融合的产物。<br>计算机网络是利用通信设备与通信链路或者通信网络，互连位置不同、功能自治的计算机系统，并遵循一定的规则实现计算机系统之间信息交换的系统。<br>计算机网络是互连的、自治的计算机的集合。<br>目前最大的、应用最广泛的计算机网络就是Internet（因特网）。</p></blockquote></li><li><p>网络协议的三要素是什么？每个要素的含义分别是什么</p><blockquote><p>语 法 （syntax）、语 义 （semantics） 和 时 序 （timing）。<br>语法定义实体之间交换信息的格式与结构。<br>语义定义实体之间交换的信息中需要发送哪些控制信息及其具体含义、接收端如何响应、差错处理机制。<br>时序也称为同步，定义实体之间交换信息的顺序以及如何匹配或适应彼此的速度。</p></blockquote></li><li><p>按网络覆盖范围划分，主要有哪几类计算机网络？它们各有什么特点？</p><blockquote><p>按网络覆盖范围分类，计算机网络可以分为以下4 类：<br>( 1 ) 个域网：通常是由个人设备通过无线通信技术构成小范围的网络，实现个人设备间的数据传输，比如蓝牙。覆盖范围为1~10 m。<br>( 2 ) 局域网：通常部署在办公楼、校园等局部区域内，采用高速有线或无线链路连接主机，实现局部范围内高速数据传输。通常覆盖范围为10 m~1km。<br>( 3 ) 城域网：指覆盖一个城市范围的网络，覆盖范围通常为5~50km 。<br>( 4 ) 广域网：可以实现异地城域网或局域网的互连，覆盖范围在几十到几千公里。</p></blockquote></li><li><p>按网络拓扑划分，主要有哪几类计算机网络？它们各有什么特点？</p><blockquote><p>按照拓扑分类，计算机网络可以分为星形拓扑、总线型拓扑、环形拓扑、网状拓扑、树形拓扑和混合拓扑等。<br>( 1 ) 星形拓扑：包括一个中央结点，网络中的主机通过点对点通信链路与中央结点连接。<br>( 2 ) 总线型拓扑：采用一条广播信道作为总线，所有结点均与总线连接，通过总线进行结点间的通信。<br>( 3 ) 环形拓扑：利用通信链路将所有结点连接成一个闭合的环，每个结点与环互通数据。<br>( 4 ) 网状拓扑：每个结点通过多条链路与不同的结点直接连接。<br>( 5 ) 树形拓扑：可以看作总线型拓扑或星形拓扑的扩展。常见通过级联星形拓扑网络中的中央结点构建树形拓扑网络。<br>( 6 ) 混合拓扑：由两种以上简单拓扑网络混合连接而成的网络。</p></blockquote></li><li><p>计算机网络结构主要包括哪几部分？每部分的主要功能分别是什么？</p><blockquote><p>现代计算机网络的结构包括网络边缘(networkedge)、接入网络(accessnetwork)与网络核心(networkcore)三部分。</p></blockquote></li></ol><h2 id="三、传输层服务与物议"><a href="#三、传输层服务与物议" class="headerlink" title="三、传输层服务与物议"></a>三、传输层服务与物议</h2><p><strong>大纲知识点</strong></p><ol><li><p>实现可靠数据传输的主要措施有哪些？这些措施主要用于解决哪些问题？</p><blockquote><p>实现可靠数据传输的主要措施包括差错检测、确认、重传、序号以及计时器等。<br>（1）差错检测：检测和纠正数据在传输过程中的比特错误差错。<br>（2）确认：解决数据丢失或传输错误的问题。<br>（3）重传：确保数据能够完整、准确地到达接收方。<br>（4）序号：解决数据包在传输过程中可能出现的乱序问题，确保数据按正确的顺序重组。<br>（5）计时器：防止数据丢失或确认信息延迟导致的传输失败。</p></blockquote></li><li><p>UDP与TCP是分别如何实现复用与分解的？</p><blockquote><p>（1）UDP的复用与分解<br>①复用：在发送端，UDP从多个进程收集数据报，并为每个数据报添加源端口号和目标端口号，然后将这些数据报发送到网络层。<br>②分解：在接收端，UDP根据报文段中的目标端口号将数据报分发到对应的套接字。UDP套接字由二元组（目标IP地址、目标端口号）标识。<br>③特点：UDP是无连接的，不维护连接状态，因此只通过端口号进行分解。如果多个数据报具有相同的目标端口号，它们会被分发到同一个套接字。<br>（2）TCP的复用与分解<br>①复用：在发送端，TCP从多个进程收集数据流，并为每个数据流添加源IP地址、源端口号、目标IP地址和目标端口号，然后将这些数据流发送到网络层。<br>②分解：在接收端，TCP根据报文段中的四元组（源IP地址、源端口号、目标IP地址、目标端口号）将数据流分发到对应的套接字。每个TCP连接都有一个唯一的套接字。<br>③特点：TCP是面向连接的，每个连接都有一个独立的套接字，即使多个连接使用相同的端口号，也可以通过源IP和源端口号区分。</p></blockquote></li><li><p>请画出TCP报文段结构，并简要说明各个字段的主要作用。<br><img src="/2025/02/25/LearnNet13017/1.png" width="70%"></p><blockquote><p>（1）源端口号标识发送该报文段的源端口；目的端口号标识发送该报文段的目的端口。<br>（2）序号是对每个应用层数据的每个字节的编号；确认序号是期望从对方接收数据的字节序号。<br>（3）首部长度指出TCP报文段的首部长度；保留字段留给今后使用；URG=1时，说明报文中有紧急数据；ACK=1时，确认序号字段有效；PSH=1时，会尽快将报文段中数据交付进程，而不再等缓存填满后再上交；RST=1时，表明TCP连接中出现严重差错，必须释放重连；SYN=1时，表明该TCP报文段是一个建立新连接请求控制段或同意建立新连接的确认段；FIN=1时，表明该TCP报文段的发送端数据已发送完毕，请求释放TCP连接；接收窗口字段表示愿意接收的应用层数据字节数量。<br>（4）校验和字段检验TCP伪首部、TCP报文段首部、数据；紧急指针只在URG=1时有效，指出在本TCP报文段中紧急数据共多少字节。<br>（5）选项字段放入最大报文长度等信息；填充字段取值全0，使首部长度是4B的整数倍。<br>（6）数据部分存放报文段的主要数据。</p></blockquote></li><li><p>TCP为何采用三次握手来建立连接？采用二次握手可以吗？为什么？</p><blockquote><p>TCP（传输控制协议）采用三次握手来建立连接，主要是为了确保连接的可靠性和防止错误连接的建立。<br>第一次握手：客户端发送一个带有SYN（同步）标志的报文到服务器，表示请求建立连接。<br>第二次握手：服务器收到客户端的SYN报文后，回复一个带有SYN和ACK（确认）标志的报文。其中，ACK是对客户端SYN报文的确认，而SYN表示服务器也准备好建立连接。<br>第三次握手：客户端收到服务器的SYN+ACK报文后，再发送一个带有ACK标志的报文给服务器，确认收到服务器的SYN+ACK报文，至此连接建立。<br>三次握手的主要作用：<br>（1）防止已失效的连接请求报文突然又传送到了服务端，因而产生错误；<br>（2）确保双方都具备发送和接收的能力；<br>（3）同步双方的初始序列号。<br>如果采用二次握手，会存在以下问题：<br>（1）无法防止已失效的连接请求报文；<br>（2）无法确认客户端的接收能力；<br>（3）无法同步初始序列号。</p></blockquote></li><li><p>请分别说明TCP建立连接与断开连接的过程，并给出主要状态转移过程。</p><blockquote><p>TCP建立连接的过程是通过三次握手来完成的。<br>第一次握手：客户端向服务器发送一个带有SYN标志的报文请求建立连接，客户端状态转移CLOSED → SYN-SENT；<br>第二次握手：服务器收到客户端的SYN报文后，回复一个带有SYN和ACK标志的报文，服务器状态转移LISTEN → SYN-RCVD；<br>第三次握手：客户端收到服务器的SYN+ACK报文后，发送一个带有ACK标志的报文给服务器，客户端状态转移SYN-SENT → ESTABLISHED，服务器收到客户端的ACK报文后状态转移SYN-RCVD → ESTABLISHED。<br>主要状态转移：<br>客户端：CLOSED → SYN-SENT → ESTABLISHED。<br>服务器：LISTEN → SYN-RCVD → ESTABLISHED。</p><p>TCP断开连接的过程是通过四次挥手来完成的。<br>第一次挥手：客户端向服务器发送一个带有FIN标志的报文，表示客户端已经完成数据发送，准备关闭连接，客户端状态转移ESTABLISHED → FIN-WAIT-1；<br>第二次挥手：服务器收到客户端的FIN报文后，回复一个带有ACK标志的报文，确认收到客户端的关闭请求，服务器状态转移ESTABLISHED → CLOSE-WAIT，客户端状态转移FIN-WAIT-1 → FIN-WAIT-2；<br>第三次挥手：服务器完成数据发送后，向客户端发送一个带有FIN标志的报文，表示服务器也准备关闭连接，服务器状态转移CLOSE-WAIT → LAST-ACK；<br>第四次挥手：客户端收到服务器的FIN报文后，回复一个带有ACK标志的报文，确认收到服务器的关闭请求，客户端状态转移FIN-WAIT-2 → TIME-WAIT，服务器状态转移LAST-ACK → CLOSED，客户端在TIME-WAIT状态等待2MSL后状态转移TIME-WAIT → CLOSED。<br>主要状态转移：<br>客户端：ESTABLISHED → FIN-WAIT-1 → FIN-WAIT-2 → TIME-WAIT → CLOSED。<br>服务器：ESTABLISHED → CLOSE-WAIT → LAST-ACK → CLOSED。</p></blockquote></li><li><p>TCP是如何保证可靠数据传输的？</p><blockquote><p>TCP的可靠数据传输实现机制包括差错编码、确认、序号、重传、计时器等。<br>（1）校验和：发送方和接收方验证校验和是否相同。不相同则数据传输有误，相同也可能有问题。<br>（2）确认应答：三次握手与四次挥手过程中通过比对Seq和ACK来实现。<br>（3）超时重传：发送数据包在一定的时间周期内没有收到相应的ACK，等待一定的时间，超时之后就认为这个数据包丢失，就会重新发送。</p></blockquote></li><li><p>请分别简述GBN协议和SR协议的工作过程。</p><blockquote><p>GBN协议是一种滑动窗口协议，用于实现可靠的数据传输。其核心思想是发送方在未收到确认（ACK）之前可以连续发送多个数据分组，但一旦检测到超时或丢失，将重传所有未确认的分组。<br>SR协议也是一种滑动窗口协议，但与GBN协议不同，它允许接收方缓存失序到达的分组，并只重传丢失的分组。</p></blockquote></li><li><p>请说明TCP滑动窗口机制，并对比TCP滑动窗口与GBN协议的异同。<br><pre class="mermaid">graph LR A[传输层TCP如何实现可靠传输] --> B[停-等协议] A --> C[滑动窗口协议] C --> D[GBN协议] C --> E[SR议]</pre></p><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div> <blockquote><p>TCP滑动窗口机制是一种用于流量控制和拥塞控制的技术，允许发送方在等待确认之前连续发送多个数据段。其核心原理如下：</p><ol><li>发送窗口与接收窗口：<br>发送方维护一个发送窗口，表示可以发送但尚未被确认的数据范围。<br>接收方维护一个接收窗口，表示可以接收的数据范围。<br>窗口大小动态调整，取决于接收方的处理能力和网络拥塞情况。</li><li>窗口滑动：<br>当发送方收到接收方的确认（ACK）时，窗口向前滑动，允许发送更多数据。<br>如果接收方缓冲区已满，窗口大小会减小，甚至变为0，发送方暂停发送。</li><li>确认机制：<br>TCP使用累积确认，接收方确认的是已正确接收的最高序号数据。<br>如果数据丢失，发送方会根据确认信息重传丢失的数据。</li><li>动态调整：<br>TCP的滑动窗口大小不是固定的，而是根据网络状况和接收方的接收能力动态调整。<br>窗口大小的调整涉及接收窗口（rwnd）和拥塞窗口（cwnd），实际发送窗口大小为两者的最小值。</li></ol><p>TCP滑动窗口与GBN协议的相同点：</p><ol><li>基于滑动窗口协议：TCP和GBN都使用滑动窗口机制来提高数据传输效率。</li><li>单个计时器：TCP和GBN都使用单个计时器来监控最早未被确认的数据段。</li><li>按序确认：TCP和GBN都要求接收方按序接收数据，接收方只确认按序到达的数据。</li></ol><p>TCP滑动窗口与GBN协议的不同点：</p><ol><li>接收窗口大小：TCP滑动窗口：动态调整，取决于接收方缓冲区容量。GBN协议：固定为1。</li><li>重传机制：TCP滑动窗口：选择性重传丢失的数据段。GBN协议：重传从丢失数据段开始的所有后续数据段。</li><li>对失序数据的处理：TCP滑动窗口：接收方缓存失序数据。GBN协议：接收方丢弃失序数据。</li><li>窗口大小限制：TCP滑动窗口：动态调整，无固定上限。GBN协议：最大为 2^n−1（n为序列号比特数）。</li><li>传输效率：TCP滑动窗口：高，支持选择性重传和缓存失序数据。GBN协议：较低，重传数据量可能较大。</li></ol></blockquote></li><li><p>TCP与UDP的主要区别是什么？</p><blockquote><ol><li>连接性：TCP：面向连接的协议。<font color="silver">（三次握手）</font>UDP：无连接的协议。</li><li>可靠性：TCP：提供可靠的数据传输<font color="silver">（确认-重传机制）</font>UDP：不保证数据包的可靠传输。</li><li>顺序性：TCP：保证数据包按顺序到达。UDP：不保证数据包的顺序。</li><li>流量控制：TCP：提供流量控制机制。UDP：没有流量控制机制。</li><li>拥塞控制：TCP：具有拥塞控制机制。UDP：没有拥塞控制机制。</li><li>应用场景：TCP：适用于需要可靠传输的应用，如 Web 浏览（HTTP）、文件传输（FTP）、电子邮件（SMTP）等。UDP：适用于对传输速度要求高、可以容忍一定丢包率的应用，如实时视频/音频传输、在线游戏、DNS 查询等。</li></ol></blockquote></li><li><p>TCP是如何实现拥塞控制的？</p><blockquote><p>TCP协议通过动态调整发送速率来响应网络状况。</p></blockquote></li></ol>]]></content:encoded>
+      <content:encoded><![CDATA[<p>共十一章</p><h2 id="一、计算机网络与信息安全概述"><a href="#一、计算机网络与信息安全概述" class="headerlink" title="一、计算机网络与信息安全概述"></a>一、计算机网络与信息安全概述</h2><p><strong>大纲知识点</strong></p><ol><li><p>什么是计算机网络？</p><blockquote><p>计算机网络是计算机技术与通信技术相互融合的产物。<br>计算机网络是利用通信设备与通信链路或者通信网络，互连位置不同、功能自治的计算机系统，并遵循一定的规则实现计算机系统之间信息交换的系统。<br>计算机网络是互连的、自治的计算机的集合。<br>目前最大的、应用最广泛的计算机网络就是Internet（因特网）。</p></blockquote></li><li><p>网络协议的三要素是什么？每个要素的含义分别是什么</p><blockquote><p>语 法 （syntax）、语 义 （semantics） 和 时 序 （timing）。<br>语法定义实体之间交换信息的格式与结构。<br>语义定义实体之间交换的信息中需要发送哪些控制信息及其具体含义、接收端如何响应、差错处理机制。<br>时序也称为同步，定义实体之间交换信息的顺序以及如何匹配或适应彼此的速度。</p></blockquote></li><li><p>按网络覆盖范围划分，主要有哪几类计算机网络？它们各有什么特点？</p><blockquote><p>按网络覆盖范围分类，计算机网络可以分为以下4 类：<br>( 1 ) 个域网：通常是由个人设备通过无线通信技术构成小范围的网络，实现个人设备间的数据传输，比如蓝牙。覆盖范围为1~10 m。<br>( 2 ) 局域网：通常部署在办公楼、校园等局部区域内，采用高速有线或无线链路连接主机，实现局部范围内高速数据传输。通常覆盖范围为10 m~1km。<br>( 3 ) 城域网：指覆盖一个城市范围的网络，覆盖范围通常为5~50km 。<br>( 4 ) 广域网：可以实现异地城域网或局域网的互连，覆盖范围在几十到几千公里。</p></blockquote></li><li><p>按网络拓扑划分，主要有哪几类计算机网络？它们各有什么特点？</p><blockquote><p>按照拓扑分类，计算机网络可以分为星形拓扑、总线型拓扑、环形拓扑、网状拓扑、树形拓扑和混合拓扑等。<br>( 1 ) 星形拓扑：包括一个中央结点，网络中的主机通过点对点通信链路与中央结点连接。<br>( 2 ) 总线型拓扑：采用一条广播信道作为总线，所有结点均与总线连接，通过总线进行结点间的通信。<br>( 3 ) 环形拓扑：利用通信链路将所有结点连接成一个闭合的环，每个结点与环互通数据。<br>( 4 ) 网状拓扑：每个结点通过多条链路与不同的结点直接连接。<br>( 5 ) 树形拓扑：可以看作总线型拓扑或星形拓扑的扩展。常见通过级联星形拓扑网络中的中央结点构建树形拓扑网络。<br>( 6 ) 混合拓扑：由两种以上简单拓扑网络混合连接而成的网络。</p></blockquote></li><li><p>计算机网络结构主要包括哪几部分？每部分的主要功能分别是什么？</p><blockquote><p>现代计算机网络的结构包括网络边缘(networkedge)、接入网络(accessnetwork)与网络核心(networkcore)三部分。</p></blockquote></li></ol><h2 id="三、传输层服务与物议"><a href="#三、传输层服务与物议" class="headerlink" title="三、传输层服务与物议"></a>三、传输层服务与物议</h2><p><strong>大纲知识点</strong></p><ol><li><p>实现可靠数据传输的主要措施有哪些？这些措施主要用于解决哪些问题？</p><blockquote><p>实现可靠数据传输的主要措施包括差错检测、确认、重传、序号以及计时器等。<br>（1）差错检测：检测和纠正数据在传输过程中的比特错误差错。<br>（2）确认：解决数据丢失或传输错误的问题。<br>（3）重传：确保数据能够完整、准确地到达接收方。<br>（4）序号：解决数据包在传输过程中可能出现的乱序问题，确保数据按正确的顺序重组。<br>（5）计时器：防止数据丢失或确认信息延迟导致的传输失败。</p></blockquote></li><li><p>UDP与TCP是分别如何实现复用与分解的？</p><blockquote><p>（1）UDP的复用与分解<br>①复用：在发送端，UDP从多个进程收集数据报，并为每个数据报添加源端口号和目标端口号，然后将这些数据报发送到网络层。<br>②分解：在接收端，UDP根据报文段中的目标端口号将数据报分发到对应的套接字。UDP套接字由二元组（目标IP地址、目标端口号）标识。<br>③特点：UDP是无连接的，不维护连接状态，因此只通过端口号进行分解。如果多个数据报具有相同的目标端口号，它们会被分发到同一个套接字。<br>（2）TCP的复用与分解<br>①复用：在发送端，TCP从多个进程收集数据流，并为每个数据流添加源IP地址、源端口号、目标IP地址和目标端口号，然后将这些数据流发送到网络层。<br>②分解：在接收端，TCP根据报文段中的四元组（源IP地址、源端口号、目标IP地址、目标端口号）将数据流分发到对应的套接字。每个TCP连接都有一个唯一的套接字。<br>③特点：TCP是面向连接的，每个连接都有一个独立的套接字，即使多个连接使用相同的端口号，也可以通过源IP和源端口号区分。</p></blockquote></li><li><p>请画出TCP报文段结构，并简要说明各个字段的主要作用。<br><img src="/2025/02/25/LearnNet13017/1.png" width="70%"></p><blockquote><p>（1）源端口号标识发送该报文段的源端口；目的端口号标识发送该报文段的目的端口。<br>（2）序号是对每个应用层数据的每个字节的编号；确认序号是期望从对方接收数据的字节序号。<br>（3）首部长度指出TCP报文段的首部长度；保留字段留给今后使用；URG=1时，说明报文中有紧急数据；ACK=1时，确认序号字段有效；PSH=1时，会尽快将报文段中数据交付进程，而不再等缓存填满后再上交；RST=1时，表明TCP连接中出现严重差错，必须释放重连；SYN=1时，表明该TCP报文段是一个建立新连接请求控制段或同意建立新连接的确认段；FIN=1时，表明该TCP报文段的发送端数据已发送完毕，请求释放TCP连接；接收窗口字段表示愿意接收的应用层数据字节数量。<br>（4）校验和字段检验TCP伪首部、TCP报文段首部、数据；紧急指针只在URG=1时有效，指出在本TCP报文段中紧急数据共多少字节。<br>（5）选项字段放入最大报文长度等信息；填充字段取值全0，使首部长度是4B的整数倍。<br>（6）数据部分存放报文段的主要数据。</p></blockquote></li><li><p>TCP为何采用三次握手来建立连接？采用二次握手可以吗？为什么？</p><blockquote><p>TCP（传输控制协议）采用三次握手来建立连接，主要是为了确保连接的可靠性和防止错误连接的建立。<br>第一次握手：客户端发送一个带有SYN（同步）标志的报文到服务器，表示请求建立连接。<br>第二次握手：服务器收到客户端的SYN报文后，回复一个带有SYN和ACK（确认）标志的报文。其中，ACK是对客户端SYN报文的确认，而SYN表示服务器也准备好建立连接。<br>第三次握手：客户端收到服务器的SYN+ACK报文后，再发送一个带有ACK标志的报文给服务器，确认收到服务器的SYN+ACK报文，至此连接建立。<br>三次握手的主要作用：<br>（1）防止已失效的连接请求报文突然又传送到了服务端，因而产生错误；<br>（2）确保双方都具备发送和接收的能力；<br>（3）同步双方的初始序列号。<br>如果采用二次握手，会存在以下问题：<br>（1）无法防止已失效的连接请求报文；<br>（2）无法确认客户端的接收能力；<br>（3）无法同步初始序列号。</p></blockquote></li><li><p>请分别说明TCP建立连接与断开连接的过程，并给出主要状态转移过程。</p><blockquote><p>TCP建立连接的过程是通过三次握手来完成的。<br>第一次握手：客户端向服务器发送一个带有SYN标志的报文请求建立连接，客户端状态转移CLOSED → SYN-SENT；<br>第二次握手：服务器收到客户端的SYN报文后，回复一个带有SYN和ACK标志的报文，服务器状态转移LISTEN → SYN-RCVD；<br>第三次握手：客户端收到服务器的SYN+ACK报文后，发送一个带有ACK标志的报文给服务器，客户端状态转移SYN-SENT → ESTABLISHED，服务器收到客户端的ACK报文后状态转移SYN-RCVD → ESTABLISHED。<br>主要状态转移：<br>客户端：CLOSED → SYN-SENT → ESTABLISHED。<br>服务器：LISTEN → SYN-RCVD → ESTABLISHED。</p><p>TCP断开连接的过程是通过四次挥手来完成的。<br>第一次挥手：客户端向服务器发送一个带有FIN标志的报文，表示客户端已经完成数据发送，准备关闭连接，客户端状态转移ESTABLISHED → FIN-WAIT-1；<br>第二次挥手：服务器收到客户端的FIN报文后，回复一个带有ACK标志的报文，确认收到客户端的关闭请求，服务器状态转移ESTABLISHED → CLOSE-WAIT，客户端状态转移FIN-WAIT-1 → FIN-WAIT-2；<br>第三次挥手：服务器完成数据发送后，向客户端发送一个带有FIN标志的报文，表示服务器也准备关闭连接，服务器状态转移CLOSE-WAIT → LAST-ACK；<br>第四次挥手：客户端收到服务器的FIN报文后，回复一个带有ACK标志的报文，确认收到服务器的关闭请求，客户端状态转移FIN-WAIT-2 → TIME-WAIT，服务器状态转移LAST-ACK → CLOSED，客户端在TIME-WAIT状态等待2MSL后状态转移TIME-WAIT → CLOSED。<br>主要状态转移：<br>客户端：ESTABLISHED → FIN-WAIT-1 → FIN-WAIT-2 → TIME-WAIT → CLOSED。<br>服务器：ESTABLISHED → CLOSE-WAIT → LAST-ACK → CLOSED。</p></blockquote></li><li><p>TCP是如何保证可靠数据传输的？</p><blockquote><p>TCP的可靠数据传输实现机制包括差错编码、确认、序号、重传、计时器等。<br>（1）校验和：发送方和接收方验证校验和是否相同。不相同则数据传输有误，相同也可能有问题。<br>（2）确认应答：三次握手与四次挥手过程中通过比对Seq和ACK来实现。<br>（3）超时重传：发送数据包在一定的时间周期内没有收到相应的ACK，等待一定的时间，超时之后就认为这个数据包丢失，就会重新发送。</p></blockquote></li><li><p>请分别简述GBN协议和SR协议的工作过程。</p><blockquote><p>GBN协议是一种滑动窗口协议，用于实现可靠的数据传输。其核心思想是发送方在未收到确认（ACK）之前可以连续发送多个数据分组，但一旦检测到超时或丢失，将重传所有未确认的分组。<br>SR协议也是一种滑动窗口协议，但与GBN协议不同，它允许接收方缓存失序到达的分组，并只重传丢失的分组。</p></blockquote></li><li><p>请说明TCP滑动窗口机制，并对比TCP滑动窗口与GBN协议的异同。<br><pre class="mermaid">graph LR A[传输层TCP如何实现可靠传输] --> B[停-等协议] A --> C[滑动窗口协议] C --> D[GBN协议] C --> E[SR议]</pre></p><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div> <blockquote><p>TCP滑动窗口机制是一种用于流量控制和拥塞控制的技术，允许发送方在等待确认之前连续发送多个数据段。其核心原理如下：</p><ol><li>发送窗口与接收窗口：<br>发送方维护一个发送窗口，表示可以发送但尚未被确认的数据范围。<br>接收方维护一个接收窗口，表示可以接收的数据范围。<br>窗口大小动态调整，取决于接收方的处理能力和网络拥塞情况。</li><li>窗口滑动：<br>当发送方收到接收方的确认（ACK）时，窗口向前滑动，允许发送更多数据。<br>如果接收方缓冲区已满，窗口大小会减小，甚至变为0，发送方暂停发送。</li><li>确认机制：<br>TCP使用累积确认，接收方确认的是已正确接收的最高序号数据。<br>如果数据丢失，发送方会根据确认信息重传丢失的数据。</li><li>动态调整：<br>TCP的滑动窗口大小不是固定的，而是根据网络状况和接收方的接收能力动态调整。<br>窗口大小的调整涉及接收窗口（rwnd）和拥塞窗口（cwnd），实际发送窗口大小为两者的最小值。</li></ol><p>TCP滑动窗口与GBN协议的相同点：</p><ol><li>基于滑动窗口协议：TCP和GBN都使用滑动窗口机制来提高数据传输效率。</li><li>单个计时器：TCP和GBN都使用单个计时器来监控最早未被确认的数据段。</li><li>按序确认：TCP和GBN都要求接收方按序接收数据，接收方只确认按序到达的数据。</li></ol><p>TCP滑动窗口与GBN协议的不同点：</p><ol><li>接收窗口大小：TCP滑动窗口：动态调整，取决于接收方缓冲区容量。GBN协议：固定为1。</li><li>重传机制：TCP滑动窗口：选择性重传丢失的数据段。GBN协议：重传从丢失数据段开始的所有后续数据段。</li><li>对失序数据的处理：TCP滑动窗口：接收方缓存失序数据。GBN协议：接收方丢弃失序数据。</li><li>窗口大小限制：TCP滑动窗口：动态调整，无固定上限。GBN协议：最大为 2^n−1（n为序列号比特数）。</li><li>传输效率：TCP滑动窗口：高，支持选择性重传和缓存失序数据。GBN协议：较低，重传数据量可能较大。</li></ol></blockquote></li><li><p>TCP与UDP的主要区别是什么？</p><blockquote><ol><li>连接性：TCP：面向连接的协议。<font color="silver">（三次握手）</font>UDP：无连接的协议。</li><li>可靠性：TCP：提供可靠的数据传输<font color="silver">（确认-重传机制）</font>UDP：不保证数据包的可靠传输。</li><li>顺序性：TCP：保证数据包按顺序到达。UDP：不保证数据包的顺序。</li><li>流量控制：TCP：提供流量控制机制。UDP：没有流量控制机制。</li><li>拥塞控制：TCP：具有拥塞控制机制。UDP：没有拥塞控制机制。</li><li>应用场景：TCP：适用于需要可靠传输的应用，如 Web 浏览（HTTP）、文件传输（FTP）、电子邮件（SMTP）等。UDP：适用于对传输速度要求高、可以容忍一定丢包率的应用，如实时视频/音频传输、在线游戏、DNS 查询等。</li></ol></blockquote></li><li><p>TCP是如何实现拥塞控制的？</p><blockquote><p>TCP拥塞控制是通过合理调度、规范、调整向网络中发送数据的主机数量、发送速率或数据量，以避免拥塞或尽快消除已发生的拥塞。<br>拥塞控制策略可以分为拥塞预防与拥塞消除两大类。<br>拥塞预防是通过采取一些技术预防拥塞的发生，如流量整形技术<br>拥塞消除是利用拥塞检测机制检测网络中是否发生拥塞，然后通过某种方法消除已发生的拥塞。<br>根据拥塞检测机制的不同，拥塞控制又可以分为基于拥塞状态反馈的拥塞控制方法和无须拥塞状态反馈的拥塞控制方法。<br>TCP的拥塞控制是从端到端的角度，推测网络是否发生拥塞，如果推断网络发生拥塞，则立即将数据发送速率降下来，以便缓解网络拥塞。<br>TCP拥塞控制的基本思想是AIMD。<br>TCP的拥塞控制采用的也是窗口机制，通过调节窗口的大小实现对发送数据速率的调整。窗口调节的基本策略是网络未发生拥塞时，逐渐“加性”增大窗口大小，当网络拥塞时，“乘性”快速减小窗口大小，<br>TCP拥塞控制窗口的调节分为慢启动阶段和拥塞避免阶段，慢启动阶段窗口从一个MSS快速增长，达到某个阈值后转为拥塞避免阶段；拥塞避免阶段的窗口增长放慢。</p><p>【简洁版】</p><ol><li>慢启动：开始时，拥塞窗口设置为一个较小的值（通常为1个MSS）。每当收到一个ACK，拥塞窗口就增加一个MSS，呈指数增长，直到达到慢启动阈值。</li><li>拥塞避免：当拥塞窗口超过慢启动阈值时，TCP进入拥塞避免阶段。拥塞窗口的增长速度变慢，每次收到ACK时，拥塞窗口增加1，呈线性增长。</li><li>快速重传：当发送方收到三个重复的ACK时，它会立即重传丢失的数据包，而不是等待重传定时器超时。</li><li>快速恢复：快速恢复算法与快速重传配合使用，用于在发生数据包丢失后快速调整拥塞窗口。</li><li>拥塞窗口调整：当发生丢包时，TCP会调整拥塞窗口的大小，以减少网络拥塞。</li></ol></blockquote></li></ol>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
@@ -226,62 +279,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/02/05/LearnJava/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>解决ssh: connect to host github.com port 22: Connection timed out</title>
-      <link>https://pearlchocolatezy.com/2025/02/05/SolveSshError/</link>
-      <guid>https://pearlchocolatezy.com/2025/02/05/SolveSshError/</guid>
-      <pubDate>Wed, 05 Feb 2025 01:57:06 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;部署在github上的hexo博客，用了很久的默认22端口突然连不上了&lt;br&gt;&lt;img class=&quot;zy_img_shadow&quot; src=&quot;/2025/02/05/SolveSshError/1.png&quot; width=&quot;60%&quot;&gt;&lt;/p&gt;
-&lt;p&gt;可能原因是：&lt;/p&gt;
-&lt;b</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>部署在github上的hexo博客，用了很久的默认22端口突然连不上了<br><img class="zy_img_shadow" src="/2025/02/05/SolveSshError/1.png" width="60%"></p><p>可能原因是：</p><blockquote><p>网络连接问题<br>SSH秘钥配置错误<br>22端口已占用<br>……</p></blockquote><p>排除下来22端口被占用或其他环境因素禁用的可能性比较大，可以改为443端口（HTTPS端口，通常开放）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T -p 443 git@ssh.github.com</span><br></pre></td></tr></table></figure><p><img class="zy_img_shadow" src="/2025/02/05/SolveSshError/2.png" width="60%"><br>跟<a href="https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints">GitHub官网</a>的主机密钥指纹对比确认正确后输入yes<br><img class="zy_img_shadow" src="/2025/02/05/SolveSshError/3.png" width="60%"></p><p><strong>在.ssh文件夹中配置新的端口号：</strong><br>找到目录：C:\Users\&lt;你的用户名&gt;.ssh\config（Windows）<br>如果没有config文件可以在.ssh文件夹下新建一个config空文件<br>文件内容为：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Host</span> <span class="string">github.com</span></span><br><span class="line">  <span class="string">HostName</span> <span class="string">ssh.github.com</span></span><br><span class="line">  <span class="string">Port</span> <span class="number">443</span></span><br><span class="line">  <span class="string">User</span> <span class="string">git</span></span><br><span class="line">  <span class="string">PreferredAuthentications</span> <span class="string">publickey</span></span><br><span class="line">  <span class="string">IdentityFile</span> <span class="string">~\.ssh\id_rsa</span></span><br></pre></td></tr></table></figure><br>尝试重新推送即可。</p>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Hexo-Butterfly/">Hexo|Butterfly</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Git/">Git</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/02/05/SolveSshError/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>计算机网络自顶向下（五）——链路层和局域网</title>
-      <link>https://pearlchocolatezy.com/2025/02/04/LearnNet5/</link>
-      <guid>https://pearlchocolatezy.com/2025/02/04/LearnNet5/</guid>
-      <pubDate>Tue, 04 Feb 2025 08:35:12 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;链路层&quot;&gt;&lt;a href=&quot;#链路层&quot; class=&quot;headerlink&quot; title=&quot;链路层&quot;&gt;&lt;/a&gt;链路层&lt;/h2&gt;&lt;h3 id=&quot;目标：原理和实现&quot;&gt;&lt;a href=&quot;#目标：原理和实现&quot; class=&quot;headerlink&quot; title=&quot;目标：原理</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h2><h3 id="目标：原理和实现"><a href="#目标：原理和实现" class="headerlink" title="目标：原理和实现"></a>目标：原理和实现</h3><p>原理：<br>检错和纠错<br>共享广播信道：多点接入<br>链路层寻址<br>LAN：以太网，VLANs<br>可靠数据传输</p><p>链路层技术的实现</p><h3 id="引论"><a href="#引论" class="headerlink" title="引论"></a>引论</h3><p>广域网WAN：网络形式采用点到点链路，实现容易<br>局域网LAN：一般采用多点连接方式，实现复杂<br>链路层的主要功能：一个节点把帧通过链路传到相邻的另一个节点（点到点）。<br>链路层服务：成帧，链路介入；在相邻两个节点完成可靠数据传递；在相邻节点间进行可靠转发；流量控制；错误检测；差错纠正；半双工和全双工（可收可发）。（一个特定的链路层只提供其中一种服务）<br>链路层功能在哪里实现：每个主机上，装了网卡，网卡实现网络层和链路层的功能；路由器上有多个网卡，每个网卡实现了物理层和相应链路层的功能。即，链路层功能在网卡上实现，网卡又称网络适配器（NIC），开机自动运行，按照协议工作。</p><h3 id="差错检测和纠正"><a href="#差错检测和纠正" class="headerlink" title="差错检测和纠正"></a>差错检测和纠正</h3><p>残存错误<br>奇偶校验<br>CRC循环冗余校验码：<br>1）模2运算（按位异或，加法不进位）；<br>2）位串的两种表示（0和1；多项式表示）；<br>3）生成多项式（r次方的比特序列）；<br>4）约定：sender多项式<code>[D][EDC]</code> 使得 receiver多项式<code>[D][EDC]</code>满足 接收方r位多项式/生成多项式=整数，则数据在传输过程中没有出错<br>CRC性能分析：能够查出所有1bit的错误、双bit的错误……</p><h3 id="多点访问协议"><a href="#多点访问协议" class="headerlink" title="多点访问协议"></a>多点访问协议</h3><p>多路访问链路和协议：<br>两种类型的链路：点对点，广播（共享线路和媒体）<br>多路访问协议：MAC<br>理想的MAP协议：1）当一个节点要发送时，按R速率（按信道设计带宽全速）发送；2）当M个节点要发送，每个以R/M的平均速率发送；3）完全分布；4）简单。<br>MAC分类：信道划分，随机访问，依次轮流。<br>信道划分MAC协议：<br>（1）TDMA(time division multiple access)：轮流使用信道，信道的时间分为周期（时分复用）<br>（2）FDMA(frequency division multiple access)：信道的有效频率被分为一个个小的频段（频分复用）<br>（3）CDMA(code division multiple access)：码分多路访问<br>随机存取协议</p>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Net/">Net</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/02/04/LearnNet5/#disqus_thread</comments>
       
     </item>
     
