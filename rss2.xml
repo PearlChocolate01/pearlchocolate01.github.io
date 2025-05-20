@@ -9,8 +9,36 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Mon, 19 May 2025 15:24:29 GMT</pubDate>
+    <pubDate>Tue, 20 May 2025 14:07:51 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>02333 软件工程（一）——绪论</title>
+      <link>https://pearlchocolatezy.com/2025/05/20/02333-1/</link>
+      <guid>https://pearlchocolatezy.com/2025/05/20/02333-1/</guid>
+      <pubDate>Tue, 20 May 2025 13:59:22 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;一、绪论&quot;&gt;&lt;a href=&quot;#一、绪论&quot; class=&quot;headerlink&quot; title=&quot;一、绪论&quot;&gt;&lt;/a&gt;一、绪论&lt;/h2&gt;&lt;p&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
+    A[绪论] --&gt; A1[软件工程的提出与发展]
+   </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h2><p><pre class="mermaid">graph LR    A[绪论] --> A1[软件工程的提出与发展]    A --> A2[软件开发的本质]</pre><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div></p><ol><li>目的：解决软件危机。</li><li>成果：<br>20世纪60年代-80年代初：瀑布模型，C语言，Pascal语言，Jackson方法，结构化方法，支持工具。<br>20世纪80年代-：软件生存周期过程，辅助工程CASE，面向对象。</li><li>软件危机的表现：生产效率低、质量低，缺乏原理、原则、方法、管理，超预算，时间拖延，无法满足需求，可维护性查，可靠性差。（背）</li><li>计算机软件的概念：（1）计算机软件一般是指计算机系统中的<i id="answer1_4_1" class="answer" onclick="showOrHide('1_4_1')">程序</i>及其<i id="answer1_4_2" class="answer" onclick="showOrHide('1_4_2')">文档</i>；（2）程序是计算机任务的处理对象和处理规则的描述；（3）文档是为了理解程序所需的阐述性资料。（4）软件是一个特定问题域的抽象，是一种逻辑实体。（背）</li><li>提出软件工程的目的：倡导以工程的原理、原则、方法进行软件开发，以期解决“软件危机”。（背）</li><li>软件危机的概念：软件生产率、软件质量远远满足不了社会发展的需求，成为社会、经济发展的制约因素。</li><li><p>软件工程的两个时期：前期研究系统实现技术，后期关注<i id="answer1_7_1" class="answer" onclick="showOrHide('1_7_1')">软件质量</i>和<i id="answer1_7_2" class="answer" onclick="showOrHide('1_7_2')">软件工程管理</i>。</p></li><li><p>软件系统模型大体分两类：软件模型，概念模型。</p></li><li>软件模型进一步分为：设计模型，实现模型，部署模型。</li><li>系统模型：系统模型是代建系统的任意抽象，其中包括所有的基本能力、特性或其他方面，没有任何冗余的细节。（背）</li><li>软件开发的本质：实现<i id="answer1_11_1" class="answer" onclick="showOrHide('1_11_1')">问题空间</i>的概念和处理逻辑到<i id="answer1_11_2" class="answer" onclick="showOrHide('1_11_2')">解空间</i>的概念和处理逻辑之间的<i id="answer1_11_3" class="answer" onclick="showOrHide('1_11_3')">映射</i>。实现这一映射的基本途径可采用<i id="answer1_11_4" class="answer" onclick="showOrHide('1_11_4')">系统建模</i>。（背）</li><li>软件开发的本质所涉及的问题：（1）技术层面如何实现这样的映射。涉及两方面：过程方向，即求解软件的开发逻辑；过程途径，即求解软件的开发手段。（2）管理层面如何管理这样的映射，以保障映射的有效性和正确性，主要功能包括：软件项目的规划、组织、人员安排、控制、领导。（背）</li><li>系统建模：运用所掌握的知识，通过抽象，给出该系统的一个结构——系统模型。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/05/20/02333-1/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>LeetCode热题100：71-80解析</title>
@@ -25,7 +53,7 @@
       
       
       
-      <content:encoded><![CDATA[<h3 id="74-数组中的第K个最大元素（堆-215）"><a href="#74-数组中的第K个最大元素（堆-215）" class="headerlink" title="74. 数组中的第K个最大元素（堆/215）"></a>74. 数组中的第K个最大元素（堆/215）</h3><p>给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。<br>请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。<br>你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。<br>假设：<br>    1 &lt;= k &lt;= nums.length &lt;= $(10)^5$；<br>    $(-10)^4$ &lt;= nums[i] &lt;= $(10)^4$。<br>示例：输入: [3,2,1,5,6,4], k = 2；输出: 5。</p><blockquote><p>【分析】<br>使用堆，空间换时间。<br>堆（heap,数据结构）：堆是一种特殊的完全二叉树。C#中没有具体的接口或类可用于堆，可以自己建一个，使用数组来存储，为堆结构写一个上浮和下沉的方法使堆可以排序为大顶堆或小顶堆。<br>最大堆（大顶堆）：每个节点的值都大于或等于其子节点的值。<br>最小堆（小顶堆）：每个节点的值都小于或等于其子节点的值。</p></blockquote>]]></content:encoded>
+      <content:encoded><![CDATA[<h3 id="74-数组中的第K个最大元素（堆-215）"><a href="#74-数组中的第K个最大元素（堆-215）" class="headerlink" title="74. 数组中的第K个最大元素（堆/215）"></a>74. 数组中的第K个最大元素（堆/215）</h3><p>给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。<br>请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。<br>你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。<br>假设：<br>    1 &lt;= k &lt;= nums.length &lt;= $(10)^5$；<br>    $(-10)^4$ &lt;= nums[i] &lt;= $(10)^4$。<br>示例：输入: [3,2,1,5,6,4], k = 2；输出: 5。</p><blockquote><p>【分析】<br>解法1：使用堆，空间换时间，时间复杂度O(nlogk)。<br>堆（heap,数据结构）：堆是一种特殊的完全二叉树。C#中没有具体的接口或类可用于堆，可以自己建一个，使用数组来存储，为堆结构写一个上浮和下沉的方法使堆可以排序为大顶堆或小顶堆。<br>最大堆（大顶堆）：每个节点的值都大于或等于其子节点的值。<br>最小堆（小顶堆）：每个节点的值都小于或等于其子节点的值。<br>解法2：快速选择算法，时间复杂度O(n)，空间复杂度O(logn)。<br>快速选择算法是快速排序的一个变种，它用于在未排序的数组中找到第 k 大（或第 k 小）的元素。</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line"><span class="comment">//快速选择</span></span><br><span class="line">    <span class="keyword">private</span> Random random = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">FindKthLargest</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> k</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">int</span> len = nums.Length;</span><br><span class="line">        <span class="built_in">int</span> target = len - k;<span class="comment">//排序后的数组是从小到大排列，第k大元素位于len-k位置</span></span><br><span class="line">        <span class="keyword">return</span> Partition(nums, <span class="number">0</span>, len - <span class="number">1</span>, target);<span class="comment">//指针初始分别在数组两端，向内扫描</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="built_in">int</span> <span class="title">Partition</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> left, <span class="built_in">int</span> right, <span class="built_in">int</span> target</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">int</span> pivot = nums[random.Next(left, right + <span class="number">1</span>)];<span class="comment">//random.Next(min,max)返回的是[min,max)范围内的随机整数</span></span><br><span class="line">        <span class="built_in">int</span> i = left, j = right;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;<span class="comment">//当两个指针未相遇时</span></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j &amp;&amp; nums[j] &gt;= pivot) j--;<span class="comment">//使用random是为了从任意一个位置开始排序</span></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j &amp;&amp; nums[i] &lt;= pivot) i++;</span><br><span class="line">            Swap(nums, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        Swap(nums, i, left);<span class="comment">//排序到这里结束</span></span><br><span class="line">        <span class="keyword">if</span> (i == target) <span class="keyword">return</span> nums[i];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (i &gt; target) <span class="keyword">return</span> Partition(nums, left, i - <span class="number">1</span>, target);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> Partition(nums, i + <span class="number">1</span>, right, target);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Swap</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> index1, <span class="built_in">int</span> index2</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (index1 == index2) <span class="keyword">return</span>;</span><br><span class="line">        <span class="built_in">int</span> temp = nums[index1];</span><br><span class="line">        nums[index1] = nums[index2];</span><br><span class="line">        nums[index2] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
       
       <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
@@ -288,32 +316,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/04/17/PgsqlTips/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>JS实现异步复制</title>
-      <link>https://pearlchocolatezy.com/2025/04/17/JS-copy/</link>
-      <guid>https://pearlchocolatezy.com/2025/04/17/JS-copy/</guid>
-      <pubDate>Thu, 17 Apr 2025 13:49:35 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;为HTML元素添加点击事件&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>为HTML元素添加点击事件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">onclick</span>=<span class="string">&quot;copyFun(&#x27;text for copy&#x27;)&quot;</span>&gt;</span>复制<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><br>使用JavaScript自带的Clipboard API（需要HTTPS或localhost）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">copyFun</span>(<span class="params">text</span>)&#123;</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="keyword">await</span> navigator.<span class="property">clipboard</span>.<span class="title function_">writeText</span>(text);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;异步复制成功！&#x27;</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;异步复制失败：&#x27;</span>,err);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/JavaScript/">JavaScript</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/04/17/JS-copy/#disqus_thread</comments>
       
     </item>
     
