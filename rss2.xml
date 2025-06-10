@@ -9,8 +9,38 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sun, 08 Jun 2025 14:42:30 GMT</pubDate>
+    <pubDate>Tue, 10 Jun 2025 14:19:24 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>04747-Java（五）——数组和字符串</title>
+      <link>https://pearlchocolatezy.com/2025/06/10/04747-05/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/10/04747-05/</guid>
+      <pubDate>Tue, 10 Jun 2025 12:44:04 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h3 id=&quot;5-1-数组&quot;&gt;&lt;a href=&quot;#5-1-数组&quot; class=&quot;headerlink&quot; title=&quot;5.1 数组&quot;&gt;&lt;/a&gt;5.1 数组&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;数组是相同类型的元素按一定顺序排列的集合。&lt;/li&gt;
+&lt;li&gt;数组声明时不用说明容量，声明时不分</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h3 id="5-1-数组"><a href="#5-1-数组" class="headerlink" title="5.1 数组"></a>5.1 数组</h3><ol><li>数组是相同类型的元素按一定顺序排列的集合。</li><li>数组声明时不用说明容量，声明时不分配内存。</li><li>声明数组的格式：<code>类型 数组名[];</code></li><li>数组初始化的两种方法：静态初始化，动态初始化。</li><li>初始化数组的格式：<br>静态初始化：<code>类型 数组名[]=&#123;值1,值2,...&#125;;</code><br>动态初始化：<code>类型 数组名[]=new 类型[数组大小];</code></li><li>简述声明数组和创建数组的区别：<br>（1）声明数组是指定义一个数组，定义的格式为：类型 数组名[]。声明数组时不会为数组分配内存，声明的数组名只是引用变量，用来指向一个数组，还不能访问数组的任何元素。<br>（2）创建数组是指对声明过的数组进行分配空间，对其进行初始化，给数组的元素赋初值，创建数组以后可以使用数组的元素。数组创建分为静态初始化和动态初始化两种。静态初始化使用一对大括号{ }将初值括起来，每个元素对应一个引用。动态初始化使用运算符new为数组分配空间。</li><li>访问数组元素时需注意哪些问题：<br>（1）数组必须已经初始化,具有内存空间。<br>（2）访问数组元素通过数组名加上下标,即数组 名[下标数字]的形式进行,下标数字是从0 开始。<br>（3）数组初始化后其大小是固定不变的,所以访 问数组元素时需注意下标数字的必须小于数组的 length属性的值,否则会抛出越界异常。</li></ol><h3 id="5-2-字符串"><a href="#5-2-字符串" class="headerlink" title="5.2 字符串"></a>5.2 字符串</h3><ol><li>“==”与equals()的区别：<br>运算符“==”判定两个字符串对象是否是同一实例，内存中的存储空间是否相同。<br>方法equals()判定两个字符串的值是否相等。</li><li>substring(3,5)表示从位置3开始，到位置5结束，不含位置5。</li><li>简述String类和StringBuffer类在对象分配内存时的区别：<br>String类分配内存时,按照对象中所含字符的实际个数等量分配。<br>StringBuffer类对象分配内存时,除去字符所占空间外,再另加16个字符大小的缓冲区。</li><li>StringBuffer类用于处理<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">可变字符串</i>。</li><li>用字符数组创建字符串语句：<code>String s=new String(chars);</code></li></ol><h3 id="5-3-Vector类"><a href="#5-3-Vector类" class="headerlink" title="5.3 Vector类"></a>5.3 Vector类</h3><ol><li>Vector类的实例可以保存不同类型的数据。</li><li>Vector类可认为是动态数组，空间大小可变。</li><li><code>Vector v=new Vector(100,50);</code>50表示在v初始化的空间用尽后以50为单位递增空间。</li><li>简述数组与Vector的显著区别：<br>（1）数组初始化(创建)后其容量大小固定不变,不能缩小或追加空间。而 Vector类实例的大小可以根据需要来改变。<br>（2）Vector保存的数据类型与数组也不一样,数组只能保存同一种数据,而 Vector实例可以保存不同类型的数据。<br>（3）数组元素的类型可以是基本数据类型,也可以是类对象,而 Vector类实例只能保存类的对象,不能保存基本类型的数据。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/10/04747-05/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>04747-Java（四）——面向对象程序设计</title>
@@ -272,36 +302,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/05/23/LeetCode100-91-100/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>LeetCode热题100：81-90解析</title>
-      <link>https://pearlchocolatezy.com/2025/05/23/LeetCode100-81-90/</link>
-      <guid>https://pearlchocolatezy.com/2025/05/23/LeetCode100-81-90/</guid>
-      <pubDate>Fri, 23 May 2025 14:08:46 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h3 id=&quot;81-爬楼梯（动态规划-70）&quot;&gt;&lt;a href=&quot;#81-爬楼梯（动态规划-70）&quot; class=&quot;headerlink&quot; title=&quot;81. 爬楼梯（动态规划/70）&quot;&gt;&lt;/a&gt;81. 爬楼梯（动态规划/70）&lt;/h3&gt;&lt;p&gt;假设你正在爬楼梯。需要 n 阶你</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h3 id="81-爬楼梯（动态规划-70）"><a href="#81-爬楼梯（动态规划-70）" class="headerlink" title="81. 爬楼梯（动态规划/70）"></a>81. 爬楼梯（动态规划/70）</h3><p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。<br>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？<br>假设：1 &lt;= n &lt;= 45。<br>示例：输入：n = 3；输出：3。(1,1,1; 1,2; 2,1)</p><blockquote><p>【分析】<br>到达第n阶的方法数等于达到第n-1阶和到达第n-2阶的方法数之和。<br>要到达第 n 阶，你可以选择从第 n−1 阶走一步上来，或者从第 n−2 阶走两步上来（从n-2阶走一步再走一步的情况，走一步时和第一种方法重了）。因此，到达第 n 阶的总方法数是到达第 n−1 阶和第 n−2 阶的方法数之和。<br>这种方法确保了每个子问题只被解决一次，并且其解被存储起来供后续使用，从而提高了算法的效率。<br>res[n]=res[n-1]+res[n-2]</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">ClimbStairs</span>(<span class="params"><span class="built_in">int</span> n</span>)</span>&#123;</span><br><span class="line"><span class="keyword">if</span>(n&lt;=<span class="number">2</span>)&#123;</span><br><span class="line"><span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这两个变量的值随着n的变大动态地变大</span></span><br><span class="line"><span class="built_in">int</span> resN_2=<span class="number">1</span>;<span class="comment">//初始化可指代n=1时的result</span></span><br><span class="line"><span class="built_in">int</span> resN_1=<span class="number">2</span>;<span class="comment">//初始化可指代n=2时的result</span></span><br><span class="line"><span class="built_in">int</span> result=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">3</span>;i&lt;=n;i++)&#123;</span><br><span class="line">result=resN_1+resN_2;<span class="comment">//当下的i的result是由n-1时的result和n-2时的result组成</span></span><br><span class="line">resN_2=resN_1;<span class="comment">//res[n-1]对于下一轮就是res[n-2]</span></span><br><span class="line">resN_1=result;<span class="comment">//当前res对于下一轮就是res[n-1]</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/C/">C#</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/LeetCode/">LeetCode</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/05/23/LeetCode100-81-90/#disqus_thread</comments>
       
     </item>
     
