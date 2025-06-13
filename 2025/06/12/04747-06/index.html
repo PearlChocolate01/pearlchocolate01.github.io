@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>04747-Java（六）——继承与多态 | 珍珠巧克力</title><meta name="author" content="Zong Yi"><meta name="copyright" content="Zong Yi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer-when-downgrade"><meta name="description" content="Java仅支持单重继承。 如果一个类有父类，那么父类只能有一个，这条限制称为单重继承 子类不能继承父类的构造方法。 允许用已定义的类来定义一个新类，新类称作子类。 在Java中如何判断两个对象各个属性（成员变量）的值是否相同？在Java中要判断两个对象的属性(成员变量)的值是否相同,需要在类声明中对equals方法进行覆盖,即重新修改这个方法,重写的equals方法中对对象中的值是否相等一一判断">
+<meta property="og:type" content="article">
+<meta property="og:title" content="04747-Java（六）——继承与多态">
+<meta property="og:url" content="https://pearlchocolatezy.com/2025/06/12/04747-06/index.html">
+<meta property="og:site_name" content="珍珠巧克力">
+<meta property="og:description" content="Java仅支持单重继承。 如果一个类有父类，那么父类只能有一个，这条限制称为单重继承 子类不能继承父类的构造方法。 允许用已定义的类来定义一个新类，新类称作子类。 在Java中如何判断两个对象各个属性（成员变量）的值是否相同？在Java中要判断两个对象的属性(成员变量)的值是否相同,需要在类声明中对equals方法进行覆盖,即重新修改这个方法,重写的equals方法中对对象中的值是否相等一一判断">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pearlchocolatezy.com/img/bg_java.jpg">
+<meta property="article:published_time" content="2025-06-12T12:41:14.000Z">
+<meta property="article:modified_time" content="2025-06-13T10:24:00.287Z">
+<meta property="article:author" content="Zong Yi">
+<meta property="article:tag" content="X2080901">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pearlchocolatezy.com/img/bg_java.jpg"><link rel="shortcut icon" href="/img/touxiang_yuki_small.png"><link rel="canonical" href="https://pearlchocolatezy.com/2025/06/12/04747-06/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '04747-Java（六）——继承与多态',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-06-13 18:24:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/zy.css"><script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script><script type="text/javascript" src="/js/zy.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="珍珠巧克力" type="application/rss+xml">
+</head><body><link rel="stylesheet" href="/css/loading-bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang_yuki.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bg_java.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">珍珠巧克力</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa-fw fas fa-laptop"></i><span> 计算机</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E8%AE%B0/"><i class="fa-fw fa fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-fw fas fa-infinity"></i><span> 数学</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E4%BC%9A/"><i class="fa-fw far fa-chart-bar"></i><span> 财会</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw fa-solid fa-keyboard"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tree"></i><span> 收集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书架</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 影院</span></a></li><li><a class="site-page child" href="/tvdrama/"><i class="fa-fw fa fa-video-camera"></i><span> 剧集</span></a></li><li><a class="site-page child" href="/animation/"><i class="fa-fw fas fa-candy-cane"></i><span> 追番</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-dog"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fa fa-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">04747-Java（六）——继承与多态</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-06-12T12:41:14.000Z" title="发表于 2025-06-12 20:41:14">2025-06-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-06-13T10:24:00.287Z" title="更新于 2025-06-13 18:24:00">2025-06-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="04747-Java（六）——继承与多态"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ol>
+<li>Java仅支持单重继承。</li>
+<li>如果一个类有父类，那么父类只能有一个，这条限制称为<i id="answer2_1" class="answer" onclick="showOrHide('2_1')">单重继承</i></li>
+<li>子类不能继承父类的构造方法。</li>
+<li>允许用已定义的类来定义一个新类，新类称作<i id="answer4_1" class="answer" onclick="showOrHide('4_1')">子类</i>。</li>
+<li>在Java中如何判断两个对象各个属性（成员变量）的值是否相同？<br>在Java中要判断两个对象的属性(成员变量)的值是否相同,需要在类声明中对equals方法进行覆盖,即重新修改这个方法,重写的equals方法中对对象中的值是否相等一一判断。</li>
+<li>请说明父类与子类的联系与区别：<br>大的更一般的类可以看作父类,包含在其中的特殊的、具体的类是子类。<br>子类与父类的关系是:<strong>子类对象“is a”父类对象。</strong>从层次关系上讲,子类继承自父类,父类的对象引用可以指向子类对象,反之则不行。从成员上讲,子类可以比父类拥有更多的成员变量和成员方法,这些成员变量和成员方法是子类独有的,父类不具有也不能使用。但是反过来,父类中具有公共、保护权限的成员变量和成员方法同时也属于子类,子类可以使用。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父类对象引用指向子类对象</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Animal is eating&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Dog is eating&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">	<span class="type">Animal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(); <span class="comment">// 父类引用指向子类对象</span></span><br><span class="line">	a.eat(); <span class="comment">// 输出：Dog is eating</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>判断父类变量指向的是不是子类实例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a <span class="keyword">instanceof</span> Dog)&#123;<span class="comment">//判断父类变量指向的是不是子类实例</span></span><br><span class="line">	Dog d=(Dog) a;<span class="comment">//将父类变量转换成对应的子类对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Java允许将一个子类的对象赋给父类的变量（子类对象可以作为父类对象使用），这称为<i id="answer8_1" class="answer" onclick="showOrHide('8_1')">对象转型（向上转型）</i>。</li>
+<li>什么是继承：<br>将一个已有类中的数据和方法保留,并加上自己特殊的数据和方法,从而构成一个新类。</li>
+<li>简述通过继承，子类可以获得的好处：【难背】<br>（1）子类可以拥有父类的所有属性和方法(2分)；<br>（2）也可以扩展原有代码、生成新的类、原有代码可以不必重写(1分)。</li>
+<li>类A某个成员变量的类型是类B，则类A<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">has a</i>类B。</li>
+<li>方法覆盖：要求子类定义方法所用的名字、返回类型及参数列表和父类中的方法使用的完全一样，也就是具有相同的方法签名，从逻辑上看就是子类方法中的成员方法将隐藏父类中的同名方法。<br>名词解释：使用类的继承关系，可以从已有的类产生新的类。在原有特性的基础上，增加了新的特性。父类中原有的方法可能不能满足新的要求，因此需要修改父类中已有的方法。</li>
+<li>重载的方法属于同一个类，覆盖的方法分属于<i id="answer13_1" class="answer" onclick="showOrHide('13_1')">父类、子类</i>。</li>
+<li>简述关键字super的作用：【难背】<br>如果子类重写了父类中的方法，但在子类中还想使用父类中被隐藏的方法，可以使用super关键字，另外，在子类的构造方法中也可以使用super关键字，其功能为调用父类的构造方法。<br>使用super关键字时要注意两个问题：<br>首先，使用super.method()调用父类中的方法method(),将执行父类方法中的所有操作，其中可能会包括一些原本不希望进行的操作，所以调用时要谨慎。<br>其次，由继承性的机制可以知道，super.method()语句所调用的方法不一定是在父类中加以描述的，它也可能是父类从它的祖先中继承来的。因此，有可能需要按继承层次关系依次向上查询才能找到。</li>
+<li>方法覆盖的两条原则：【难背】<br>（1）覆盖方法的允许范围不能小于原方法。<br>（2）覆盖方法所抛出的异常不能比原方法多。</li>
+<li>如果一个抽象类除了抽象方法外什么都没有，则使用接口更合适。</li>
+<li>抽象类可以包含抽象方法和非抽象方法。</li>
+<li>用关键字<i id="answer18_1" class="answer" onclick="showOrHide('18_1')">final</i>修饰的类是终极类，不能有子类。</li>
+<li>接口及其实现的基础语法：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">A</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span>&#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">implements</span> <span class="title class_">A</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> String s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>什么是抽象类、抽象方法？在使用过程中有什么注意事项？【难背】<br>定义时只定义了方法但没有定义具体实现的类称为抽象类，在Java中通过关键字abstract把一个类定义为抽象类。<br>每一个未被定义具体实现的方法也用关键字abstract修饰，这样的方法称为抽象方法，只有抽象类才有抽象方法。<br>在使用抽象类和抽象方法时要注意的事项有：不能用抽象类作为模板创建对象，必须定义抽象类的子类后，用子类作为模板才能创建实例。对于抽象方法不能进行调用，子类将抽象方法实现以后才可以调用。</li>
+<li>接口中所有的方法都是抽象方法，没有方法体。</li>
+<li>一个类可以实现多个接口，从而实现了多重继承。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class 类名 implements 接口<span class="number">1</span>, 接口<span class="number">2</span>, ..., 接口N &#123;</span><br><span class="line">    <span class="comment">// 实现接口中的方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>接口可以定义自己的成员变量和方法，但成员变量必须赋初值且不可改变（系统会自动添加final和static关键字）。</li>
+<li>实现接口必须实现该接口的所有方法。</li>
+<li>接口可以继承。</li>
+<li>简述抽象类与接口的联系与区别：【难背】<br>抽象类是指类中定义了方法但没有具体实现的类，抽象类代表一些基本行为，但又无法或不宜在这个类中对这些行为加以具体实现，而希望在子类中根据实际情况去实现。<br>接口是体现抽象类功能的另一种方式，可将其想象为一个“纯”的抽象类，接口中所有的方法都是抽象方法，都没有方法体，接口与抽象类都用来定义多个类的共同属性。<br>接口还可以实现与抽象类不同的功能，具体来说，Java不支持多重继承，一个类只能从唯一的一个类继承，但允许一个类实现多个接口，从而实现了多重继承的功能，并具有更加清晰的结构。</li>
+<li>一个接口能够包含的元素有<i id="answer27_1" class="answer" onclick="showOrHide('27_1')">成员变量</i>，默认修饰符是<i id="answer27_2" class="answer" onclick="showOrHide('27_2')">abstract</i>；<i id="answer27_3" class="answer" onclick="showOrHide('27_3')">成员方法</i>，默认修饰符是<i id="answer27_4" class="answer" onclick="showOrHide('27_4')">static,final</i>。</li>
+<li>子类中修改父类中已有的同名方法，称为方法<i id="answer28_1" class="answer" onclick="showOrHide('28_1')">覆盖/重写</i>。</li>
+<li>同一个类中，具有不同签名的同名方法是<i id="answer29_1" class="answer" onclick="showOrHide('29_1')">重载</i>方法。</li>
+<li>接口中的抽象方法不能是私有或受保护的方法。</li>
+<li>Java中实现多重继承的机制是<i id="answer31_1" class="answer" onclick="showOrHide('31_1')">使用接口</i>。</li>
+</ol>
+<script>
+//填空专用
+function showOrHide(index){
+    let answer_text=document.getElementById(`answer${index}`);
+    if(answer_text.classList.contains('hide_answer')){
+        answer_text.classList.remove('hide_answer');
+    }else {
+        answer_text.classList.add('hide_answer');
+    }
+
+}
+</script>
+
+<style>
+.answer{
+    color:transparent;
+    position: relative;
+}
+
+.answer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px; /* 下划线高度 */
+  background-color: black; /* 下划线颜色 */
+}
+
+.hide_answer{
+    color:black;
+}
+
+</style></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com">Zong Yi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pearlchocolatezy.com/2025/06/12/04747-06/">https://pearlchocolatezy.com/2025/06/12/04747-06/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pearlchocolatezy.com" target="_blank">珍珠巧克力</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/X2080901/">X2080901</a><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/bg_java.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/06/11/02333-5/"><img class="next-cover" src="/img/bg_software.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">02333 软件工程（五）——面向对象方法RUP</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2025/05/29/04747-01/" title="04747-Java（一）——概述"><img class="cover" src="/img/bg_java.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-29</div><div class="title">04747-Java（一）——概述</div></div></a></div><div><a href="/2025/06/10/04747-05/" title="04747-Java（五）——数组和字符串"><img class="cover" src="/img/bg_java.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-10</div><div class="title">04747-Java（五）——数组和字符串</div></div></a></div><div><a href="/2025/06/08/04747-04/" title="04747-Java（四）——面向对象程序设计"><img class="cover" src="/img/bg_java.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-08</div><div class="title">04747-Java（四）——面向对象程序设计</div></div></a></div><div><a href="/2025/06/02/04747-03/" title="04747-Java（三）——流程控制语句"><img class="cover" src="/img/bg_java.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-02</div><div class="title">04747-Java（三）——流程控制语句</div></div></a></div><div><a href="/2025/06/02/04747-02/" title="04747-Java（二）——数据和表达式"><img class="cover" src="/img/bg_java.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-02</div><div class="title">04747-Java（二）——数据和表达式</div></div></a></div><div><a href="/2025/02/05/LearnJava/" title="04747 Java语言程序设计 框架+知识点"><img class="cover" src="/img/bg_java.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-05</div><div class="title">04747 Java语言程序设计 框架+知识点</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang_yuki.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zong Yi</div><div class="author-info__description">Mon panache. - 我的勇气。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pearlchocolate01"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://pearlchocolatezy.com/rss2.xml" target="_blank" title="RSS"><i class="fa-solid fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">(๑╹ヮ╹๑)ﾉ  欢迎来到珍珠巧克力的小站</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/06/12/04747-06/" title="04747-Java（六）——继承与多态"><img src="/img/bg_java.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="04747-Java（六）——继承与多态"/></a><div class="content"><a class="title" href="/2025/06/12/04747-06/" title="04747-Java（六）——继承与多态">04747-Java（六）——继承与多态</a><time datetime="2025-06-13T10:24:00.287Z" title="更新于 2025-06-13 18:24:00">2025-06-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/23/LeetCode100-91-100/" title="LeetCode热题100：91-100解析"><img src="/img/bg_leetcode.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode热题100：91-100解析"/></a><div class="content"><a class="title" href="/2025/05/23/LeetCode100-91-100/" title="LeetCode热题100：91-100解析">LeetCode热题100：91-100解析</a><time datetime="2025-06-11T14:50:07.456Z" title="更新于 2025-06-11 22:50:07">2025-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/11/02333-5/" title="02333 软件工程（五）——面向对象方法RUP"><img src="/img/bg_software.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="02333 软件工程（五）——面向对象方法RUP"/></a><div class="content"><a class="title" href="/2025/06/11/02333-5/" title="02333 软件工程（五）——面向对象方法RUP">02333 软件工程（五）——面向对象方法RUP</a><time datetime="2025-06-11T10:41:24.126Z" title="更新于 2025-06-11 18:41:24">2025-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/10/04747-05/" title="04747-Java（五）——数组和字符串"><img src="/img/bg_java.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="04747-Java（五）——数组和字符串"/></a><div class="content"><a class="title" href="/2025/06/10/04747-05/" title="04747-Java（五）——数组和字符串">04747-Java（五）——数组和字符串</a><time datetime="2025-06-10T14:19:24.470Z" title="更新于 2025-06-10 22:19:24">2025-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/08/04747-04/" title="04747-Java（四）——面向对象程序设计"><img src="/img/bg_java.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="04747-Java（四）——面向对象程序设计"/></a><div class="content"><a class="title" href="/2025/06/08/04747-04/" title="04747-Java（四）——面向对象程序设计">04747-Java（四）——面向对象程序设计</a><time datetime="2025-06-08T14:42:30.719Z" title="更新于 2025-06-08 22:42:30">2025-06-08</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022-12 - 2025 By Zong Yi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : ''
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '8a1150939f4fa795f439',
+      clientSecret: 'ba1c39ca577e914d7e48639a4e1fb9b6ce67d8c8',
+      repo: 'pearlchocolate01.github.io',
+      owner: 'PearlChocolate01',
+      admin: ['PearlChocolate01'],
+      id: '92dc19258acc0fd4b04888d197c67dc0',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'DPq7jAfPBtKwlm2h1mA2KUVb-MdYXbMMI',
+      appKey: 'uLosrTMuocJInslQDE0UJEGE',
+      avatar: 'retro',
+      serverURLs: 'https://valine.pearlchocolatezy.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

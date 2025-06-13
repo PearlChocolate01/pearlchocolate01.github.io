@@ -9,8 +9,67 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Tue, 10 Jun 2025 14:19:24 GMT</pubDate>
+    <pubDate>Fri, 13 Jun 2025 10:24:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>04747-Java（六）——继承与多态</title>
+      <link>https://pearlchocolatezy.com/2025/06/12/04747-06/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/12/04747-06/</guid>
+      <pubDate>Thu, 12 Jun 2025 12:41:14 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;Java仅支持单重继承。&lt;/li&gt;
+&lt;li&gt;如果一个类有父类，那么父类只能有一个，这条限制称为&lt;i id=&quot;answer2_1&quot; class=&quot;answer&quot; onclick=&quot;showOrHide(&#39;2_1&#39;)&quot;&gt;单重继承&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;子类不能继</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>Java仅支持单重继承。</li><li>如果一个类有父类，那么父类只能有一个，这条限制称为<i id="answer2_1" class="answer" onclick="showOrHide('2_1')">单重继承</i></li><li>子类不能继承父类的构造方法。</li><li>允许用已定义的类来定义一个新类，新类称作<i id="answer4_1" class="answer" onclick="showOrHide('4_1')">子类</i>。</li><li>在Java中如何判断两个对象各个属性（成员变量）的值是否相同？<br>在Java中要判断两个对象的属性(成员变量)的值是否相同,需要在类声明中对equals方法进行覆盖,即重新修改这个方法,重写的equals方法中对对象中的值是否相等一一判断。</li><li>请说明父类与子类的联系与区别：<br>大的更一般的类可以看作父类,包含在其中的特殊的、具体的类是子类。<br>子类与父类的关系是:<strong>子类对象“is a”父类对象。</strong>从层次关系上讲,子类继承自父类,父类的对象引用可以指向子类对象,反之则不行。从成员上讲,子类可以比父类拥有更多的成员变量和成员方法,这些成员变量和成员方法是子类独有的,父类不具有也不能使用。但是反过来,父类中具有公共、保护权限的成员变量和成员方法同时也属于子类,子类可以使用。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父类对象引用指向子类对象</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Animal is eating&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Dog is eating&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="type">Animal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(); <span class="comment">// 父类引用指向子类对象</span></span><br><span class="line">a.eat(); <span class="comment">// 输出：Dog is eating</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>判断父类变量指向的是不是子类实例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a <span class="keyword">instanceof</span> Dog)&#123;<span class="comment">//判断父类变量指向的是不是子类实例</span></span><br><span class="line">Dog d=(Dog) a;<span class="comment">//将父类变量转换成对应的子类对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>Java允许将一个子类的对象赋给父类的变量（子类对象可以作为父类对象使用），这称为<i id="answer8_1" class="answer" onclick="showOrHide('8_1')">对象转型（向上转型）</i>。</li><li>什么是继承：<br>将一个已有类中的数据和方法保留,并加上自己特殊的数据和方法,从而构成一个新类。</li><li>简述通过继承，子类可以获得的好处：【难背】<br>（1）子类可以拥有父类的所有属性和方法(2分)；<br>（2）也可以扩展原有代码、生成新的类、原有代码可以不必重写(1分)。</li><li>类A某个成员变量的类型是类B，则类A<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">has a</i>类B。</li><li>方法覆盖：要求子类定义方法所用的名字、返回类型及参数列表和父类中的方法使用的完全一样，也就是具有相同的方法签名，从逻辑上看就是子类方法中的成员方法将隐藏父类中的同名方法。<br>名词解释：使用类的继承关系，可以从已有的类产生新的类。在原有特性的基础上，增加了新的特性。父类中原有的方法可能不能满足新的要求，因此需要修改父类中已有的方法。</li><li>重载的方法属于同一个类，覆盖的方法分属于<i id="answer13_1" class="answer" onclick="showOrHide('13_1')">父类、子类</i>。</li><li>简述关键字super的作用：【难背】<br>如果子类重写了父类中的方法，但在子类中还想使用父类中被隐藏的方法，可以使用super关键字，另外，在子类的构造方法中也可以使用super关键字，其功能为调用父类的构造方法。<br>使用super关键字时要注意两个问题：<br>首先，使用super.method()调用父类中的方法method(),将执行父类方法中的所有操作，其中可能会包括一些原本不希望进行的操作，所以调用时要谨慎。<br>其次，由继承性的机制可以知道，super.method()语句所调用的方法不一定是在父类中加以描述的，它也可能是父类从它的祖先中继承来的。因此，有可能需要按继承层次关系依次向上查询才能找到。</li><li>方法覆盖的两条原则：【难背】<br>（1）覆盖方法的允许范围不能小于原方法。<br>（2）覆盖方法所抛出的异常不能比原方法多。</li><li>如果一个抽象类除了抽象方法外什么都没有，则使用接口更合适。</li><li>抽象类可以包含抽象方法和非抽象方法。</li><li>用关键字<i id="answer18_1" class="answer" onclick="showOrHide('18_1')">final</i>修饰的类是终极类，不能有子类。</li><li>接口及其实现的基础语法：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">A</span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span>&#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">implements</span> <span class="title class_">A</span>&#123;</span><br><span class="line"><span class="keyword">public</span> String s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>什么是抽象类、抽象方法？在使用过程中有什么注意事项？【难背】<br>定义时只定义了方法但没有定义具体实现的类称为抽象类，在Java中通过关键字abstract把一个类定义为抽象类。<br>每一个未被定义具体实现的方法也用关键字abstract修饰，这样的方法称为抽象方法，只有抽象类才有抽象方法。<br>在使用抽象类和抽象方法时要注意的事项有：不能用抽象类作为模板创建对象，必须定义抽象类的子类后，用子类作为模板才能创建实例。对于抽象方法不能进行调用，子类将抽象方法实现以后才可以调用。</li><li>接口中所有的方法都是抽象方法，没有方法体。</li><li>一个类可以实现多个接口，从而实现了多重继承。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class 类名 implements 接口<span class="number">1</span>, 接口<span class="number">2</span>, ..., 接口N &#123;</span><br><span class="line">    <span class="comment">// 实现接口中的方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>接口可以定义自己的成员变量和方法，但成员变量必须赋初值且不可改变（系统会自动添加final和static关键字）。</li><li>实现接口必须实现该接口的所有方法。</li><li>接口可以继承。</li><li>简述抽象类与接口的联系与区别：【难背】<br>抽象类是指类中定义了方法但没有具体实现的类，抽象类代表一些基本行为，但又无法或不宜在这个类中对这些行为加以具体实现，而希望在子类中根据实际情况去实现。<br>接口是体现抽象类功能的另一种方式，可将其想象为一个“纯”的抽象类，接口中所有的方法都是抽象方法，都没有方法体，接口与抽象类都用来定义多个类的共同属性。<br>接口还可以实现与抽象类不同的功能，具体来说，Java不支持多重继承，一个类只能从唯一的一个类继承，但允许一个类实现多个接口，从而实现了多重继承的功能，并具有更加清晰的结构。</li><li>一个接口能够包含的元素有<i id="answer27_1" class="answer" onclick="showOrHide('27_1')">成员变量</i>，默认修饰符是<i id="answer27_2" class="answer" onclick="showOrHide('27_2')">abstract</i>；<i id="answer27_3" class="answer" onclick="showOrHide('27_3')">成员方法</i>，默认修饰符是<i id="answer27_4" class="answer" onclick="showOrHide('27_4')">static,final</i>。</li><li>子类中修改父类中已有的同名方法，称为方法<i id="answer28_1" class="answer" onclick="showOrHide('28_1')">覆盖/重写</i>。</li><li>同一个类中，具有不同签名的同名方法是<i id="answer29_1" class="answer" onclick="showOrHide('29_1')">重载</i>方法。</li><li>接口中的抽象方法不能是私有或受保护的方法。</li><li>Java中实现多重继承的机制是<i id="answer31_1" class="answer" onclick="showOrHide('31_1')">使用接口</i>。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/12/04747-06/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>02333 软件工程（五）——面向对象方法RUP</title>
+      <link>https://pearlchocolatezy.com/2025/06/11/02333-5/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/11/02333-5/</guid>
+      <pubDate>Wed, 11 Jun 2025 08:59:20 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
+    A[面向对象方法RUL] --&gt; A1[RUP的特点]
+    A --&gt; A2[核心工作流]&lt;/pre&gt;&lt;br&gt;&lt;div class=&quot;mermaid-wrap&quot;&gt;&lt;pre class=&quot;mermaid-</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p><pre class="mermaid">graph LR    A[面向对象方法RUL] --> A1[RUP的特点]    A --> A2[核心工作流]</pre><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div></p><p>RUP：Rational Unified Process，统一软件开发过程</p><ol><li>面向对象符号体系。</li><li>三个突出特征：以<i id="answer1_1" class="answer" onclick="showOrHide('1_1')">用况</i>为驱动、以<i id="answer1_2" class="answer" onclick="showOrHide('1_2')">体系结构</i>为中心的<i id="answer1_3" class="answer" onclick="showOrHide('1_3')">迭代、增量式</i>开发。</li><li>RUP四个阶段：初始阶段 -&gt; 精化阶段 -&gt; 构造阶段 -&gt; 移交阶段。<br>精化阶段：估算成本进度，减少风险，至少要完成的阶段。<br>构造阶段：形成最终的系统体系结构基线，确保产品可以开始向客户交付，具有初始操作能力。<br>移交阶段：确保有一个实在的产品发布给客户。</li><li>一个核心工作流包括：需求获取、分析、设计、实现、测试。</li><li>RUP利用UML提供的术语和工具定义了<i id="answer5_1" class="answer" onclick="showOrHide('5_1')">需求获取层</i>、<i id="answer5_2" class="answer" onclick="showOrHide('5_2')">系统分析层</i>、<i id="answer5_3" class="answer" onclick="showOrHide('5_3')">设计层</i>、<i id="answer5_4" class="answer" onclick="showOrHide('5_4')">实现层</i>，并给出了各层模型间的映射。</li><li>简述RUP设计模型以及包含的元素：【难背】<br>RUP的设计模型是RUP设计的主要结果，它尽量保持该系统具有分析模型的结构，并作为系统实现的输入。（1分）<br>它包括以下元素：<br>（1）设计子系统和服务子系统，以及它们的依赖、接口和内容；（1分）<br>（2）设计类，以及它们具有的操作、属性、关系及其实现需求；（1分）<br>（3）用况细化；（1分）<br>（4）体系结构描述。（1分）</li><li>为什么UML要同RUP一起才称得上是软件开发的方法学？【难背】<br>（1）一种软件开发方法学，至少由三部分组成：用于表达基本信息的术语，用于组织基本信息的表达格式，用于在不同抽象层之间进行映射的过程指导。<br>（2）UML仅包含前两方面的内容，因此它只是一种可视化的建模语言，而不是一种特定的软件开发方法学。<br>（3）RUP给出的是一种基于UML的过程指导，满足软件开发方法学的第三项内容。<br>因此UML要同RUP一起才称得上是一种软件开发的方法学。</li><li>RUP的<i id="answer8_1" class="answer" onclick="showOrHide('8_1')">部署模型</i>包含节点和主动类到节点的初始映射。</li><li>RUP从两个角度描述软件结构：系统设计模型，表达物理分布的<i id="answer9_1" class="answer" onclick="showOrHide('9_1')">系统部署模型</i>。</li><li>简述建造一个系统需求获取模型的活动（RUP创建系统用况模型应进行的活动，0.5分/个），以及各活动的输入和输出：【难背】<br>（1）活动:发现描述参与者和用况。输入:业务模型或领域模型,补充需求,特征表。输出:用况模型[概述],术语表;(1分)<br>（2）活动:赋予用况优先级。输入:用况模型[概述],补充需求,术语表。输出:体系结构描述[用况模型视角];(1分)<br>（3）活动:精化用况。输入:用况模型[概述],补充需求,术语表。输出:用况[精化];(1分)<br>（4）活动:构造人机接口原型（用户界面原型）。输入:用况[精化],用况模型[概述],补充需求,术语表。输出:人机接口原理;(1分)<br>（5）活动:用况模型结构化。输入:用况[精化],用况模型[概述],补充需求,术语表。输出:用况模型[精化]。(1分)</li><li>RUP中创建系统的分析模型，一般应进行<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">体系结构</i>分析、<i id="answer11_2" class="answer" onclick="showOrHide('11_2')">用况</i>分析、<i id="answer11_3" class="answer" onclick="showOrHide('11_3')">类的</i>分析、<i id="answer11_4" class="answer" onclick="showOrHide('11_4')">包的</i>分析4项活动。</li><li>RUP中的分析类分为：<i id="answer12_1" class="answer" onclick="showOrHide('12_1')">边界类</i>、<i id="answer12_2" class="answer" onclick="showOrHide('12_2')">实体类</i>、<i id="answer12_3" class="answer" onclick="showOrHide('12_3')">控制类</i>。</li><li>简述RUP需求获取的基本步骤：【难背】<br>（1）列出候选的特征、(1 分)<br>（2）理解系统语境、(1 分)<br>（3）捕获系统功能需求、(2 分)<br>（4）捕获非功能需求。 (1 分)</li><li>RUP采用<i id="answer14_1" class="answer" onclick="showOrHide('14_1')">Use Case</i>技术来获取需求，其目标是使用UML中的<i id="answer14_2" class="answer" onclick="showOrHide('14_2')">用况</i>、参与者以及依赖等术语来抽象客观实际问题，形成系统的需求获取模型。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/11/02333-5/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>04747-Java（五）——数组和字符串</title>
@@ -243,65 +302,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/05/29/BackToHangzhou5/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>04747-Java（一）——概述</title>
-      <link>https://pearlchocolatezy.com/2025/05/29/04747-01/</link>
-      <guid>https://pearlchocolatezy.com/2025/05/29/04747-01/</guid>
-      <pubDate>Thu, 29 May 2025 14:31:39 GMT</pubDate>
-      
-        
-        
-      <description>&lt;ol&gt;
-&lt;li&gt;简述Java与平台无关原理：&lt;br&gt;java与平台无关的关键是JVM,JVM是一台虚拟计算机,不同的操作系统有不同的虚拟机,它类似于一个小巧而高效的CPU。Java编译器将Java程序编译成JVM(虚拟机)能够识别的二进制代码,这种代码称为字节码,字节码就是虚拟</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<ol><li>简述Java与平台无关原理：<br>java与平台无关的关键是JVM,JVM是一台虚拟计算机,不同的操作系统有不同的虚拟机,它类似于一个小巧而高效的CPU。Java编译器将Java程序编译成JVM(虚拟机)能够识别的二进制代码,这种代码称为字节码,字节码就是虚拟机的机器指令,它与平台无关,有统一的格式,不依赖于具体的硬件环境,只运行在JVM上。在任何安装Java运行时环境的系统上,都可以执行这些代码。</li><li>Java程序分为：Java应用程序，Java小程序。</li><li>Java实行<>语言定义阶段</>、<>字节码检查阶段</>、<>程序执行阶段</>三级代码安全检查机制。</li><li>Windows操作系统霞安装JDK并设置缓解变量后，测试命令：<>javac</>。该命令还能将java程序编译成字节码。</li><li>JDK的常用工具<br>bin目录下主要的开发工具：javac, java, jdb, javadoc。<br>javac.exe是java的编译器。<br>java.exe是java的解释器。<br>JDK是java开发工具集。<br>JRE是java运行时环境。<br>JVM是java虚拟机。</li><li>Java集成环境（IDE）工具：编辑器，编译器，图形用户界面。</li><li>Java程序编译过程中，源代码文件（.java）被编译器编译后，会生成字节码文件（类文件.class）。字节码可以被Java虚拟机（JVM）解释执行。（两个阶段：编译，解释执行）<br>Java程序生成的字节码文件与平台无关。<br>Java解释执行Java字节码。（不是源程序）<br>Java没有指针。</li><li>Java运行的是<>与机器无关</>的二进制格式的类文件。</li><li>Java源文件中最多只能有一个public类，其他类的个数不限。</li><li>面向对象的方法学：面向对象的分析，面向对象的设计，面向对象的程序设计（OOP）。</li><li>Java语言的特性：无用内存自动回收机制，面向对象，多线程，JVM。<br>C语言的特性：全局变量，指针，预处理器，结构和类型定义。</li><li>编译java文件的命令：javac Test.java</li><li>面向对象语言机制：封装，继承，多态。<br>面向过程语言机制：方法调用，模块，结构化。</li><li>英文名词：<br>API：应用程序编程接口<br>OOP：面向对象程序设计<br>constructor：JDK文档中的构造方法</li></ol>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/05/29/04747-01/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>LeetCode热题100：91-100解析</title>
-      <link>https://pearlchocolatezy.com/2025/05/23/LeetCode100-91-100/</link>
-      <guid>https://pearlchocolatezy.com/2025/05/23/LeetCode100-91-100/</guid>
-      <pubDate>Fri, 23 May 2025 14:09:28 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h3 id=&quot;91-不同路径（多维动态规划-不同路径）&quot;&gt;&lt;a href=&quot;#91-不同路径（多维动态规划-不同路径）&quot; class=&quot;headerlink&quot; title=&quot;91. 不同路径（多维动态规划/不同路径）&quot;&gt;&lt;/a&gt;91. 不同路径（多维动态规划/不同路径）&lt;/h3</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h3 id="91-不同路径（多维动态规划-不同路径）"><a href="#91-不同路径（多维动态规划-不同路径）" class="headerlink" title="91. 不同路径（多维动态规划/不同路径）"></a>91. 不同路径（多维动态规划/不同路径）</h3><p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。<br>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。<br>问总共有多少条不同的路径？<br>假设：1 &lt;= m, n &lt;= 100；题目数据保证答案小于等于 2 * $(10)^9$。<br>示例：输入：m = 3, n = 7；输出：28。</p><blockquote><p>【分析】</p></blockquote><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">UniquePaths</span>(<span class="params"><span class="built_in">int</span> m, <span class="built_in">int</span> n</span>)</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/C/">C#</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/LeetCode/">LeetCode</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/05/23/LeetCode100-91-100/#disqus_thread</comments>
       
     </item>
     
