@@ -9,8 +9,40 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Fri, 13 Jun 2025 10:24:00 GMT</pubDate>
+    <pubDate>Fri, 13 Jun 2025 14:38:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>02333 软件工程（六）——软件测试</title>
+      <link>https://pearlchocolatezy.com/2025/06/13/02333-6/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/13/02333-6/</guid>
+      <pubDate>Fri, 13 Jun 2025 13:47:56 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;调试是为了证明程序员的正确。&lt;/li&gt;
+&lt;li&gt;调试的结果一般是不可预见的。&lt;/li&gt;
+&lt;li&gt;调试是不受时间约束的。&lt;/li&gt;
+&lt;li&gt;测试从一个侧面证明程序员的“失败”。&lt;/li&gt;
+&lt;li&gt;测试以已知条件开始。&lt;/li&gt;
+&lt;li&gt;静态软件评估技术：评审，代码</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>调试是为了证明程序员的正确。</li><li>调试的结果一般是不可预见的。</li><li>调试是不受时间约束的。</li><li>测试从一个侧面证明程序员的“失败”。</li><li>测试以已知条件开始。</li><li>静态软件评估技术：评审，代码检查（走查），静态分析（形式化证明）。</li><li>测试的首要目标是<i id="answer7_1" class="answer" onclick="showOrHide('7_1')">预防错误</i>。</li><li>集成测试的目标是为了发现<i id="answer8_1" class="answer" onclick="showOrHide('8_1')">与接口有关的错误</i>。</li><li>软件测试是一个有程序的过程，包括测试<i id="answer9_1" class="answer" onclick="showOrHide('9_1')">设计</i>、测试<i id="answer9_2" class="answer" onclick="showOrHide('9_2')">执行</i>、测试<i id="answer9_3" class="answer" onclick="showOrHide('9_3')">结果比较</i>。</li><li>软件评估分为<i id="answer10_1" class="answer" onclick="showOrHide('10_1')">静态评估</i>，<i id="answer10_2" class="answer" onclick="showOrHide('10_2')">动态评估</i>。</li><li>依据程序逻辑结构的测试技术<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">白盒测试技术</i>。</li><li>黑盒测试技术又称功能测试技术，包括：事务处理流程技术，定义域测试技术，状态测试技术。</li><li>测试度量：语句覆盖≤分支覆盖≤条件组合覆盖≤路径覆盖</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/13/02333-6/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>04747-Java（六）——继承与多态</title>
@@ -276,32 +308,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/06/01/02333-2/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>回杭的日子5</title>
-      <link>https://pearlchocolatezy.com/2025/05/29/BackToHangzhou5/</link>
-      <guid>https://pearlchocolatezy.com/2025/05/29/BackToHangzhou5/</guid>
-      <pubDate>Thu, 29 May 2025 14:43:27 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1818978932&auto=1&height=66"></iframe><br></p><p>没有抢到CP31的票，急匆匆制定的PlanB就成了治愈系的绿色漫游。<br>尽管和很多年轻人一样调侃着抢票的难度，也从容地享受着失败者的自嗨，遗憾的心情确实是伴随着全程的，好在杭州的每一株草木都带给我治愈的力量。</p><p>微雨阴晴，早上被布谷鸟的叫声唤醒，走进林木深处就没有了初夏燥热的阳光，正是游玩西湖风景区最好的时候。<br>第一站是虎跑公园，入口的屋檐上长满了垂直向上的枝草，似乎能想象出有如宫崎骏动画中、植物从角角落落不起眼的地方生长出来的样子，没有为了干净的屋檐而破坏，我被生命之美所感动，也被保护着这片风景的人所感动。进门所见的水池、水中木、浮萍、鲤鱼仿佛构成了一幅精心设计的写意画，肆意生长的杂草也争当画中的主角，鱼儿在浮萍之间悠游，好一副动态景观。沿着溪水前行，没有着急看到下一幅画的迫切，每一眼都希望可以再久一点。</p><p>这里是我的灵魂故乡。</p>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E6%97%A5%E8%AE%B0/">日记</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/%E6%9D%AD%E5%B7%9E/">杭州</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/05/29/BackToHangzhou5/#disqus_thread</comments>
       
     </item>
     
