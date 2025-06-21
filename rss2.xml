@@ -9,8 +9,68 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Sat, 14 Jun 2025 13:09:45 GMT</pubDate>
+    <pubDate>Sat, 21 Jun 2025 14:18:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>04747-Java（七）——输入和输出流</title>
+      <link>https://pearlchocolatezy.com/2025/06/21/04747-07/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/21/04747-07/</guid>
+      <pubDate>Sat, 21 Jun 2025 14:10:53 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;OutputStream的常用方法write(int i),close(),flush()表示将字节i写入到数据流中，将输出流关闭，刷新输出流并强制写出所有缓冲的输出字节。&lt;/li&gt;
+&lt;li&gt;Jav中所有涉及数据流的操作中，都会引入包&lt;i id=&quot;answer2</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>OutputStream的常用方法write(int i),close(),flush()表示将字节i写入到数据流中，将输出流关闭，刷新输出流并强制写出所有缓冲的输出字节。</li><li>Jav中所有涉及数据流的操作中，都会引入包<i id="answer2_1" class="answer" onclick="showOrHide('2_1')">java.io</i>。</li><li>请说明输入数据流中方法read()和方法read(byte[] b)的作用是什么：【背】<br>方法read()的作用是：从输入流中读取一个字节的二进制数据。<br>方法read(byte[] b)的作用是：将多个字节读到数组中,填满整个数组。</li><li>Java中把不同的输入、输出源抽象为<i id="answer4_1" class="answer" onclick="showOrHide('4_1')">流</i>。</li><li>什么是数据流，数据流分为哪些类，各类的特点是什么：【背】<br>数据流是指一组有顺序的、有起点和终点的字节集合。<br>数据流分为输入数据流和输出数据流,输入数据流只能读不能写,输出数据流只能写不能读。<br>从数据流中读取数据时,必须有一个数据源与该数据流相连。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/21/04747-07/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>02333 软件工程（七）——软件生存周期过程与管理</title>
+      <link>https://pearlchocolatezy.com/2025/06/21/02333-7/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/21/02333-7/</guid>
+      <pubDate>Sat, 21 Jun 2025 12:48:53 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;按过程主体，软件生存周期分为：基本过程，支持过程，组织过程。&lt;/li&gt;
+&lt;li&gt;软件基本过程：获取过程，供应过程，开发过程，运行过程，维护过程。&lt;/li&gt;
+&lt;li&gt;软件验证过程的任务：需求验证，设计验证，代码验证，集成验证，文档验证。&lt;/li&gt;
+&lt;li&gt;简述软件</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>按过程主体，软件生存周期分为：基本过程，支持过程，组织过程。</li><li>软件基本过程：获取过程，供应过程，开发过程，运行过程，维护过程。</li><li>软件验证过程的任务：需求验证，设计验证，代码验证，集成验证，文档验证。</li><li>简述软件验证过程中，过程实现的任务：【背】<br>（1）确定项目<font color="blue">是否需要</font>一项验证工作以及独立程度。<br>（2）如果项目承担验证工作,则应为验证软件产品建立相应的<font color="blue">验证过程</font>。<br>（3）如果项目需要独立的验证工作,则应选择一个<font color="blue">有资格的组织</font>负责进行验证。<br>（4）基于以上有关范围、粒度、复杂性和至关重要性分析,确定需要验证的生存周期活动和软件产品,并应为所选择的生存周期活动和软件产品<font color="blue">选择适当的验证活动</font>和任务以及执行这些任务相关的方法、技术<font color="blue">和工具</font>。<br>（5）基于所确定的验证任务,开发验证计划并建立相应的<font color="blue">文档</font>。<br>（6）<font color="blue">实现</font>验证计划。</li><li>什么是验证和确认，以及它们的区别？【背】<br>（1）验证就是证实一个过程或项目的每一软件工作产品/服务是否正确地反映了所规约的需求。；（1分）<br>（2）确认就是证实所期望使用的软件工作产品是否满足其需求；（1分）<br>（3）区别：验证是通过提供的客观证据、证实规约的需求是否得以满足；确认是通过提供的客观证据，证实有关特定期望的使用或应用的需求是否得以满足。（3分）</li><li>软件生存周期过程分为<i id="answer4_1" class="answer" onclick="showOrHide('4_1')">5</i>个基本过程，<i id="answer4_2" class="answer" onclick="showOrHide('4_2')">8</i>个支持过程，<i id="answer4_3" class="answer" onclick="showOrHide('4_3')">4</i>个组织过程。</li><li>软件生存周期的七个过程组：<br>需求分析过程：意图是建立系统软件部分需求。<br>软件确认过程：证实期望使用的软件产品是否满足其需求。</li><li>增量模型：快速构建第一版产品的好方法；适合在项目一开始增加一两个需求，可减少需求变更。</li><li>螺旋模型：适合开发风险大需求不确定的项目；引入<i id="answer9_1" class="answer" onclick="showOrHide('9_1')">风险分析</i>。</li><li>喷泉模型：支持面向对象技术。</li><li>瀑布模型：适合开发小组非常熟悉项目需求；有自上而下相互衔接的固定顺序。</li><li>简述演化模型及其适用场合：【背】<br>（1）演化模型是在用户提出待开发系统的核心需求的基础上，开发人员按照这一需求，首先开发一个核心系统投入运行，根据用户反馈，实施迭代，每次迭代均由需求、设计、编码、测试、集成等阶段组成，通过增加或修正，产生软件产品的增量，最终完成软件产品的开发。<br>（2）一定程度上可减少软件开发活动盲目性;<br>（3）该模型主要针对事先不能完整定义需求的软件开发。</li><li>简述瀑布模型各阶段：【背】<br>（1）系统需求；（1分）<br>（2）软件需求；（1分）<br>（3）需求分析；（1分）<br>（4）设计；（1分）<br>（5）编码；（1分）<br>（6）测试；（1分）<br>（7）运行。（1分）</li><li>简述瀑布模型概念及其主要问题：<br>定义：瀑布模型将软件生存周期的各项活动规定为按固定顺序而连接的若干阶段工作,形如瀑布流水,最终得到产品。(1分)<br>问题：<br>（1）要求客户能够完整、正确和清晰地表达他们的需求;并要求开发人员一开始就要理解这一应用。(1分)<br>（2）由于需求的不稳定性,使设计、编码和测试阶段都可能发生延期;并且当项目接近结束时,出现了大量的集成和测试工作。(1分)<br>（3）在开始的阶段中,很难评估真正的进度状态;并且直到项目结束之前都不能演示系统的能力。(1分)<br>（4）在一个项目的早期阶段,过分地强调了基线和里程碑处的文档;并可能需要花费更多的时间用于建立一些用处不大的文档。(1分)</li><li>简述螺旋模型概念及其特点：<br>（1）螺旋模型是瀑布模型与演化模型的基础上加入两者所忽略的风险分析所建立的一种软件开发模型。(2分)<br>（2）螺旋模型关注解决问题的基本步骤，即标识问题，标识一些可选方案，选择一个最佳方案，遵循动作步骤并实施后续工作。一个突出特征是，在开发的迭代中实际上只有一个迭代过程真正开发了可交付的软件。(3分)</li><li>项目管理计划的主体是<i id="answer16_1" class="answer" onclick="showOrHide('16_1')">过程管理计划</i>。</li><li>支持生存周期过程具有重要作用的计划：<i id="answer17_1" class="answer" onclick="showOrHide('17_1')">软件工程管理</i>计划，<i id="answer17_2" class="answer" onclick="showOrHide('17_2')">软件配置管理</i>计划，<i id="answer17_3" class="answer" onclick="showOrHide('17_3')">软件质量保证</i>计划，<i id="answer17_4" class="answer" onclick="showOrHide('17_4')">软件验证和确认</i>计划，<i id="answer17_5" class="answer" onclick="showOrHide('17_5')">软件度量</i>计划。</li><li>简述选择一个合适项目的生存周期模型的步骤：【背】<br>（1）标识开发项目可用的SLCM（软件生命周期管理）。<br>（2）在所期望的最终系统和开发环境中,识那些会影响SLCM选择的属性。<br>（3）标识为选择生存周期模型所需要的任何约束,包括外部的或是内部的。<br>（4）基于以往的经验和组织能力,评估第一步所选择的那几个SLCM。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/21/02333-7/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>02333 软件工程（六）——软件测试</title>
@@ -251,63 +311,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/06/02/04747-02/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>02333 软件工程（三）——结构化方法</title>
-      <link>https://pearlchocolatezy.com/2025/06/01/02333-3/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/01/02333-3/</guid>
-      <pubDate>Sun, 01 Jun 2025 12:15:51 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
-    A[结构化方法] --&gt; A1[结构化需求分析]
-    A --&gt; A2[结构化设计]&lt;/pre&gt;&lt;br&gt;&lt;div class=&quot;mermaid-wrap&quot;&gt;&lt;pre class=&quot;mermaid-src</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p><pre class="mermaid">graph LR    A[结构化方法] --> A1[结构化需求分析]    A --> A2[结构化设计]</pre><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div></p><h3 id="3-1-结构化需求分析"><a href="#3-1-结构化需求分析" class="headerlink" title="3.1 结构化需求分析"></a>3.1 结构化需求分析</h3><ol><li>可以用于描述加工的是：<i id="answer3_1" class="answer" onclick="showOrHide('3_1')">结构化自然语言</i>。</li><li>可以用于表示数据的静态结构的是：<i id="answer3_2" class="answer" onclick="showOrHide('3_2')">数据存储</i>。</li><li>结构化分析方法用于表达功能模型的工具：<i id="answer3_3_1" class="answer" onclick="showOrHide('3_3_1')">DFD图（数据流图、数据流程图）</i>。一般包含<i id="answer3_3_2" class="answer" onclick="showOrHide('3_3_2')">数据流</i>、<i id="answer3_3_3" class="answer" onclick="showOrHide('3_3_3')">数据存储</i>、<i id="answer3_3_4" class="answer" onclick="showOrHide('3_3_4')">加工</i>、<i id="answer3_3_5" class="answer" onclick="showOrHide('3_3_5')">数据源</i>、<i id="answer3_3_6" class="answer" onclick="showOrHide('3_3_6')">数据潭</i>等。</li><li>数据字典中定于数据结构的符号：m…n表示<i id="answer3_4_1" class="answer" onclick="showOrHide('3_4_1')">子界</i>，<code>&#123;&#125;</code>表示<i id="answer3_4_2" class="answer" onclick="showOrHide('3_4_2')">重复</i>。</li><li>结构化分析方法建模步骤：建立系统 -&gt; 建立层次 -&gt; 定义字典 -&gt; 加工。<br>（1）建立系统环境图,确定系统语境；（1分）<br>（2）自顶向下，逐步求精，建立系统的层次数据流图；（2分）<br>（3）定义数据字典；（1分）<br>（4）描述加工。（1分）</li><li>数据流图中，椭圆表示加工，双横线表示数据存储，方框表示数据源。</li><li>在结构化分析方法中，可采用<i id="answer3_7_1" class="answer" onclick="showOrHide('3_7_1')">结构化自然语言</i>、<i id="answer3_7_2" class="answer" onclick="showOrHide('3_7_2')">判定表</i>、<i id="answer3_7_3" class="answer" onclick="showOrHide('3_7_3')">判定树</i>描述加工。</li><li>结构化分析方法中，数据的变换单位是<i id="answer3_8" class="answer" onclick="showOrHide('3_8')">加工</i>。</li><li>事务流程图中，一个事务可以被另一个事务吸食，称为<i id="answer3_9" class="answer" onclick="showOrHide('3_9')">事务吸收</i>。</li><li>数据字典中，所有客体均可用<i id="answer3_10_1" class="answer" onclick="showOrHide('3_10_1')">顺序结构</i>、<i id="answer3_10_2" class="answer" onclick="showOrHide('3_10_2')">选择结构</i>、<i id="answer3_10_3" class="answer" onclick="showOrHide('3_10_3')">重复结构</i>三种基本结构表示。</li><li>结构化方法中，软件中具有特定标识的独立成分是<i id="answer3_11" class="answer" onclick="showOrHide('3_11')">模块</i>。</li><li>结构化方法包括：<i id="answer3_12_1" class="answer" onclick="showOrHide('3_12_1')">结构化分析方法</i>、<i id="answer3_12_2" class="answer" onclick="showOrHide('3_12_2')">结构化设计方法</i>、<i id="answer3_12_3" class="answer" onclick="showOrHide('3_12_3')">结构化程序设计方法</i>。</li></ol><h3 id="3-2-结构化设计"><a href="#3-2-结构化设计" class="headerlink" title="3.2 结构化设计"></a>3.2 结构化设计</h3><ol><li>耦合：不同模块间相互依赖程度。<br>耦合程度：内容耦合 &gt; 公共耦合 &gt; 控制耦合 &gt; 数据耦合<br>数据耦合：通过传递参数调用模块。<br>控制耦合：通过传递开关量（只有两种状态的离散信号）调用模块。<br>公共耦合：一组模块共同引用一个全局数据项。<br>内容耦合：一个模块直接操作另一个模块的数据，或一个模块不通过正常入口转入另一个模块。</li><li>内聚：一个模块内部各成分之间相互关联程度。<br>常见内聚类型：偶然内聚、逻辑内聚、时间内聚、过程内聚、通信内聚、顺序内聚、功能内聚。<br>内聚程度：功能内聚 &gt; 过程内聚 &gt; 逻辑内聚<br>通信内聚：一个模块内所有成分都生成或操作同一数据集。<br>偶然内聚：一个模块的各成分之间基本不存在任何关系。</li><li>提高模块独立性的原则：高内聚低耦合</li><li>在软件设计中，扇入和扇出的概念是指应用程序模块之间的层次调用情况。<br><img class="zy_img_shadow" src="/2025/06/01/02333-3/2.png" width="80%"><br>按照结构化设计方法，一个应用程序是由多个功能相对独立的模块所组成。<br>扇入：是指直接调用该模块的上级模块的个数。扇入大表示模块的复用程度高。<br>扇出：是指该模块直接调用的下级模块的个数。扇出大表示模块的复杂度高，需要控制和协调过多的下级模块；但扇出过小（例如总是1）也不好。扇出过大一般是因为缺乏中间层次，应该适当增加中间层次的模块。扇出太小时可以把下级模块进一步分解成若干个子功能模块，或者合并到它的上级模块中去。<br>设计良好的软件结构，通常顶层扇出比较大，中间扇出小，底层模块则有大扇入。（大小大）<mark class="hl-label default">（2024-04XZ 2'）</mark> </li><li>宽度：同一层次上模块总数的最大值。</li><li>深度：粗略标志一个系统的规模和复杂程度。</li><li>作用域：模块内受一个判定所“影响”的所有模块的集合。（背）</li><li>控制域：模块本身或所有直接或间接“从属”于它的模块的集合。（背）</li><li>作用域和控制域的启发式原则：尽力使模块的作用域在其控制域之内。</li><li>逐步求精：每一步是对上一步结果的细化。（使用N-S盒图）</li><li>详细设计工具：PFD图（程序流程图/框图）、N-S图（盒图）、PAD图（问题分析图）、PDL（类程序设计语言）。<br>N-S图：盒图，支持自顶向下逐步求精，严格控制一个处理到另一个处理的转移。<br>PAD图：问题分析图，用二维树结构表示程序控制流，面向高级语言。<br><strong>简述PDL特点：</strong><br>（1）PDL也称为伪码,它是一种用正文形式表示数据和处理过程的设计工具。<br>（2）PDL借用某种结构化程序设计语言(如Pascal或)的关键字作为语法框架,用于定义控制结构和数据结构。<br>（3）PDL通常使用某种自然语言(如汉语或英语)的词汇,灵活自由地表示实际的操作和判定条件。<br>（4）PDL可以作为注释工具直接插在源程序中间。</li><li>程序流程图优缺点<br>（1）优点：对控制流程描绘很直观，便于初学者掌握。<br>（2）缺点：不是一种逐步求精的工具；控制流不受约束，可能破坏好的系统结构；不易表示数据结构。</li><li>结构化程序设计：顺序结构、选择结构、循环结构。<br>选择结构的表达式：IF-THEN-ELSE。</li><li>针对具有变换型流图和事务型DFD的总体设计步骤：<br>（1）在软件总体设计中，通常以变换设计为主，事务设计为辅进行结构设计；（1分）<br>（2）首先利用变换设计，把软件系统分为输入，中心变换和输出3个部分，设计上层模块；（1分）<br>（3）然后根据各部分数据流图的结构特点，适当地利用变换设计和事务设计进行细化，得到初始的模块结构图；（1分）<br>（4）再按照“高内聚低耦合”的原则，对初始的模块结构图进行精化，得到最终的模块结构图。（2分）</li><li>变换设计的基本步骤：<br>（1）设计准备，复审并精化系统模块；（1分）<br>（2）确定输入、变换、输出这三部分之间的边界；（1分）<br>（3）设计系统模块结构图的顶层和第一层；（1分）<br>（4）自顶向下，逐步求精。（2分）</li><li>结构化方法的不同阶段：可行性研究阶段、需求分析阶段、总体设计阶段、详细设计阶段、编码实现阶段、测试阶段、维护阶段。<br>总体设计阶段使用HIPO图，由IPO图和H图（层次图）组成。<br>层次图：适合自顶向下的软件设计过程。<br><strong>总体设计阶段内的三个阶段：</strong> <mark class="hl-label default">（2024-04JD 5'）</mark> <br>（1）第一阶段为初始设计。对给定的数据流图进行复审和精化的基础上，将其转化为初始的模块结构图。（1分）<br>（2）第二阶段为精化设计。依据模块“高内聚低耦合”的原则，精化初始的模块结构图，并设计其中的全局数据结构和每一模块的接口。（2分）<br>（3）第三阶段为复审阶段。对前两个阶段所得到的高层软件结构进行复审，必要时还可能需要对该软件结构做一些精化工作。（2分）</li><li>概要设计规约的主要内容 <mark class="hl-label default">（2024-04JD 5'）</mark> <br>（1）系统架构设计：包括系统的物理硬件架构、软件架构、技术平台选择等。（1分）<br>（2）功能模块设计：根据需求将功能划分到子系统或模块中，包括主要数据结构。（1分）<br>（3）接口设计：定义系统内部模块间或与外部系统的交互接口，以及必要的注释。（1分）<br>（4）数据库设计：设计核心数据的逻辑结构。（1分）<br>（5）测试需求等。（1分）</li><li>待建系统的数据流图两种类型：变换型数据流图、事务型数据流图。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/01/02333-3/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>02333 软件工程（二）——软件需求与软件需求规约</title>
-      <link>https://pearlchocolatezy.com/2025/06/01/02333-2/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/01/02333-2/</guid>
-      <pubDate>Sun, 01 Jun 2025 12:15:36 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
-    A[软件需求] --&gt; A1[需求概念]
-    A --&gt; A2[需求获取]
-    A --&gt; A3[需求规约]&lt;/pre&gt;&lt;br&gt;&lt;div class=&quot;mermaid-wrap&quot;&gt;&lt;pre clas</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p><pre class="mermaid">graph LR    A[软件需求] --> A1[需求概念]    A --> A2[需求获取]    A --> A3[需求规约]</pre><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div></p><ol><li>软件需求分为：功能需求（主体），非功能需求。</li><li>接口需求的分类：用户接口，硬件接口，软件接口，通信接口，内存约束，运行，地点需求。</li><li>单个需求必须具有的基本性质：必要的、无歧义的、可测的、可测量的。</li><li>需求分析的三大挑战：问题空间理解，人与人之间的通信，需求的变化性。</li><li>初始发现需求的常用技术：自悟，交谈（提问/回答），观察（可能引起抵触），小组会，提炼（已有文档）。</li><li>验证需求是否正确的技术：自悟、提炼。</li><li>需求规约的定义：需求规约是一个软件项目/产品/系统所有需求陈述的正式文档，它表达了一个软件产品/系统的概念模型。</li><li>软件需求规约的性质：重要性，稳定性，可修改性，完整性（基本），一致性。</li><li>需求规约的三种形式：<br>（1）非形式化的需求规约：基于自然语言来编制需求规约。<br>（2）半形式化的需求规约：以半形式化符号体系（术语表）等表达需求规约。<br>（3）形式化规约：基于良构数学概念符号体系来编制需求规约。</li><li>需求规约在项目开发中的基本作用：<br>（1）需求规约是软件开发组织和用户之间一份事实上的技术合同书，是产品功能及其环境的体现；（1分）<br>（2）对于项目的其余大多数工作，需求规约是一个管理控制点；（1分）<br>（3）对于产品/系统的设计，需求规约是一个正式的、受控的起始点；（1分）<br>（4）是创建产品验收测试计划和用户指南的基础，即基于需求规约一般还会产生另外两个文档：初始测试计划和用户系统操作描述。（2分）</li><li>需求规约与项目需求有哪些不同？<br>（1）需求规约是软件开发组织和用户之间一份事实上的技术合同书，即关注产品需求，（1分）回答“交付给客户的产品/系统是什么了（1分）。<br>（2）项目需求是客户和开发者之间有关技术合同-产品/ 系统需求的理解。（1分）应记录在工作陈述中或其他某一项目文档中,即关注项目工作于管理，（1分）回答“开发组要做的是什么事。（1分）</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/01/02333-2/#disqus_thread</comments>
       
     </item>
     
