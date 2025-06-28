@@ -9,8 +9,71 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Mon, 23 Jun 2025 14:50:25 GMT</pubDate>
+    <pubDate>Wed, 25 Jun 2025 15:45:29 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>04747-Java（八）——图形界面设计</title>
+      <link>https://pearlchocolatezy.com/2025/06/23/04747-08/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/23/04747-08/</guid>
+      <pubDate>Mon, 23 Jun 2025 14:56:05 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;J开头的是Swing组件。&lt;/li&gt;
+&lt;li&gt;AWT组件包括：Label，Checkbox，TextField&lt;/li&gt;
+&lt;li&gt;请简要说明AWT组件与Swing组件的区别：&lt;br&gt;AWT组件是早期的JDK版本提供的窗口工具集,包含部分本地代码,在不同平台上运行</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>J开头的是Swing组件。</li><li>AWT组件包括：Label，Checkbox，TextField</li><li>请简要说明AWT组件与Swing组件的区别：<br>AWT组件是早期的JDK版本提供的窗口工具集,包含部分本地代码,在不同平台上运行的效果略有差异,也被称为“重量级”组件。<br>Swing组件是较新的JDK版本提供的窗口工具集,功能比AWT更加强大,多数组件的名字以“J”开头。Swing组件不包含任何本地代码,在任何平台上的显示效果都是一致的,也被称为“轻量级组件”。</li><li>Swing组件定义在<i id="answer4_1" class="answer" onclick="showOrHide('4_1')">jaxax.swing</i>包中。</li><li>Swing的四种顶层容器：JFrame, JApplet, JDialog, JWindow。</li><li>所有容器的父类是Container。</li><li>JFrame：一个带有标题行和控制按钮的独立窗口，有时称为框架，创建应用程序时需要使用JFrame。</li><li>创建小应用程序时使用 JApplet。</li><li>Frame被称为容器组件。</li><li>Java有哪些方法可以将组件放到内容窗格中：<br>Java有两种方法可以将组件放入内容窗格中。<br>第一种是通过顶层容器的 getContentPane()方法获得默认的内容窗格,然后将组件添加到内容窗格中。<br>第二种方法是创建一个新的内容窗格,将组件添加到新的内容窗格,然后用新的内容窗格取代顶层容器默认的内容窗格。</li><li>JScrollPane是带有滚动条的面板。</li><li>什么是容器组件？容器组件应如何使用？<br>容器组件是指可以包含其他组件的组件。<br>容器分为顶层容器和一般用途容器,显示在屏幕上的所有组件都必须包含在某个容器中,有些容器可以嵌套,在这个嵌套层次的最外层,必须是一个顶层容器。</li><li>将三个按钮垂直排列的代码：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frame=<span class="keyword">new</span> <span class="title class_">JFrame</span>(<span class="string">&quot;Buttons&quot;</span>);</span><br><span class="line">Container con=frame.getContentPane();</span><br><span class="line">con.add(btn1, BorderLayout.NORTH);</span><br><span class="line">con.add(btn2, BorderLayout.CENTER);</span><br><span class="line">con.add(btn3, BorderLayout.SOUTH);</span><br><span class="line">frame.pack();<span class="comment">//调整窗口的大小，使其能够容纳所有组件的首选大小和布局</span></span><br><span class="line">frame.setVisible(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></li><li>Swing常用的四种按钮：JButton, JToggleButton, JCheckBox, JRadioButton。</li><li>JMenu继承自JMenuItem，JMenuItem继承自AbstractButton，最终继承自JComponent。</li><li>JButton继承自AbstractButton，AbstractButton继承自JComponent。</li><li>JLabel直接继承自JComponent。</li><li>JTextArea继承自JTextComponent，JTextComponent继承自JComponent。</li><li>java.awt包中的类<i id="answer19_1" class="answer" onclick="showOrHide('19_1')">Graphics</i>是所有图形处理的基础。</li><li>组合框上的用户事件可以通过<i id="answer20_1" class="answer" onclick="showOrHide('20_1')">ActionListener</i>或<i id="answer20_2" class="answer" onclick="showOrHide('20_2')">ItemListener</i>处理。</li><li>如何处理 JComboBox上的用户事件？【背】<br>JComboBox(组合框)上的用户事件既可以通过 ActionListener处理,又可以通过 ItemListener处理。<br>用户输入项目后按键,对应的接口是 ActionListener。<br>用户选定项目,对应的接口是 ItemListener。<br>用户的一次选择操作会引发两个 ItemEvent事件,因此通常使用 ActionListener处理比较方便。</li><li>请说明按钮和按钮组的关系：【背】<br>按钮可以添加到按钮组中,这时首先要创建一个按钮组,然后调用按钮组的add()方法将按钮添加进去。当多个按钮被添加到同一个按钮组后,如果用户选中一个按钮,那么其他按钮就会变为未选中状态,即同一个按钮组中只能有一个按钮处于被选中状态。</li><li>给label，button添加文字：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//(this是JFrame)</span></span><br><span class="line">label1=<span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;aa&quot;</span>);<span class="comment">//新建label并添加文字</span></span><br><span class="line">btn=<span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;bb&quot;</span>);<span class="comment">//新建button并添加文字</span></span><br><span class="line">btn.setText(<span class="string">&quot;bbb&quot;</span>);<span class="comment">//button修改文字</span></span><br><span class="line">btn.setToolTipText(<span class="string">&quot;hello&quot;</span>);<span class="comment">//btn修改hover title</span></span><br><span class="line"></span><br><span class="line">Container con=getContentPane();</span><br><span class="line">con.setLayout(<span class="keyword">new</span> <span class="title class_">FlowLayout</span>());<span class="comment">//FlowLayout:按照组件添加的顺序，从左到右、从上到下排列组件</span></span><br></pre></td></tr></table></figure></li><li>FlowLayout的对其方式的可选值有：LEFT, CENTER, RIGHT。</li><li>CardLayout特点：允许多个组件共用同一个显示空间，通过卡片的切换来显示不同的组件。</li><li>BoxLayout特点：多个组件从上到下排列。</li><li>GridLayout特点：容器被分成网格状。</li><li>FlowLayout每行可以放1个组件。</li><li>BorderLayout布局管理器是如何安排组件的？【背】<br>BorderLayout提供了一种较为复杂的组件布局管理方案。每个由BorderLayout管理的容器被划分为5个区域, 分别代表容器的上部(North)、下部(South)、左部(West)、右部(East)和中部(Center),分别使用常量 BorderLayout.NORTH、BorderLayout.SOUTH、BorderLayout.WEST、BorderLayout.EAST和BorderLayout.CENTER来表示。在容器的每个区域,可以加入一个组件。</li><li>设置JPanel的布局：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">panel.setLauout(<span class="keyword">new</span> <span class="title class_">FlowLayout</span>(FlowLayout.LEFT));</span><br></pre></td></tr></table></figure></li><li>向容器添加组件：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.add(checkBox,BorderLayout.EAST);</span><br></pre></td></tr></table></figure></li><li>容器中组件的位置和大小/显示方式通常由<i id="answer32_1" class="answer" onclick="showOrHide('32_1')">布局管理器</i>负责安排。</li><li>MouseMotionListener接口主要用于处理鼠标的移动和拖拽事件。<br>它包含两个方法：<code>mouseMoved(MouseEvent e)</code>用于处理鼠标移动事件，<code>mouseDragged(MouseEvent e)</code>用于处理鼠标拖动事件。</li><li>MouseListener处理鼠标点击、鼠标释放、鼠标离开事件。</li><li>什么是事件侦听程序？【背】<br>在Java中,为了接收并处理某类用户事件,组件必须注册相应的事件处理程序,这种事件处理程序称为事件侦听程序(Listener),也称为侦听器,它是实现了对应侦听程序接口的一个类。</li><li>对事件的响应称为<i id="answer36_1" class="answer" onclick="showOrHide('36_1')">事件处理</i>。</li><li>在JList上进行选择时，将引发<i id="answer37_1" class="answer" onclick="showOrHide('37_1')">ListSelectionEvent</i>。</li><li>考试常用方法：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">addItemListener(<span class="built_in">this</span>)</span><br><span class="line">checkBox.isSelected()</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyPanel</span> <span class="keyword">extends</span> <span class="title class_">JPanel</span> <span class="keyword">implements</span> <span class="title class_">MonseListener</span></span><br><span class="line">mouseClicked(MouseEvent e)</span><br></pre></td></tr></table></figure></li><li>java.awt.event中，用来检测并对事件做出反应的模型所包括的三种对象：【背】<br>源对象(1分)、监视器对象(1分)、事件对象(1分)</li><li>请写出Java语言中的事件处理机制：<br>事件被直接送往产生这个事件的组件(1分), 组件需要注册一个或多个侦听程序(1分)。侦听程序的类中包含了事件处理程序(1分)，用来接收和处理该事件(1分)</li><li>KeyListener的作用：<i id="answer41_1" class="answer" onclick="showOrHide('41_1')">处理键盘事件</i>。</li><li>在Java的绘图区域中，坐标原点（0,0）通常位于左上角。</li><li>在Java中进行绘图操作时，当组件被显示出来时，需调用paint(Graphics g)方法。</li><li>AWT的Font对象的作用是<i id="answer44_1" class="answer" onclick="showOrHide('44_1')">用类Font对象设置字型</i>。</li><li>Graphics2D类，stoke属性控制线条的宽度，笔形样式，线段连接方式，短划线图案；paint属性控制填充效果。【背】</li><li>什么是轻量级组件？什么是重量级组件？在程序中同时使用轻量级组件和重量级组件时，会有什么显示效果？【背】<br>不包含本地代码的组件成为轻量级组件。<br>包含本地代码的组件称为重量级组件。<br>当重量级组件与轻量级组件一同使用时，如果组件区域有重叠，则重量级组件总是显示在上面。</li><li><i id="answer47_1" class="answer" onclick="showOrHide('47_1')">Swing</i>组件比<i id="answer47_2" class="answer" onclick="showOrHide('47_2')">AWT</i>组件拥有更多的功能。</li><li>JFrame是顶层容器，可指定窗口标题，Swing可以继承它</li><li>Jpanel属于容器。</li><li>JLabel上既可以有文本也可以有图标。</li><li>setEnabled方法改变按钮的可用状态。</li><li>Swing中的复选按钮：JCheckbox；单选按钮：JRadioButton；切换按钮：JToggleButton</li><li>JPanel的默认布局管理器FlowLayout。</li><li>用户在程序界面所进行的操作是一个<i id="answer54_1" class="answer" onclick="showOrHide('54_1')">用户事件</i>。</li><li>要使得已注册的按钮对象暂时不响应事件，需要使用的方法是<i id="answer55_1" class="answer" onclick="showOrHide('55_1')">removeActionListener(ActionListener l)</i>。</li><li>在事件<i id="answer56_1" class="answer" onclick="showOrHide('56_1')">适配器</i>类中实现了相应接口中全部的方法，只不过方法体都为空。</li><li>当要创建自定义图形时，需要由JPanel类派生一个新类，并重写父类的<i id="answer57_1" class="answer" onclick="showOrHide('57_1')">paintComponent()</i>方法。</li><li>在Graphics类中，绘图模式主要有正常模式和<i id="answer58_1" class="answer" onclick="showOrHide('58_1')">异或</i>模式2种。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/23/04747-08/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>04747-Java（九）——Swing组件</title>
+      <link>https://pearlchocolatezy.com/2025/06/23/04747-09/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/23/04747-09/</guid>
+      <pubDate>Mon, 23 Jun 2025 14:55:34 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;JList不能用Array创建列表。&lt;/li&gt;
+&lt;li&gt;JList既支持单项选择，也支持连续或间断的多项选择。&lt;/li&gt;
+&lt;li&gt;JComboBox设置默认值：&lt;code&gt;jcb.setSelectedIndex(0)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;JComb</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>JList不能用Array创建列表。</li><li>JList既支持单项选择，也支持连续或间断的多项选择。</li><li>JComboBox设置默认值：<code>jcb.setSelectedIndex(0)</code></li><li>JComboBox是一个下拉式菜单。</li><li>Jlist是可供用户进行选择的<i id="answer1_1" class="answer" onclick="showOrHide('1_1')">一系列可选项</i>。</li><li>请说明列表的当前选项发生变化的处理过程：【背】<br>当用户在列表上选择时,将引发ListSelectionEvent事件,在 JList中提供了 addListSelectionListener( ListSelectionListener listener)法,该方法用于注册对应的事件侦听程序,在ListSelectionListener接口中,只有一个方法:valueChanged(ListSelectionEvent),当列表的当前选项发生变化时,将会调用该方法进行响应处理。</li><li>滚动面板的滚动条总是可见：<code>VERTICAL_SCROLLBAR_ALWAYS</code>。</li><li>列表获取所选项：<code>list.getSelectedvalue()</code>。</li><li>JTextField是一个单行的文本输入框，可以指定列数，可以设置文本对齐方式。</li><li><i id="answer10_1" class="answer" onclick="showOrHide('10_1')">文本 或 JTextField 和 JTextArea</i>组件可用于显示信息和提供用户输入功能。</li><li>简述 JTextField和 JTextArea的区别：【背】<br>JTextField是一个单行的文本输入框,可用于输入少量文本,<br>JTextArea是一个多行多列的文本输入框。</li><li>方法setMnemonic()的作用是：<i id="answer12_1" class="answer" onclick="showOrHide('12_1')">为菜单项设置快捷键</i>。</li><li>可以创建仅有图标的菜单项。</li><li>分割线：JSeparator。</li><li>请简要说明建立一个菜单系统的过程：【背】<br>通常在建立菜单系统时,首先创建一个菜单栏( JMenuBar),并通过 setMenuBar()方法将其放入某个框架中,然后创建若干个菜单(JMenu),通过 JMenuBar的add()方法将菜单加入菜单栏。最后创建各个菜单项,通过 JMenu的add()方法将它们加入不同的菜单中。</li><li>试述JMenuBar、JMenu、JMenuItem的关系：【背】<br>JMenuBar定义的是菜单栏,用来包容一组菜单,即 JMenu可以被添加至 JMenuBar,另外, JMenu还可以被添加至另一个 JMenu。如果将 JMenu看作是一棵树,那么 JMenultem就是这棵树的叶子,是菜单系统的最下面一级,即JMenu用来包容一组 JMenultem。</li><li>菜单栏：JMenuBar。</li><li>对话框是顶层容器。</li><li>强制型对话框被关闭之前,其他窗口无法接收任何形式的输入。<br>非强制型对话框可以中断对话过程,去响应对话框之外的事件。</li><li>一般要先创建一个窗类口类,再创建一个对话框。</li><li>构造一个强制对话框的语句：JDialog(frame,true)。</li><li>创建一个所有者为frame，标题为str的非强制对话框：JDialog(frame,str,false)。</li><li>JFileChooser 是一个用于创建文件选择对话框的类，它允许用户选择文件或目录，并且可以配置为打开或保存文件，同时支持文件类型过滤和多选功能。</li><li>JDialog类通常用于创建：<i id="answer24_1" class="answer" onclick="showOrHide('24_1')">自定义</i>对话框</li><li>文件对话框是专门用于对文件或目录进行<i id="answer25_1" class="answer" onclick="showOrHide('25_1')">浏览和选择</i>的对话框。</li><li>列表的当前选项发生变化时，将会调用<i id="answer26_1" class="answer" onclick="showOrHide('26_1')">valueChanged</i>方法。</li><li>JComboBox删除指定选项的方法是<i id="answer27_1" class="answer" onclick="showOrHide('27_1')">removeItem</i>。</li><li><code>Font f=new Font(&quot;宋体&quot;,Font.PLAIN,12);</code></li><li>菜单栏：<code>JMenuBar</code><br>复选菜单项：<code>JCheckBoxMenuItem</code><br>单选菜单项：<code>JRadioButtonMenuItem</code><br>itemEvent状态改变的响应事件：<code>itemStateChanged</code><br>文件对话框类：<code>JFileChooser</code></li><li>打开确认对话框的方法：showConfirmDialog<br>打开信息对话框的方法：showMessageDialog</li></ol><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/23/04747-09/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>04747-Java（七）——输入和输出流</title>
@@ -251,66 +314,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/06/05/02333-4/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>04747-Java（三）——流程控制语句</title>
-      <link>https://pearlchocolatezy.com/2025/06/02/04747-03/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/02/04747-03/</guid>
-      <pubDate>Mon, 02 Jun 2025 06:53:08 GMT</pubDate>
-      
-        
-        
-      <description>&lt;ol&gt;
-&lt;li&gt;简述Java中异常的分类及其概念：&lt;br&gt;Java中异常可分为三类,分别为：受检异常、运行时异常、错误。&lt;br&gt;受检异常是程序执行期间发生的严重事件的后果。&lt;br&gt;运行时异常通常是程序中逻辑错误的结果。&lt;br&gt;错误是指发生了不正确的情况,这些情况都比较严重,一般</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<ol><li>简述Java中异常的分类及其概念：<br>Java中异常可分为三类,分别为：受检异常、运行时异常、错误。<br>受检异常是程序执行期间发生的严重事件的后果。<br>运行时异常通常是程序中逻辑错误的结果。<br>错误是指发生了不正确的情况,这些情况都比较严重,一般程序很难处理。</li><li>如果程序中有package语句，那么该语句一定是源文件中的<i id="answer2_1" class="answer" onclick="showOrHide('2_1')">第一条非注释语句</i>。</li><li>Java中，通常用<i id="answer3_1" class="answer" onclick="showOrHide('3_1')"> classpath （环境变量）</i>指定搜寻包的路径。</li><li>简述package语句和import语句的区别：<br>(1)package语句为包语句,每个文件最多只有一个,且必须放在文件开始的地方(2分)。<br>(2)import语句为引入语句,可以没有,也可以有多个,如果有,必须放在所有类定义的前面(2分)</li><li>Java规定switch语句不允许使用浮点型或long型,表达式的结果必须是int型或char型,当用byte型或short型时,要进行提升。</li><li>Java中有哪几种流程控制语句：赋值语句、分支语句、循环语句、跳转语句。</li><li>continue语句的作用是<i id="answer7_1" class="answer" onclick="showOrHide('7_1')">立即结束本次循环</i>。</li><li>while语句和do语句的区别：<br>while语句先计算条件表达式的值,当值为真时,重复执行循环体语句,直到条件表达式为假时结束。如果第一次检查时条件表达式为假,则循环体语句一次也不执行。<br>do语句首先执行循环体语句,然后判定条件表达式的值,当值为真时,重复执行循环体语句,直到表达式的值为假时结束循环。不论条件表达式的值是真是假,do循环中的循环体都至少执行一次。</li><li>分支语句有：if，switch。</li><li>简述break语句的基本用法：<br>break语句可用于3类语句中：<br>第一类是在 switch语句中,第二类是在for、while及do等循环体中,第三类是在语句块中。<br>在switch语句及循环体语句中, break的语义是跳过本块中余下的所有语句, 转到块尾, 执行其后的语句。第三种使用方法是在块中和标号配合使用,其语义是跳出标号所标记的语句块,继续执行后面的语句。这种形式的break语句多用于嵌套块中,控制从内层跳到外层块之后。</li><li>Java语言中对异常进行处理时，不论是否捕获到异常，对于finally后面的语句都要执行。</li><li>Scanner类提供的许多方法，可用来方便地<i id="answer12_1" class="answer" onclick="showOrHide('12_1')">读入不同类型的输入值</i>。</li><li>一般地，如果一个方法引发了一个异常，而它自己又不处理，就要由<i id="answer13_1" class="answer" onclick="showOrHide('13_1')">throw抛出交给调用者处理</i>。</li><li>Java把程序运行过程中遇到的非致命的、通过某种修正后程序还能继续执行的错误称为<i id="answer14_1" class="answer" onclick="showOrHide('14_1')">异常</i>。</li><li>简述程序员处理异常的方法：<br>Java语言中,程序员处理异常的方法有两种,一种是使用try块和 catch块,捕获到所发生的异常类,并进行相应的处理。<br>另一种方法是,程序员不在当前方法内处理异常,而是把异常抛出到调用方法中。当不能使用合理的方式来解决不正常或意外事件的情形下,才抛出异常。</li><li>说明嵌套的if语句中，if与else的个数应满足的条件及else语句的对应规则：<br>if的个数不少于else的个数。else与离它最近的未匹配的if语句对应。</li><li>简述try-catch块的处理过程：<br>（1）如果try块内没有发生异常，则try块内的语句全部执行，然后执行catch块后的语句。<br>（2）如果在try块内发生了某类异常，则执行立即转到对应的catch块，执行其中的语句去处理异常。<br>（3）不论是否捕获到异常，总要执行finally后面的语句。 </li><li>Java类库中的每个异常都有一个存取方法，可返回抛出异常时创建的描述字符串，该方法的名字是<i id="answer19_1" class="answer" onclick="showOrHide('19_1')">getMessage()</i>。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/02/04747-03/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>04747-Java（二）——数据和表达式</title>
-      <link>https://pearlchocolatezy.com/2025/06/02/04747-02/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/02/04747-02/</guid>
-      <pubDate>Mon, 02 Jun 2025 06:52:59 GMT</pubDate>
-      
-        
-        
-      <description>&lt;ol&gt;
-&lt;li&gt;包的命名要求：层次关系以点分割；通常用小写字母。&lt;/li&gt;
-&lt;li&gt;Java中标识符的命名规则：标识符是由字母、数字、下划线、美元符($)组成的字符串,且数字不能作为标识符的开头。标识符区分大小写,长度没有限制。（背）&lt;/li&gt;
-&lt;li&gt;关键字的作用：&lt;br&gt;f</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<ol><li>包的命名要求：层次关系以点分割；通常用小写字母。</li><li>Java中标识符的命名规则：标识符是由字母、数字、下划线、美元符($)组成的字符串,且数字不能作为标识符的开头。标识符区分大小写,长度没有限制。（背）</li><li>关键字的作用：<br>final：用于声明常量变量。<br>static：用于声明静态变量或方法，表明该成员属于类本身不属于实例；不能用于声明常量变量，但<code>static final</code>结合使用可以定义常量变量。<br>protected：一种访问修饰符，用于控制类成员的访问权限，允许同一个包内或通过继承的子类访问该成员。<br>super：用于引用父类的成员。<br>class：用于定义类。<br>long：用于声明长整型变量。<br>new：用于创建新对象。</li><li>Java中的保留关键字：<br> 基本类型关键字<pre><code> byte short int long float double boolean char</code></pre> 控制语句关键字<pre><code> if else switch case default while do for break continue return</code></pre> 类、对象和接口定义关键字<pre><code> class interface extends implements this super new instanceof</code></pre> 包和导入关键字<pre><code> package import</code></pre> 访问控制关键字<pre><code> public protected private</code></pre> 异常处理关键字<pre><code> try catch finally throw throws</code></pre> 其他关键字<pre><code> static final abstract synchronized volatile transient native strictfp assert</code></pre> <a href="https://blog.csdn.net/weixin_48958956/article/details/140869156">Java关键字简介</a></li><li>简述包的概念及其命名要求：<br>（1）概念：包是类的容器,包的设计人员利用包来划分名字空间,以避免类名冲突。<br>（2）命名要求：包的名字有层次关系,各层之间以点分隔。包层次必须与Java开发系统的文件系统结构相同。通常包名中全部用小写字母。</li><li>Java程序的结构可以包含哪些内容：<br>一个Java程序的结构可以包含以下5方面的内容:<br>（1）package语句:包语句,每个文件最多只有一个,且必须放在文件开始的地方。<br>（2）import语句:引入语句,可以没有,也可以有多个,如果有 import语句,必须放在所有类定义的前面。<br>（3）具有 public权限的类定义:每个文件中最多有一个。<br>（4）类定义:每个文件中包含的非 public权限的类定义的个数没有限制。<br>（5）接口定义:每个文件中包含的接口定义个数没有限制。</li><li>变量取值范围<br>byte：-128~127<br>int：-2,147,483,648到2,147,483,647（$-2^(31)$~$2^(31)-1$）<br>long：-9,223,372,036,854,775,808（$-2^(63)$）到9,223,372,036,854,775,807（$2^(63)-1$）（‌字面量表示‌：若数值超出int范围（如大于2147483647），需在末尾添加L或l后缀（推荐大写L以避免与数字1混淆），例：long a=9876543210编译错误）</li><li>变量占用内存<br>byte：8位<br>short：16位<br>int：32位<br>long：64位</li><li>运算符优先级：括号 &gt; 基本运算 &gt; 移位 &gt; 大小对比 &gt; 逻辑&amp;&amp; &gt; 逻辑|| &gt; 三元运算</li><li><code>&gt;&gt;</code>是算术右移操作符，用于将二进制值向右移动指定位数，同时保留符号位。<br>例：求解<code>85&gt;&gt;1</code>：85转为二进制为（短除法）01010101，右移一位为00101010，再转为十进制（乘法）为42。<br>简单计算：右移一位相当于除以2，且向下取整。</li><li>表达式由<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">运算符</i>和<i id="answer11_2" class="answer" onclick="showOrHide('11_2')">操作数</i>组成。</li><li>Java可以声明变量的地方及其区别：<br>声明变量的地方有两处,一处是在方法内,另一处是在类定义内。方法内定义的变量称为自动变量,也称为局部变量、临时变量或栈变量。类中定义的变量就是类的成员变量。</li><li><i id="answer13_1" class="answer" onclick="showOrHide('13_1')">null</i>表示引用不指向任何对象。</li><li>Java中数据类型转换的分类及其适用情况：<br>Java中的数据类型转换分为自动转换和强制转换两类。转换的一般原则是位数少的类型转换为位数多的类型,这称为自动类型转换。当位数多的类型向位数少的类型进行转换时,需要在程序中明确指明,这种转换称为强制类型转换。</li><li>基本数据类型什么时候有自己的内存空间：<br>基本数据类型的变量在声明之后,系统会自动在内存中分配相应的存储空间,即声明后即有自己的内存空间。</li><li>简述二元逻辑论中“短路”操作功能：<br>进行二元逻辑运算时,先计算运算符左侧表达式的值(2分)<br>如果使用该值能得到整个表达式的值,则跳过运算符右侧表达式的计算(1分),<br>否则计算运算符右侧表达式,并得到整个表达式的值(1分)。</li><li>Java中的基本数据类型byte、char、float、long和short在参与表达式计算时，能够进行自动类型变换的类型顺序依次是什么：依次是byte、short、char、long、float。</li><li><code>&amp;</code>按位与运算的结果是按位“皆1则1”。</li><li>Java逻辑与和逻辑或运算符有一个特殊的功能，当左侧操作数能决定表达式的值时，则跳过右侧操作数的运算。这个功能是<i id="answer19_1" class="answer" onclick="showOrHide('19_1')">短路操作</i>。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/02/04747-02/#disqus_thread</comments>
       
     </item>
     
