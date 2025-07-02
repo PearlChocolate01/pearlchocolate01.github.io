@@ -9,8 +9,123 @@
     <atom:link href="https://pearlchocolatezy.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Mon panache. - 我的勇气。</description>
-    <pubDate>Wed, 25 Jun 2025 15:45:29 GMT</pubDate>
+    <pubDate>Mon, 30 Jun 2025 16:00:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>04747-Java（十）——多线程</title>
+      <link>https://pearlchocolatezy.com/2025/06/29/04747-10/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/29/04747-10/</guid>
+      <pubDate>Sun, 29 Jun 2025 08:24:40 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;进程是程序的一次执行（进程本身不是程序），对应了代码加载、执行至执行完毕的一个完整过程，或者说是程序在处理机中的一次运行。&lt;/li&gt;
+&lt;li&gt;进程既包括其所要执行的命令，又包括执行指令所需的任何系统资源，如CPU、内存空间、I/O端口等。&lt;/li&gt;
+&lt;li&gt;Ja</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>进程是程序的一次执行（进程本身不是程序），对应了代码加载、执行至执行完毕的一个完整过程，或者说是程序在处理机中的一次运行。</li><li>进程既包括其所要执行的命令，又包括执行指令所需的任何系统资源，如CPU、内存空间、I/O端口等。</li><li>Java中线程的状态共有4种，分别为:新建、可运行状态、死亡、阻塞。</li><li>Java对被阻塞的线程是如何处理的？【背】<br>在Java中，所有被阻塞的线程按次序排列，组成一个阻塞队伍。而所有就绪但没有运行的线程则根据其优先级进入一个就绪队列，当CPU空闲时，如果就绪队列不空，队列中第一个具有最高优先级的线程将运行。当一个线程被抢占而停止运行时，它的运行状态被改变并放到就绪队伍的队尾；同样，一个被阻塞的线程就绪后通常也放到就绪队列的队尾。</li><li>线程：线程是进程执行过程中产生的多条执行线索，是比进程单位更小的执行单位，线程在形式上同进程十分相似，都是用一个按序执行的语句序列来完成特定的功能，不同的是，线程没有入口，也没有出口，自身不能自动运行，必须栖身于某一个进程中，由进程触发执行，并且属于同一进程的线程共享该进程的系统资源。【背】</li><li>要让某个子类对象实现多线程：声明实现Runnable接口,在类内实现run()方法,声明和创建线程对象,并让该对象调用start()方法。</li><li>线程的结构都包含哪些部分，作用分别是什么？【背】<br>在Java中,线程由虚拟CPU、执行的代码、处理的数据三部分组成。<br>虚拟CPU的作用是控制整个线程的运行,<br>执行的代码的作用是由Thread类控制按序运行,<br>处理的数据的作用是传递给 Thread类,由代码在执行过程中进行处理。</li><li>用 Thread类的子类创建线程的过程是什么？【背】<br>(1)从Thread类派生出一个子类,在类中一定要实现run()<br>(2)用派生出的子类创建一个对象。<br>(3)用start()方法启动线程。</li><li>请说明创建线程两种方法的适用条件：【背】<br>（1）适用于采用实现 Runnable接口的情况:因为Java只允许单重继承,如果一个类已经继承了 Thread,就不能再继承其他类,这就被迫采用实现 Runnable的方法。另外,由于原来的线程采用的是实现 Runnable接口的方法,可能会出于保持程序风格的一贯性而继续使用这种方法。<br>（2）适用于采用继承 Thread方法的情况:当一个run()方法置于 Thread类的子类中时,this实际上引用的是控制当前运行系统的 Thread实例,部分代码比较简洁,所以许多Java程序员愿意使用继承 Thread的方法。</li><li>使用 synchronized 修饰一个方法时，整个方法会被同步。这意味着同一时间只有一个线程可以访问这个方法。</li><li>请写出用Thread类的子类创建线程并启动线程所包含的步骤：<br>(1)从Thread类派生出一个子类。(1分)<br>(2)实现run()。(1分)<br>(3)用该类创建一个对象。(1分)<br>(4)用start()方法启动线程。(1分)</li><li>notify()/notifyAll()可以将等待队列中线程唤醒。</li><li>sleep()/wait()/join()可以将线程挂起。</li><li>yield()强制终止线程的执行。</li><li>同优先级的线程按“先进先出”调度原则。</li><li>线程优先级的高低可能影响线程执行的先后顺序,但不是阻塞的原因。</li><li>Java对线程的调度采取优先级策略。</li><li>Java中断线程执行的方法：interrupt</li><li>运行状态的线程执行stop方法后进入死亡状态。</li><li>编译器在编译阶段无法检测到死锁。</li><li>synchronized修饰操作共享数据的一个变量或一个方法。</li><li>Java中如何实现“对象互斥锁”？【背】<br>Java语言中,有两种方法可以实现“对象互斥锁”,一是用关键字volatile来声明一个共享数据(变量),二是用关键字 synchronized来声明操作共享数据的一个方法或一段代码。</li><li>请写出在Java语言中，关键字synchronized的作用：【背】<br>（1）使用关键字synchronized定义临界段(1分),<br>（2）能对共享对象的操作上锁(2分)</li><li>wait可以释放当前当前线程持有的对象互斥锁。</li><li>线程的四种状态：新建，可运行状态，死亡，阻塞。</li><li>wait和sleep常引起阻塞。</li><li>调用start可使线程出于可运行。</li><li>线程优先级：级别最低是1，默认级别是5，最高级别是10。</li><li>sleep和yield可以给同等优先级的其他线程一个运行的机会。</li><li>Thread的静态方法currentThread可以引用正在运行的线程。</li><li>Thread类的setPriority可以设置线程优先级。</li><li>Thread中代表最高优先级的常量：MAX_PRIORITY</li><li>synchronized可以阻止多个线程同时访问同一个条件变量。</li><li>用关键字synchronized标识的代码段或方法即为“对象互斥锁”锁住的部分。</li><li>synchronized语句的参数必须是this。</li><li>当持有锁定标志的线程运行完synchronized()调用包含的程序块后，这个标志将会被：自动返还。</li><li>什么时候需要考虑线程的互斥问题？【背】<br>当同时运行的线程需要共享数据时需要考虑线程的互斥问题。</li><li>在调用一个对象的wait方法时，必须持有该对象的：锁定标识。</li></ol>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/29/04747-10/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>02333 软件工程（八）——集成化能力成熟度模型(CMMI)</title>
+      <link>https://pearlchocolatezy.com/2025/06/29/02333-8/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/29/02333-8/</guid>
+      <pubDate>Sun, 29 Jun 2025 07:35:55 GMT</pubDate>
+      
+        
+        
+      <description>&lt;ol&gt;
+&lt;li&gt;CMMI是一个有关产品和服务的过程改善的成熟度模型，集成了三个源模型：软件CMM、系统工程CMM、集成产品开发CMM（或产品集成开发CMM）。&lt;/li&gt;
+&lt;li&gt;CMMI模型基于过程途径思想，通过过程把软件质量三个支撑点进行集成，以开发所期望的系统产品。三个支撑</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<ol><li>CMMI是一个有关产品和服务的过程改善的成熟度模型，集成了三个源模型：软件CMM、系统工程CMM、集成产品开发CMM（或产品集成开发CMM）。</li><li>CMMI模型基于过程途径思想，通过过程把软件质量三个支撑点进行集成，以开发所期望的系统产品。三个支撑点是：受训的人员、规程和方法、工具和设备。</li><li>共用目标用于确定一个过程域是否得以满足。</li><li>共用目标在每个过程域中都有多个，而专用目标可以有一个或多个。</li><li>CMMI分五个成熟度等级，每一个等级都是进行下一个等级的基础：【背】<br>（1）初始级<br>（2）已管理级<br>（3）已定义级<br>（4）量化管理级<br>（5）优化管理级</li><li>CMMI针对每个过程域设定了6个能力等级：【背】<br>0级——未完成级<br>1级——已执行级<br>2级——已管理级<br>3级——已定义级<br>4级——已定量管理级<br>5级——持续优化级</li><li>符号表示：<br>圆角矩形：过程域，专用目标和共用目标<br>椭圆：共用实践的精化，工作产品，子实践<br>菱形：专用和共用实践</li><li>可以帮助确定一个过程域（的独有特征）是否得到满足的是：专用目标。</li><li>典型工作产品是专用实践产生的：输出样品。</li><li>在单一过程域中已达到的过程改善称为：能力等级。</li><li>达到预先定义的一组过程域所有目标的一种过程改善等级称为：成熟度等级。</li><li>CMMI模型提供了两种过程改善路径：一是称为能力等级的过程改善路径，二是称为成熟度等级的过程改善路径。其意在改进组织的“整体性能”。</li><li>CMMI的两种等级可用于：评定活动和估算。</li><li>简述能力等级和成熟度等级之间的区别和联系：【背】<br>（1）区别：<br>能力等级是一种过程改善路径，该路径可使组织针对单一过程域不断改善该过程域。（1分）<br>成熟度等级也是一种过程改善路径，该路径可使组织通过关注一组过程域不断改善一组相关的过程域；（1分）<br>（2）联系：<br>能力等级和成熟度等级都是CMMI提供的两种过程改善路径，侧重不同：它们都是按共用目标从弱到强。（1分）<br>当某一过程域逐步完成了所有等级的“最佳实践”，它才可能满足成熟度等级对单一过程域的要求。（1分）<br>当一组过程域及相关共用目标的一个成熟度等级完成后，软件过程才能实现高一级别的“成熟”，从而实现对软件过程有效管理的“最佳实践”。（1分）</li><li>裁剪过程的意图：围绕一个组织，影响一个项目，反映一个组织。</li><li>CMMI中有22个过程域，分为4类：项目管理类，工程类，过程管理类，支持类。</li><li>需求开发、确认、验证过程域可归类为：工程类。</li><li>项目规划的一个重要任务：对需要的规划参数进行估算。</li><li>过程域：是一个业务中一束相关的实践,当它们一起得以实现时,就满足被认为对该过程域的改善具有重要作用的一组条件。【背】</li><li>项目规划的内容/活动：【背】<br>(1)估算工作产品和任务。<br>(2)确定需要的资源。<br>(3)协商承诺。<br>(4)生成进度。<br>(5)标识并分析项目风险。</li><li>需求开发过程域的意图：分析客户需求、产品需求、产品部件需求。【背】</li><li>项目规划过程域的意图：建立并维护项目活动计划的定义，项目计划提供了执行和控制项目活动的基础。【背】</li><li>项目规划过程域的专用目标：估算项目规模、开发项目计划、获得对该计划的承诺。【背】</li></ol>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/29/02333-8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>02333 软件工程 考试大纲复习手册</title>
+      <link>https://pearlchocolatezy.com/2025/06/29/02333-syllabus/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/29/02333-syllabus/</guid>
+      <pubDate>Sun, 29 Jun 2025 04:17:58 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;题型：单项选择题、名词解释题、简答题、综合应用题等。&lt;/p&gt;
+&lt;h2 id=&quot;第一章-概述&quot;&gt;&lt;a href=&quot;#第一章-概述&quot; class=&quot;headerlink&quot; title=&quot;第一章 概述&quot;&gt;&lt;/a&gt;&lt;font color=&quot;mediumblue&quot;&gt;第一章 概述&lt;/f</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>题型：单项选择题、名词解释题、简答题、综合应用题等。</p><h2 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a><font color="mediumblue">第一章 概述</font></h2><mark class="hl-label pink">【重点】软件工程的定义、特点、基本原理。</mark> <h3 id="1-1-软件工程的定义、特点、基本原理"><a href="#1-1-软件工程的定义、特点、基本原理" class="headerlink" title="1.1 软件工程的定义、特点、基本原理"></a>1.1 软件工程的定义、特点、基本原理</h3><h3 id="1-2-软件危机的定义和原因"><a href="#1-2-软件危机的定义和原因" class="headerlink" title="1.2 软件危机的定义和原因"></a>1.2 软件危机的定义和原因</h3><h3 id="1-3-软件工程的生命周期"><a href="#1-3-软件工程的生命周期" class="headerlink" title="1.3 软件工程的生命周期"></a>1.3 软件工程的生命周期</h3><h3 id="1-4-软件开发过程模型"><a href="#1-4-软件开发过程模型" class="headerlink" title="1.4 软件开发过程模型"></a>1.4 软件开发过程模型</h3><h2 id="第二章-分析阶段"><a href="#第二章-分析阶段" class="headerlink" title="第二章 分析阶段"></a><font color="mediumblue">第二章 分析阶段</font></h2><mark class="hl-label pink">【重点】问题定义；可行性研究的任务、内容和步骤；DFD图的画法。</mark> <h3 id="2-1-可行性研究-amp-规格说明书"><a href="#2-1-可行性研究-amp-规格说明书" class="headerlink" title="2.1 可行性研究 &amp; 规格说明书"></a>2.1 可行性研究 &amp; 规格说明书</h3><h3 id="2-2-问题定义"><a href="#2-2-问题定义" class="headerlink" title="2.2 问题定义"></a>2.2 问题定义</h3><h3 id="2-3-系统流程图"><a href="#2-3-系统流程图" class="headerlink" title="2.3 系统流程图"></a>2.3 系统流程图</h3><h3 id="2-4-需求分析-amp-需求评审"><a href="#2-4-需求分析-amp-需求评审" class="headerlink" title="2.4 需求分析 &amp; 需求评审"></a>2.4 需求分析 &amp; 需求评审</h3><h2 id="第三章-总体设计"><a href="#第三章-总体设计" class="headerlink" title="第三章 总体设计"></a><font color="mediumblue">第三章 总体设计</font></h2><mark class="hl-label pink">【重点】模块设计准则、设计方法；结构设计方法；数据流设计方法；MVC框架。</mark> <h3 id="3-1-总体设计"><a href="#3-1-总体设计" class="headerlink" title="3.1 总体设计"></a>3.1 总体设计</h3><h3 id="3-2-设计方法"><a href="#3-2-设计方法" class="headerlink" title="3.2 设计方法"></a>3.2 设计方法</h3><h3 id="3-3-MVC框架"><a href="#3-3-MVC框架" class="headerlink" title="3.3 MVC框架"></a>3.3 MVC框架</h3><h2 id="第四章-详细设计"><a href="#第四章-详细设计" class="headerlink" title="第四章 详细设计"></a><font color="mediumblue">第四章 详细设计</font></h2><mark class="hl-label pink">【重点】问题定义；详细设计的方法和工具；用户界面设计原则。</mark> <h3 id="4-1-详细设计"><a href="#4-1-详细设计" class="headerlink" title="4.1 详细设计"></a>4.1 详细设计</h3><h3 id="4-2-Jackson程序设计方法-amp-Warnier程序设计方法"><a href="#4-2-Jackson程序设计方法-amp-Warnier程序设计方法" class="headerlink" title="4.2 Jackson程序设计方法 &amp; Warnier程序设计方法"></a>4.2 Jackson程序设计方法 &amp; Warnier程序设计方法</h3><h3 id="4-3-用户界面"><a href="#4-3-用户界面" class="headerlink" title="4.3 用户界面"></a>4.3 用户界面</h3><h2 id="第五章-编码及测试"><a href="#第五章-编码及测试" class="headerlink" title="第五章 编码及测试"></a><font color="mediumblue">第五章 编码及测试</font></h2><mark class="hl-label pink">【重点】程序设计风格；代码行度量法；黑盒测试、白盒测试；测试用例设计；自动测试。</mark> <h3 id="5-1-程序设计语言"><a href="#5-1-程序设计语言" class="headerlink" title="5.1 程序设计语言"></a>5.1 程序设计语言</h3><h3 id="5-2-程序文档化"><a href="#5-2-程序文档化" class="headerlink" title="5.2 程序文档化"></a>5.2 程序文档化</h3><h3 id="5-3-程序表达式"><a href="#5-3-程序表达式" class="headerlink" title="5.3 程序表达式"></a>5.3 程序表达式</h3><h3 id="5-4-代码效率"><a href="#5-4-代码效率" class="headerlink" title="5.4 代码效率"></a>5.4 代码效率</h3><h3 id="5-5-软件测试"><a href="#5-5-软件测试" class="headerlink" title="5.5 软件测试"></a>5.5 软件测试</h3><h2 id="第六章-软件维护及软件再工程"><a href="#第六章-软件维护及软件再工程" class="headerlink" title="第六章 软件维护及软件再工程"></a><font color="mediumblue">第六章 软件维护及软件再工程</font></h2><mark class="hl-label pink">【重点】软件可维护度量方法；软件再工程方法。</mark> <h3 id="6-1-软件维护"><a href="#6-1-软件维护" class="headerlink" title="6.1 软件维护"></a>6.1 软件维护</h3><h3 id="6-2-软件的逆向工程和再工程"><a href="#6-2-软件的逆向工程和再工程" class="headerlink" title="6.2 软件的逆向工程和再工程"></a>6.2 软件的逆向工程和再工程</h3><h2 id="第七章-面向对象方法学"><a href="#第七章-面向对象方法学" class="headerlink" title="第七章 面向对象方法学"></a><font color="mediumblue">第七章 面向对象方法学</font></h2><mark class="hl-label pink">【重点】面向对象方法；对象模型；动态模型；功能模型。</mark> <h3 id="7-1-面向对象方法学"><a href="#7-1-面向对象方法学" class="headerlink" title="7.1 面向对象方法学"></a>7.1 面向对象方法学</h3><h3 id="7-2-面向对象建模方法"><a href="#7-2-面向对象建模方法" class="headerlink" title="7.2 面向对象建模方法"></a>7.2 面向对象建模方法</h3><h3 id="7-3-三个模型"><a href="#7-3-三个模型" class="headerlink" title="7.3 三个模型"></a>7.3 三个模型</h3><h2 id="第八章-面向对象分析"><a href="#第八章-面向对象分析" class="headerlink" title="第八章 面向对象分析"></a><font color="mediumblue">第八章 面向对象分析</font></h2><mark class="hl-label pink">【重点】面向对象分析的基本过程和三种模型的建立</mark> <h3 id="8-1-面向对象的3个子模型和5个层次"><a href="#8-1-面向对象的3个子模型和5个层次" class="headerlink" title="8.1 面向对象的3个子模型和5个层次"></a>8.1 面向对象的3个子模型和5个层次</h3><h3 id="8-2-类与对象、事件跟踪"><a href="#8-2-类与对象、事件跟踪" class="headerlink" title="8.2 类与对象、事件跟踪"></a>8.2 类与对象、事件跟踪</h3><h3 id="8-3-建立三种模型"><a href="#8-3-建立三种模型" class="headerlink" title="8.3 建立三种模型"></a>8.3 建立三种模型</h3><h2 id="第九章-面向对象设计"><a href="#第九章-面向对象设计" class="headerlink" title="第九章 面向对象设计"></a><font color="mediumblue">第九章 面向对象设计</font></h2><mark class="hl-label pink">【重点】面向对象的准则和启发规则；设计子系统；设计类中的服务；设计关联；设计模式。</mark> <h3 id="9-1-面向对象设计准则和启发规则"><a href="#9-1-面向对象设计准则和启发规则" class="headerlink" title="9.1 面向对象设计准则和启发规则"></a>9.1 面向对象设计准则和启发规则</h3><h3 id="9-2-软件重用"><a href="#9-2-软件重用" class="headerlink" title="9.2 软件重用"></a>9.2 软件重用</h3><h3 id="9-3-子系统"><a href="#9-3-子系统" class="headerlink" title="9.3 子系统"></a>9.3 子系统</h3><h3 id="9-4-设计关联-amp-设计模式"><a href="#9-4-设计关联-amp-设计模式" class="headerlink" title="9.4 设计关联 &amp; 设计模式"></a>9.4 设计关联 &amp; 设计模式</h3><h2 id="第十章-面向对象实现"><a href="#第十章-面向对象实现" class="headerlink" title="第十章 面向对象实现"></a><font color="mediumblue">第十章 面向对象实现</font></h2><mark class="hl-label pink">【重点】面向对象设计风格；设计测试用例。</mark> <h3 id="10-1-面向对象语言"><a href="#10-1-面向对象语言" class="headerlink" title="10.1 面向对象语言"></a>10.1 面向对象语言</h3><h3 id="10-2-面向对象设计风格"><a href="#10-2-面向对象设计风格" class="headerlink" title="10.2 面向对象设计风格"></a>10.2 面向对象设计风格</h3><h3 id="10-3-面向对象测试"><a href="#10-3-面向对象测试" class="headerlink" title="10.3 面向对象测试"></a>10.3 面向对象测试</h3><h2 id="第十一章-软件工程标准化和软件文档"><a href="#第十一章-软件工程标准化和软件文档" class="headerlink" title="第十一章 软件工程标准化和软件文档"></a><font color="mediumblue">第十一章 软件工程标准化和软件文档</font></h2><mark class="hl-label pink">【重点】软件工程标准化的概念、类型和意义；软件文档的作用和分类。</mark> <h3 id="11-1-软件工程标准化"><a href="#11-1-软件工程标准化" class="headerlink" title="11.1 软件工程标准化"></a>11.1 软件工程标准化</h3><h3 id="11-2-软件文档"><a href="#11-2-软件文档" class="headerlink" title="11.2 软件文档"></a>11.2 软件文档</h3><h2 id="第十二章-软件工程质量"><a href="#第十二章-软件工程质量" class="headerlink" title="第十二章 软件工程质量"></a><font color="mediumblue">第十二章 软件工程质量</font></h2><mark class="hl-label pink">【重点】软件质量的定义、度量和软件质量度量模型。</mark> <h3 id="12-1-软件质量"><a href="#12-1-软件质量" class="headerlink" title="12.1 软件质量"></a>12.1 软件质量</h3><h3 id="12-2-CMM模型"><a href="#12-2-CMM模型" class="headerlink" title="12.2 CMM模型"></a>12.2 CMM模型</h3><h2 id="第十三章-软件工程项目管理"><a href="#第十三章-软件工程项目管理" class="headerlink" title="第十三章 软件工程项目管理"></a><font color="mediumblue">第十三章 软件工程项目管理</font></h2><mark class="hl-label pink">【重点】软件工程项目管理的概念；成本估算；开发进度计划的制定；甘特图；工程网络与关键路径；项目跟踪与控制；软件配置。</mark> <h3 id="13-1-软件项目管理"><a href="#13-1-软件项目管理" class="headerlink" title="13.1 软件项目管理"></a>13.1 软件项目管理</h3><h3 id="13-2-基于CASE技术的开发工具"><a href="#13-2-基于CASE技术的开发工具" class="headerlink" title="13.2 基于CASE技术的开发工具"></a>13.2 基于CASE技术的开发工具</h3><h3 id="13-3-软件成本估算"><a href="#13-3-软件成本估算" class="headerlink" title="13.3 软件成本估算"></a>13.3 软件成本估算</h3><h3 id="13-4-开发计划"><a href="#13-4-开发计划" class="headerlink" title="13.4 开发计划"></a>13.4 开发计划</h3><h3 id="13-5-甘特图"><a href="#13-5-甘特图" class="headerlink" title="13.5 甘特图"></a>13.5 甘特图</h3><h3 id="13-6-工程网络与关键路径"><a href="#13-6-工程网络与关键路径" class="headerlink" title="13.6 工程网络与关键路径"></a>13.6 工程网络与关键路径</h3><h3 id="13-7-项目跟踪与控制"><a href="#13-7-项目跟踪与控制" class="headerlink" title="13.7 项目跟踪与控制"></a>13.7 项目跟踪与控制</h3><h3 id="13-8-软件配置"><a href="#13-8-软件配置" class="headerlink" title="13.8 软件配置"></a>13.8 软件配置</h3>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/29/02333-syllabus/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>04747 Java 考试大纲复习手册</title>
+      <link>https://pearlchocolatezy.com/2025/06/29/04747-syllabus/</link>
+      <guid>https://pearlchocolatezy.com/2025/06/29/04747-syllabus/</guid>
+      <pubDate>Sun, 29 Jun 2025 04:15:34 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;题型：单项选择题、填空题、简答题、程序改错题、程序分析题、程序设计题等。&lt;/p&gt;
+&lt;h2 id=&quot;第一章-概述&quot;&gt;&lt;a href=&quot;#第一章-概述&quot; class=&quot;headerlink&quot; title=&quot;第一章 概述&quot;&gt;&lt;/a&gt;&lt;font color=&quot;mediumblue&quot;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>题型：单项选择题、填空题、简答题、程序改错题、程序分析题、程序设计题等。</p><h2 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a><font color="mediumblue">第一章 概述</font></h2><mark class="hl-label pink">【重点】Java语言的特点，Java开发环境的基本使用。</mark> <h3 id="1-1-理解Java语言的特点和应用背景"><a href="#1-1-理解Java语言的特点和应用背景" class="headerlink" title="1.1 理解Java语言的特点和应用背景"></a>1.1 理解Java语言的特点和应用背景</h3><h3 id="1-2-Java应用和程序初步"><a href="#1-2-Java应用和程序初步" class="headerlink" title="1.2 Java应用和程序初步"></a>1.2 Java应用和程序初步</h3><h3 id="1-3-Java的编译、运行命令"><a href="#1-3-Java的编译、运行命令" class="headerlink" title="1.3 Java的编译、运行命令"></a>1.3 Java的编译、运行命令</h3><h3 id="1-4-较流行的IDE环境"><a href="#1-4-较流行的IDE环境" class="headerlink" title="1.4 较流行的IDE环境"></a>1.4 较流行的IDE环境</h3><h2 id="第二章-标识符和数据类型"><a href="#第二章-标识符和数据类型" class="headerlink" title="第二章 标识符和数据类型"></a><font color="mediumblue">第二章 标识符和数据类型</font></h2><mark class="hl-label pink">【重点】常量，变量，面向对象基本概念。</mark> <h3 id="2-1-关键字和自定义标识符（自建类、方法等的名称）"><a href="#2-1-关键字和自定义标识符（自建类、方法等的名称）" class="headerlink" title="2.1 关键字和自定义标识符（自建类、方法等的名称）"></a>2.1 关键字和自定义标识符（自建类、方法等的名称）</h3><h3 id="2-2-三种注释"><a href="#2-2-三种注释" class="headerlink" title="2.2 三种注释"></a>2.2 三种注释</h3><h3 id="2-3-常量和变量-amp-数据类型转换"><a href="#2-3-常量和变量-amp-数据类型转换" class="headerlink" title="2.3 常量和变量 &amp; 数据类型转换"></a>2.3 常量和变量 &amp; 数据类型转换</h3><h3 id="2-4-复合数据类型：Array，类，接口，Enum，包"><a href="#2-4-复合数据类型：Array，类，接口，Enum，包" class="headerlink" title="2.4 复合数据类型：Array，类，接口，Enum，包"></a>2.4 复合数据类型：Array，类，接口，Enum，包</h3><h3 id="2-5-面向对象基本概念"><a href="#2-5-面向对象基本概念" class="headerlink" title="2.5 面向对象基本概念"></a>2.5 面向对象基本概念</h3><h2 id="第三章-表达式和流程控制语句"><a href="#第三章-表达式和流程控制语句" class="headerlink" title="第三章 表达式和流程控制语句"></a><font color="mediumblue">第三章 表达式和流程控制语句</font></h2><mark class="hl-label pink">【重点】流程控制语句。</mark> <h3 id="3-1-运算符-amp-Math类"><a href="#3-1-运算符-amp-Math类" class="headerlink" title="3.1 运算符 &amp; Math类"></a>3.1 运算符 &amp; Math类</h3><h3 id="3-2-表达式语句、条件语句、循环语句"><a href="#3-2-表达式语句、条件语句、循环语句" class="headerlink" title="3.2 表达式语句、条件语句、循环语句"></a>3.2 表达式语句、条件语句、循环语句</h3><h3 id="3-3-while-do-while-for-break-continue"><a href="#3-3-while-do-while-for-break-continue" class="headerlink" title="3.3 while, do-while, for, break, continue"></a>3.3 while, do-while, for, break, continue</h3><h2 id="第四章-数组、向量和字符串"><a href="#第四章-数组、向量和字符串" class="headerlink" title="第四章 数组、向量和字符串"></a><font color="mediumblue">第四章 数组、向量和字符串</font></h2><mark class="hl-label pink">【重点】数组的声明、创建和使用。</mark> <h3 id="4-1-StringBuffer类"><a href="#4-1-StringBuffer类" class="headerlink" title="4.1 StringBuffer类"></a>4.1 StringBuffer类</h3><h3 id="4-2-一维数组的声明、创建、初始化、使用"><a href="#4-2-一维数组的声明、创建、初始化、使用" class="headerlink" title="4.2 一维数组的声明、创建、初始化、使用"></a>4.2 一维数组的声明、创建、初始化、使用</h3><h3 id="4-3-多维数组的声明、创建、初始化、使用"><a href="#4-3-多维数组的声明、创建、初始化、使用" class="headerlink" title="4.3 多维数组的声明、创建、初始化、使用"></a>4.3 多维数组的声明、创建、初始化、使用</h3><h3 id="4-4-String类，Array类（System-arraycopy-方法）"><a href="#4-4-String类，Array类（System-arraycopy-方法）" class="headerlink" title="4.4 String类，Array类（System.arraycopy()方法）"></a>4.4 String类，Array类（System.arraycopy()方法）</h3><h2 id="第五章-进一步讨论对象和类"><a href="#第五章-进一步讨论对象和类" class="headerlink" title="第五章 进一步讨论对象和类"></a><font color="mediumblue">第五章 进一步讨论对象和类</font></h2><mark class="hl-label pink">【重点】类与对象的创建和使用，与类之间的关系，继承过程中产生的隐藏和覆盖问题。</mark> <h3 id="5-1-类的声明-amp-构造方法"><a href="#5-1-类的声明-amp-构造方法" class="headerlink" title="5.1 类的声明 &amp; 构造方法"></a>5.1 类的声明 &amp; 构造方法</h3><h3 id="5-2-类的继承"><a href="#5-2-类的继承" class="headerlink" title="5.2 类的继承"></a>5.2 类的继承</h3><h3 id="5-3-抽象类"><a href="#5-3-抽象类" class="headerlink" title="5.3 抽象类"></a>5.3 抽象类</h3><h3 id="5-4-接口-amp-接口的实现"><a href="#5-4-接口-amp-接口的实现" class="headerlink" title="5.4 接口 &amp; 接口的实现"></a>5.4 接口 &amp; 接口的实现</h3><h3 id="5-5-main-static-final-super-访问控制符"><a href="#5-5-main-static-final-super-访问控制符" class="headerlink" title="5.5 main, static ,final, super, 访问控制符"></a>5.5 main, static ,final, super, 访问控制符</h3><h3 id="5-6-包"><a href="#5-6-包" class="headerlink" title="5.6 包"></a>5.6 包</h3><h3 id="5-7-子类"><a href="#5-7-子类" class="headerlink" title="5.7 子类"></a>5.7 子类</h3><h2 id="第六章-Java语言中的异常"><a href="#第六章-Java语言中的异常" class="headerlink" title="第六章 Java语言中的异常"></a><font color="mediumblue">第六章 Java语言中的异常</font></h2><mark class="hl-label pink">【重点】异常处理机制。</mark> <h3 id="6-1-常见异常"><a href="#6-1-常见异常" class="headerlink" title="6.1 常见异常"></a>6.1 常见异常</h3><h3 id="6-2-自定义异常"><a href="#6-2-自定义异常" class="headerlink" title="6.2 自定义异常"></a>6.2 自定义异常</h3><h2 id="第八章-Java的图形用户界面设计"><a href="#第八章-Java的图形用户界面设计" class="headerlink" title="第八章 Java的图形用户界面设计"></a><font color="mediumblue">第八章 Java的图形用户界面设计</font></h2><mark class="hl-label pink">【重点】容器、布局、常用组件、委托事件处理机制。</mark> <h3 id="8-1-Java-GUI的组成"><a href="#8-1-Java-GUI的组成" class="headerlink" title="8.1 Java GUI的组成"></a>8.1 Java GUI的组成</h3><h3 id="8-2-容器-amp-布局"><a href="#8-2-容器-amp-布局" class="headerlink" title="8.2 容器 &amp; 布局"></a>8.2 容器 &amp; 布局</h3><h3 id="8-3-AWT和Swing常用组件"><a href="#8-3-AWT和Swing常用组件" class="headerlink" title="8.3 AWT和Swing常用组件"></a>8.3 AWT和Swing常用组件</h3><h2 id="第九章-Swing组件"><a href="#第九章-Swing组件" class="headerlink" title="第九章 Swing组件"></a><font color="mediumblue">第九章 Swing组件</font></h2><mark class="hl-label pink">【重点】常用组件的综合使用。</mark> <h3 id="9-1-菜单"><a href="#9-1-菜单" class="headerlink" title="9.1 菜单"></a>9.1 菜单</h3><h3 id="9-2-对话框-amp-滚动条"><a href="#9-2-对话框-amp-滚动条" class="headerlink" title="9.2 对话框 &amp; 滚动条"></a>9.2 对话框 &amp; 滚动条</h3><h3 id="9-3-按钮、标签、列表、组合框、文本域、文本区等"><a href="#9-3-按钮、标签、列表、组合框、文本域、文本区等" class="headerlink" title="9.3 按钮、标签、列表、组合框、文本域、文本区等"></a>9.3 按钮、标签、列表、组合框、文本域、文本区等</h3><h3 id="9-4-处理鼠标事件"><a href="#9-4-处理鼠标事件" class="headerlink" title="9.4 处理鼠标事件"></a>9.4 处理鼠标事件</h3><h2 id="第十章-JavaApplet"><a href="#第十章-JavaApplet" class="headerlink" title="第十章 JavaApplet"></a><font color="mediumblue">第十章 JavaApplet</font></h2><mark class="hl-label pink">【重点】Applet类的主要方法，Applet的生命周期。</mark> <h3 id="10-1-Applet的基础知识"><a href="#10-1-Applet的基础知识" class="headerlink" title="10.1 Applet的基础知识"></a>10.1 Applet的基础知识</h3><h3 id="10-2-Applet类的主要方法"><a href="#10-2-Applet类的主要方法" class="headerlink" title="10.2 Applet类的主要方法"></a>10.2 Applet类的主要方法</h3><h3 id="10-3-Applet的运行机制"><a href="#10-3-Applet的运行机制" class="headerlink" title="10.3 Applet的运行机制"></a>10.3 Applet的运行机制</h3><h3 id="10-4-Applet生命周期"><a href="#10-4-Applet生命周期" class="headerlink" title="10.4 Applet生命周期"></a>10.4 Applet生命周期</h3><h3 id="10-5-HTML与Applet的配合使用"><a href="#10-5-HTML与Applet的配合使用" class="headerlink" title="10.5 HTML与Applet的配合使用"></a>10.5 HTML与Applet的配合使用</h3><h3 id="10-6-Applet的应用"><a href="#10-6-Applet的应用" class="headerlink" title="10.6 Applet的应用"></a>10.6 Applet的应用</h3>]]></content:encoded>
+      
+      
+      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
+      
+      
+      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
+      
+      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
+      
+      
+      <comments>https://pearlchocolatezy.com/2025/06/29/04747-syllabus/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>04747-Java（八）——图形界面设计</title>
@@ -195,125 +310,6 @@
       
       
       <comments>https://pearlchocolatezy.com/2025/06/12/04747-06/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>02333 软件工程（五）——面向对象方法RUP</title>
-      <link>https://pearlchocolatezy.com/2025/06/11/02333-5/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/11/02333-5/</guid>
-      <pubDate>Wed, 11 Jun 2025 08:59:20 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
-    A[面向对象方法RUL] --&gt; A1[RUP的特点]
-    A --&gt; A2[核心工作流]&lt;/pre&gt;&lt;br&gt;&lt;div class=&quot;mermaid-wrap&quot;&gt;&lt;pre class=&quot;mermaid-</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p><pre class="mermaid">graph LR    A[面向对象方法RUL] --> A1[RUP的特点]    A --> A2[核心工作流]</pre><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div></p><p>RUP：Rational Unified Process，统一软件开发过程</p><ol><li>面向对象符号体系。</li><li>三个突出特征：以<i id="answer1_1" class="answer" onclick="showOrHide('1_1')">用况</i>为驱动、以<i id="answer1_2" class="answer" onclick="showOrHide('1_2')">体系结构</i>为中心的<i id="answer1_3" class="answer" onclick="showOrHide('1_3')">迭代、增量式</i>开发。</li><li>RUP四个阶段：初始阶段 -&gt; 精化阶段 -&gt; 构造阶段 -&gt; 移交阶段。<br>精化阶段：估算成本进度，减少风险，至少要完成的阶段。<br>构造阶段：形成最终的系统体系结构基线，确保产品可以开始向客户交付，具有初始操作能力。<br>移交阶段：确保有一个实在的产品发布给客户。</li><li>一个核心工作流包括：需求获取、分析、设计、实现、测试。</li><li>RUP利用UML提供的术语和工具定义了<i id="answer5_1" class="answer" onclick="showOrHide('5_1')">需求获取层</i>、<i id="answer5_2" class="answer" onclick="showOrHide('5_2')">系统分析层</i>、<i id="answer5_3" class="answer" onclick="showOrHide('5_3')">设计层</i>、<i id="answer5_4" class="answer" onclick="showOrHide('5_4')">实现层</i>，并给出了各层模型间的映射。</li><li>简述RUP设计模型以及包含的元素：【难背】<br>RUP的设计模型是RUP设计的主要结果，它尽量保持该系统具有分析模型的结构，并作为系统实现的输入。（1分）<br>它包括以下元素：<br>（1）设计子系统和服务子系统，以及它们的依赖、接口和内容；（1分）<br>（2）设计类，以及它们具有的操作、属性、关系及其实现需求；（1分）<br>（3）用况细化；（1分）<br>（4）体系结构描述。（1分）</li><li>为什么UML要同RUP一起才称得上是软件开发的方法学？【难背】<br>（1）一种软件开发方法学，至少由三部分组成：用于表达基本信息的术语，用于组织基本信息的表达格式，用于在不同抽象层之间进行映射的过程指导。<br>（2）UML仅包含前两方面的内容，因此它只是一种可视化的建模语言，而不是一种特定的软件开发方法学。<br>（3）RUP给出的是一种基于UML的过程指导，满足软件开发方法学的第三项内容。<br>因此UML要同RUP一起才称得上是一种软件开发的方法学。</li><li>RUP的<i id="answer8_1" class="answer" onclick="showOrHide('8_1')">部署模型</i>包含节点和主动类到节点的初始映射。</li><li>RUP从两个角度描述软件结构：系统设计模型，表达物理分布的<i id="answer9_1" class="answer" onclick="showOrHide('9_1')">系统部署模型</i>。</li><li>简述建造一个系统需求获取模型的活动（RUP创建系统用况模型应进行的活动，0.5分/个），以及各活动的输入和输出：【难背】<br>（1）活动:发现描述参与者和用况。输入:业务模型或领域模型,补充需求,特征表。输出:用况模型[概述],术语表;(1分)<br>（2）活动:赋予用况优先级。输入:用况模型[概述],补充需求,术语表。输出:体系结构描述[用况模型视角];(1分)<br>（3）活动:精化用况。输入:用况模型[概述],补充需求,术语表。输出:用况[精化];(1分)<br>（4）活动:构造人机接口原型（用户界面原型）。输入:用况[精化],用况模型[概述],补充需求,术语表。输出:人机接口原理;(1分)<br>（5）活动:用况模型结构化。输入:用况[精化],用况模型[概述],补充需求,术语表。输出:用况模型[精化]。(1分)</li><li>RUP中创建系统的分析模型，一般应进行<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">体系结构</i>分析、<i id="answer11_2" class="answer" onclick="showOrHide('11_2')">用况</i>分析、<i id="answer11_3" class="answer" onclick="showOrHide('11_3')">类的</i>分析、<i id="answer11_4" class="answer" onclick="showOrHide('11_4')">包的</i>分析4项活动。</li><li>RUP中的分析类分为：<i id="answer12_1" class="answer" onclick="showOrHide('12_1')">边界类</i>、<i id="answer12_2" class="answer" onclick="showOrHide('12_2')">实体类</i>、<i id="answer12_3" class="answer" onclick="showOrHide('12_3')">控制类</i>。</li><li>简述RUP需求获取的基本步骤：【难背】<br>（1）列出候选的特征、(1 分)<br>（2）理解系统语境、(1 分)<br>（3）捕获系统功能需求、(2 分)<br>（4）捕获非功能需求。 (1 分)</li><li>RUP采用<i id="answer14_1" class="answer" onclick="showOrHide('14_1')">Use Case</i>技术来获取需求，其目标是使用UML中的<i id="answer14_2" class="answer" onclick="showOrHide('14_2')">用况</i>、参与者以及依赖等术语来抽象客观实际问题，形成系统的需求获取模型。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/11/02333-5/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>04747-Java（五）——数组和字符串</title>
-      <link>https://pearlchocolatezy.com/2025/06/10/04747-05/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/10/04747-05/</guid>
-      <pubDate>Tue, 10 Jun 2025 12:44:04 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h3 id=&quot;5-1-数组&quot;&gt;&lt;a href=&quot;#5-1-数组&quot; class=&quot;headerlink&quot; title=&quot;5.1 数组&quot;&gt;&lt;/a&gt;5.1 数组&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;数组是相同类型的元素按一定顺序排列的集合。&lt;/li&gt;
-&lt;li&gt;数组声明时不用说明容量，声明时不分</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h3 id="5-1-数组"><a href="#5-1-数组" class="headerlink" title="5.1 数组"></a>5.1 数组</h3><ol><li>数组是相同类型的元素按一定顺序排列的集合。</li><li>数组声明时不用说明容量，声明时不分配内存。</li><li>声明数组的格式：<code>类型 数组名[];</code></li><li>数组初始化的两种方法：静态初始化，动态初始化。</li><li>初始化数组的格式：<br>静态初始化：<code>类型 数组名[]=&#123;值1,值2,...&#125;;</code><br>动态初始化：<code>类型 数组名[]=new 类型[数组大小];</code></li><li>简述声明数组和创建数组的区别：<br>（1）声明数组是指定义一个数组，定义的格式为：类型 数组名[]。声明数组时不会为数组分配内存，声明的数组名只是引用变量，用来指向一个数组，还不能访问数组的任何元素。<br>（2）创建数组是指对声明过的数组进行分配空间，对其进行初始化，给数组的元素赋初值，创建数组以后可以使用数组的元素。数组创建分为静态初始化和动态初始化两种。静态初始化使用一对大括号{ }将初值括起来，每个元素对应一个引用。动态初始化使用运算符new为数组分配空间。</li><li>访问数组元素时需注意哪些问题：<br>（1）数组必须已经初始化,具有内存空间。<br>（2）访问数组元素通过数组名加上下标,即数组 名[下标数字]的形式进行,下标数字是从0 开始。<br>（3）数组初始化后其大小是固定不变的,所以访 问数组元素时需注意下标数字的必须小于数组的 length属性的值,否则会抛出越界异常。</li></ol><h3 id="5-2-字符串"><a href="#5-2-字符串" class="headerlink" title="5.2 字符串"></a>5.2 字符串</h3><ol><li>“==”与equals()的区别：<br>运算符“==”判定两个字符串对象是否是同一实例，内存中的存储空间是否相同。<br>方法equals()判定两个字符串的值是否相等。</li><li>substring(3,5)表示从位置3开始，到位置5结束，不含位置5。</li><li>简述String类和StringBuffer类在对象分配内存时的区别：<br>String类分配内存时,按照对象中所含字符的实际个数等量分配。<br>StringBuffer类对象分配内存时,除去字符所占空间外,再另加16个字符大小的缓冲区。</li><li>StringBuffer类用于处理<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">可变字符串</i>。</li><li>用字符数组创建字符串语句：<code>String s=new String(chars);</code></li></ol><h3 id="5-3-Vector类"><a href="#5-3-Vector类" class="headerlink" title="5.3 Vector类"></a>5.3 Vector类</h3><ol><li>Vector类的实例可以保存不同类型的数据。</li><li>Vector类可认为是动态数组，空间大小可变。</li><li><code>Vector v=new Vector(100,50);</code>50表示在v初始化的空间用尽后以50为单位递增空间。</li><li>简述数组与Vector的显著区别：<br>（1）数组初始化(创建)后其容量大小固定不变,不能缩小或追加空间。而 Vector类实例的大小可以根据需要来改变。<br>（2）Vector保存的数据类型与数组也不一样,数组只能保存同一种数据,而 Vector实例可以保存不同类型的数据。<br>（3）数组元素的类型可以是基本数据类型,也可以是类对象,而 Vector类实例只能保存类的对象,不能保存基本类型的数据。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/10/04747-05/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>04747-Java（四）——面向对象程序设计</title>
-      <link>https://pearlchocolatezy.com/2025/06/08/04747-04/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/08/04747-04/</guid>
-      <pubDate>Sun, 08 Jun 2025 09:06:42 GMT</pubDate>
-      
-        
-        
-      <description>&lt;ol&gt;
-&lt;li&gt;类中可以不显示定义构造方法。&lt;br&gt;（可以不手动写，编译器会自动生成一个无参的）&lt;/li&gt;
-&lt;li&gt;可以创建不带参数的构造方法。&lt;/li&gt;
-&lt;li&gt;构造方法不能从父类继承。&lt;/li&gt;
-&lt;li&gt;构造方法有返回值。（可以是对象的实例自己，可以是void）&lt;/li&gt;
-</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<ol><li>类中可以不显示定义构造方法。<br>（可以不手动写，编译器会自动生成一个无参的）</li><li>可以创建不带参数的构造方法。</li><li>构造方法不能从父类继承。</li><li>构造方法有返回值。（可以是对象的实例自己，可以是void）</li><li>构造方法的调用方式与普通方法不同。</li><li>方法签名包括：方法名，参数列表。</li><li>重载方法的返回值可以相同也可以不同。</li><li>重载方法返回值类型不可作为区分重载方法的依据。<br>原因：选择哪个重载方法是在执行方法之前进行的，此时还不知道返回值是什么，所以不能确定返回值的类型。</li><li>如果方法的形参是引用类型，调用方法时，实参传递的内容：<i id="answer9_1" class="answer" onclick="showOrHide('9_1')">将实参的首地址传给形参</i>。从方法返回时，对实参的影响：<i id="answer9_2" class="answer" onclick="showOrHide('9_2')">对形参的修改也即修改了实参</i>。</li><li>静态方法不能直接引用实例变量。</li><li>被整个类共享的变量为<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">静态变量</i>。</li><li>不需要创建对象就可以调用的方法为<i id="answer12_1" class="answer" onclick="showOrHide('12_1')">静态变量</i>。</li><li>int,char,void,byte的包装类分别为<i id="answer13_1" class="answer" onclick="showOrHide('13_1')">Interger</i>，<i id="answer13_2" class="answer" onclick="showOrHide('13_2')">Character</i>，<i id="answer13_3" class="answer" onclick="showOrHide('13_3')">Void</i>，<i id="answer13_4" class="answer" onclick="showOrHide('13_4')">Byte</i>。</li><li>简述包装类的用途：<br>当想用处理对象一样的方式来处理基本类型的数据时，必须将基本类型值包装成一个对象。</li><li>包装类定义在<i id="answer15_1" class="answer" onclick="showOrHide('15_1')">java.lang</i>包中。</li><li>自动将基本数据类型转换为对应的包装类的过程为<i id="answer16_1" class="answer" onclick="showOrHide('16_1')">装箱</i>。</li><li>自动将包装类的对象转换为基本类型的过程为<i id="answer17_1" class="answer" onclick="showOrHide('17_1')">拆箱</i>。</li><li>类中定义的静态成员，用static修饰，只分配一次内存，不同实例的该成员共享一块内存。<br>（Java中没有全局变量的概念，所有变量都必须属于某个类。）</li><li>类中含有的两部分元素：数据成员变量，成员方法。</li><li>类的修饰词<br>private：只能被类内部访问。<br>protected：只能被类所在包访问。（默认）<br>public：公共的，可以被所有对象访问。</li><li>子类构造方法调用父类构造方法，调用语句必须写在子类构造方法的第一行。</li><li>Java程序中源文件名必须根据文件中的<i id="answer22_1" class="answer" onclick="showOrHide('22_1')">共有类名</i>来定义。</li><li>简述构造方法重载：<br>在进行对象实例化时可能遇到许多不同情况，要求针对给定的不同参数，调用不同的构造方法，此时可以通过在一个类中同时定义若干个构造方法来实现。</li><li>简述类的概念：<br>现实世界中存在很多同类的对象，它们来自同一种原型或模板，或具有一些共性，可抽象提取为类。</li><li><i id="answer25_1" class="answer" onclick="showOrHide('25_1')">new</i>运算符可自动调用构造方法。</li><li>调用方法时传给方法的值称为<i id="answer26_1" class="answer" onclick="showOrHide('26_1')">实参</i>。</li><li>Java中实例变量与静态变量的区别是什么？<br>Java运行中系统生成类的每个实例对象时,会为每个对象的实例变量分配内存,然后才可以访问实例变量,而且不同对象的内存空间相互独立。<br>静态变量是不依赖于特定对象,系统只在类定义时为静态成员分配内存,此时还没有创建对象,也没有对对象进行实例化。以后生成该类的实例对象时,将不再为静态成员分配内存,不同对象的静态变量将共享同一块内存空间。</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      <category domain="https://pearlchocolatezy.com/tags/Java/">Java</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/08/04747-04/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>02333 软件工程（四）——面向对象方法UML</title>
-      <link>https://pearlchocolatezy.com/2025/06/05/02333-4/</link>
-      <guid>https://pearlchocolatezy.com/2025/06/05/02333-4/</guid>
-      <pubDate>Thu, 05 Jun 2025 09:50:21 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;&lt;pre class=&quot;mermaid&quot;&gt;graph LR
-    A[面向对象方法UML] --&gt; A1[UML术语表]
-    A --&gt; A2[UML的模型表达格式]&lt;/pre&gt;&lt;br&gt;&lt;div class=&quot;mermaid-wrap&quot;&gt;&lt;pre class=&quot;mer</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p><pre class="mermaid">graph LR    A[面向对象方法UML] --> A1[UML术语表]    A --> A2[UML的模型表达格式]</pre><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>    </pre></div></p><h3 id="4-1-UML术语表"><a href="#4-1-UML术语表" class="headerlink" title="4.1 UML术语表"></a>4.1 UML术语表</h3><ol><li>UML表达关系的术语中，包含是一种特殊的<i id="answer1_1" class="answer" onclick="showOrHide('1_1')">依赖</i>。</li><li><i id="answer2_1" class="answer" onclick="showOrHide('2_1')">UML</i>是面向对象技术发展中一个重要的里程碑。</li><li>关联的多重性是指类中对象参与一个关联的数目。</li><li>术语<i id="answer4_1" class="answer" onclick="showOrHide('4_1')">依赖</i>可用于表达客观世界中各种各样事物之间的关系。</li><li>UML术语表：<br><code>+</code>：公共可见的（public）<br><code>-</code>：对该关联之外的任何对象而言，该端的对象是不可见的<br><code>#</code>：该端的对象只有另一端的“子孙”是可以访问的（protected）<br><code>~</code>：在同一包中声明的类是可访问的</li><li>接口使用注意以下问题：（选择）<br>（1）接口只可以被其他类目使用，而其本身不能访问其他类目。<br>（2）接口描述类的外部可见操作，通常是该类的一个特定有限行为。<br>（3）接口不描述其中操作的实现，也没有属性和状态。<br>（4）接口之间没有关联、泛化、实现和依赖，但可以参与泛化、实现和依赖。</li><li>为了描述模型化包之间的关系，UML给出了<i id="answer7_1" class="answer" onclick="showOrHide('7_1')">引入</i>依赖和<i id="answer7_2" class="answer" onclick="showOrHide('7_2')">访问</i>依赖。</li><li>UML关系术语：<br><font color="midnightblue">关联：表示类与类之间的联系。方向箭头实线表示。<br>泛化：表示一般与特殊的关系。用带空心三角箭头的直线表示。<br>细化：一个类目规约了保证另一个类目执行的契约。<br>依赖：表示一个类使用另一个类的对象。用带箭头的虚线表示。<br>聚合：表示整体与部分的关系，部分可独立存在。用带空心菱形的直线表示。<br>组合：表示整体与部分的关系，部分对象与整体对象有相同的生命周期。用带实心菱形的直线表示。<br>实现：表示类与接口的关系。用带箭头的虚线表示。</font><br><strong>关联、泛化、细化都是一类特定的依赖。</strong></li><li>在类的关联中，对于一个给定的类目，可以通过<i id="answer9_1" class="answer" onclick="showOrHide('9_1')">导航</i>。</li><li>用于描述关联的一定内涵的术语是<i id="answer10_1" class="answer" onclick="showOrHide('10_1')">关联名</i>。</li><li>关联的一端的类目对另一端的类目的一种呈现，称为<i id="answer11_1" class="answer" onclick="showOrHide('11_1')">角色</i>。</li><li>泛化的四个约束：<i id="answer12_1" class="answer" onclick="showOrHide('12_1')">完整</i>、<i id="answer12_2" class="answer" onclick="showOrHide('12_2')">不完整</i>、<i id="answer12_3" class="answer" onclick="showOrHide('12_3')">互斥</i>、<i id="answer12_4" class="answer" onclick="showOrHide('12_4')">重叠</i>。</li><li>类是一组具有相同<i id="answer13_1" class="answer" onclick="showOrHide('13_1')">属性</i>、<i id="answer13_2" class="answer" onclick="showOrHide('13_2')">操作</i>、<i id="answer13_3" class="answer" onclick="showOrHide('13_3')">关系</i>、<i id="answer13_4" class="answer" onclick="showOrHide('13_4')">语义</i>。</li><li>类的泛化关系中，如果一个类有多个父类，则说明它使用了<i id="answer14_1" class="answer" onclick="showOrHide('14_1')">语义</i>。</li><li>UML中，实线椭圆表示<i id="answer15_1" class="answer" onclick="showOrHide('15_1')">用况</i>。</li><li>一种软件开发方法学至少由三部分组成：<br>（1）用于表达基本信息的术语<br>（2）用于组织基本信息的表达格式<br>（3）不同抽象层之间进行映射的过程指导</li><li>类中对象参与一个关联的数目，称为该关联的<i id="answer17_1" class="answer" onclick="showOrHide('17_1')">多重性</i>。</li><li>协作是一个交互，涉及交互<i id="answer18_1" class="answer" onclick="showOrHide('18_1')">各方</i>、交互<i id="answer18_2" class="answer" onclick="showOrHide('18_2')">方式</i>、交互<i id="answer18_3" class="answer" onclick="showOrHide('18_3')">内容</i>三要素。</li><li>节点具有<i id="answer19_1" class="answer" onclick="showOrHide('19_1')">记忆</i>能力和<i id="answer19_2" class="answer" onclick="showOrHide('19_2')">处理</i>能力。</li><li>UML表达客观事物之间关系的术语及定义 <mark class="hl-label default">（2024-04JD 5'）</mark> <br>（1）为了表达各类客观事物之间的关系，UML给出了表达关系的基本术语：关联、泛化、细化、依赖；（1分）<br>（2）关联是类目之间的一种结构关系，是对一组具有相同结构、相同链的描述。（1分）泛化是一般性类目和它的较为特殊性类目之间的一种关系。（1分）细化是类目之间的语义关系，其中一个类目规约了保证另一个类目执行的契约。（1分）依赖是一种使用关系，用于描述一个类目使用另一类目的信息和服务。（1分）</li></ol><h3 id="4-2-UML的模型表达格式"><a href="#4-2-UML的模型表达格式" class="headerlink" title="4.2 UML的模型表达格式"></a>4.2 UML的模型表达格式</h3><ol><li>用况图（USE CASE图）：可以表达系统功能模型的图形化工具（背）；可用于概念模型和软件模型的动态结构。</li><li>类图：可用于描述概念模型和软件模型的静态结构。</li><li>状态图：从一个状态到另一个状态的控制流建模工具；支持生存周期的建模。</li><li>交互图：支持系统交互的建模。</li><li>UML两类图形化工具：结构图，行为图。</li><li>创建一个系统类图的步骤：（选择）<br>（1）模型化待建系统中的概念，形成类图中的基本元素；<br>（2）模型化待建系统中的各种关系，形成该系统的初始类图；<br>（3）模型化系统中的协作，给出该类图的最终类图；<br>（4）模型化逻辑数据库模式。</li><li>用况图的六个模型元素：主题、用况、参与者、关联、泛化、依赖。（背）<br>用况图模型元素之间的关系：用况图中，关联是操作者和用况之间的唯一关系。操作者之间的关系可以是泛化。用况之间可以有泛化、扩展和包含，其中包含和扩展是依赖的变体。（背）</li><li>UML中的事件类型：信号事件，调用事件，时间事件，变化事件。（背）<br>UML中的事件通常分为：内部事件，外部事件。</li><li>用况之间的关系：扩展，包含，泛化。</li><li>类图包含：类，接口，关联，泛化，依赖等关系。</li><li>简述状态图中的一个转换涉及的内容：<br>（1）源状态：发生状态转移的那个状态。<br>（2）转移触发器：满足其监护条件，则使状态发生转移。<br>（3）监护条件：布尔表达式，表达式为真，则触发转移；表达式为假，则不发生转移。<br>（4）效应：一种可执行的行为。<br>（5）目标状态：转移完成后所处的状态。</li><li>状态图的状态：初态，终态，通常状态。</li><li>简述创建系统类图所涉及的工作：<br>（1）创建一个系统的类图依赖于所使用的方法学；（1分）<br>（2）涉及以下4方面的工作：<br>模型化待建系统中的概念，形成类图中的基本元素；（1分）<br>模型化待建系统中的各种关系，形成该系统的初始类图；（1分）<br>模型化系统中的协作，给出该系统的最终类图：（1分）<br>模型化逻辑数据库模式。（1分）</li></ol><script>//填空专用function showOrHide(index){    let answer_text=document.getElementById(`answer${index}`);    if(answer_text.classList.contains('hide_answer')){        answer_text.classList.remove('hide_answer');    }else {        answer_text.classList.add('hide_answer');    }}</script><style>.answer{    color:transparent;    position: relative;}.answer::after {  content: "";  position: absolute;  left: 0;  bottom: 0;  width: 100%;  height: 1px; /* 下划线高度 */  background-color: black; /* 下划线颜色 */}.hide_answer{    color:black;}</style>]]></content:encoded>
-      
-      
-      <category domain="https://pearlchocolatezy.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category>
-      
-      
-      <category domain="https://pearlchocolatezy.com/tags/X2080901/">X2080901</category>
-      
-      
-      <comments>https://pearlchocolatezy.com/2025/06/05/02333-4/#disqus_thread</comments>
       
     </item>
     
