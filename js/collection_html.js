@@ -2,7 +2,7 @@ document.write(`
 <div id="root">
 	<div class="container">
 	<!-- 一个ani是一部作品 -->
-		<li class="ani" v-for="a in collection_data" :key="a.id">
+		<li class="ani" v-for="a in collection_data" :key="a.id" v-show="a.isShow">
 			<div class="img_d">
 				<img class="animation_img" :src="a.img_src">
 			</div>
